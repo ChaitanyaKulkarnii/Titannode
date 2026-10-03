@@ -43,7 +43,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "The raw, unvarnished story of TitanNodes. Built by Chiku & ZRX47 after scams, Discord sabotage, and ₹15,000 in painful lessons. 0% overselling guaranteed.",
+          "The raw, unvarnished story of TitanNodes. Built by Chiku, ZYRO & Darsh Patel after scams, Discord sabotage, and ₹15,000 in painful lessons. 0% overselling guaranteed.",
       },
     ],
   }),
@@ -91,7 +91,7 @@ export function AboutPage() {
 
           <p className="mx-auto mt-4 sm:mt-6 max-w-3xl text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed">
             TitanNodes wasn&apos;t funded by venture capital. It was forged through serial hosting scams, an unauthorized Discord bot nuke by a former partner, phishing attacks, and an agonizing ₹15,000 out-of-pocket loss on cheap oversold VPS nodes. 
-            <span className="text-white font-semibold"> This is the real story of how Chiku and ZRX47 built a zero-overselling infrastructure standard.</span>
+            <span className="text-white font-semibold"> This is the real story of how Chiku, ZYRO, and Darsh Patel built a zero-overselling infrastructure standard.</span>
           </p>
 
           {/* Quick Metrics Bar */}
@@ -298,7 +298,7 @@ export function AboutPage() {
                 </div>
 
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                  When ZRX47 partnered with Chiku to revive the host, they attempted to compete with low-ball prices by leasing cheap bulk VPS nodes. The provider claimed &quot;High Performance 64GB RAM&quot;, but in reality, the memory was swapped aggressively over saturated SATA links. Players suffered severe lag, and refunds piled up immediately.
+                  When ZYRO and Darsh Patel partnered with Chiku to revive the host, they attempted to compete with low-ball prices by leasing cheap bulk VPS nodes. The provider claimed &quot;High Performance 64GB RAM&quot;, but in reality, the memory was swapped aggressively over saturated SATA links. Players suffered severe lag, and refunds piled up immediately.
                 </p>
 
                 {/* Monospace Financial Receipt */}
@@ -562,7 +562,7 @@ export function AboutPage() {
               </div>
               <h3 className="font-space-grotesk text-xl font-bold text-white">3. Direct Founder Ticket Ownership</h3>
               <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal">
-                No outsourced bots or copy-pasted replies. Chiku and ZRX47 personally read and answer Discord support tickets every single day with real technical triage and under 15-minute response times.
+                No outsourced bots or copy-pasted replies. Chiku, ZYRO, and Darsh Patel personally read and answer Discord support tickets every single day with real technical triage and under 15-minute response times.
               </p>
             </div>
 
@@ -601,7 +601,7 @@ export function AboutPage() {
           </div>
 
           {/* Signatures & Ratification Verification Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
             {/* Chiku Signature Card */}
             <div className="rounded-none border border-white/10 bg-[#0a0e17] p-5 space-y-3 transition hover:border-white/20">
               <div className="flex items-center justify-between">
@@ -644,7 +644,7 @@ export function AboutPage() {
               </div>
             </div>
 
-            {/* ZRX47 Signature Card */}
+            {/* ZYRO Signature Card */}
             <div className="rounded-none border border-white/10 bg-[#0a0e17] p-5 space-y-3 transition hover:border-white/20">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 font-bold">
@@ -681,11 +681,53 @@ export function AboutPage() {
                     Z
                   </div>
                   <div>
-                    <span className="font-space-grotesk text-base font-bold text-white block">ZRX47</span>
+                    <span className="font-space-grotesk text-base font-bold text-white block">ZYRO</span>
                     <span className="text-xs text-zinc-400">Co-Owner &amp; Operations</span>
                   </div>
                 </div>
-                <span className="text-xs font-mono text-zinc-500">@zrx47</span>
+                <span className="text-xs font-mono text-zinc-500">@zyro</span>
+              </div>
+            </div>
+
+            {/* Darsh Patel Signature Card */}
+            <div className="rounded-none border border-white/10 bg-[#0a0e17] p-5 space-y-3 transition hover:border-white/20">
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 font-bold">
+                  Digitized Founder Signature
+                </span>
+                <span className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400">
+                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                  Active on Discord
+                </span>
+              </div>
+              <div className="py-2 overflow-hidden">
+                <svg
+                  viewBox="0 0 200 55"
+                  className="h-12 w-44 text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.2)]"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M 22 18 L 22 42 C 22 42 36 43 44 36 C 51 29 48 18 34 18 L 22 18" />
+                  <path d="M 52 36 C 56 28 64 28 66 34 C 68 38 70 42 74 35 C 78 28 84 28 86 34 L 88 42" strokeWidth="2" />
+                  <path d="M 98 20 L 98 42 C 98 42 110 43 116 36 C 122 29 114 22 100 22" />
+                  <path d="M 124 32 C 130 26 138 26 140 32 C 142 38 146 42 152 34 L 156 20" strokeWidth="2" />
+                  <path d="M 18 48 C 50 45 105 44 160 46 C 168 46 155 51 138 51" strokeWidth="1.6" />
+                </svg>
+              </div>
+              <div className="pt-2 border-t border-white/5 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 shrink-0 rounded-full bg-[#00b0ff]/20 border border-[#00b0ff]/40 flex items-center justify-center text-[#00b0ff] font-bold text-sm shadow">
+                    DP
+                  </div>
+                  <div>
+                    <span className="font-space-grotesk text-base font-bold text-white block">Darsh Patel</span>
+                    <span className="text-xs text-zinc-400">Co-Owner</span>
+                  </div>
+                </div>
+                <span className="text-xs font-mono text-zinc-500">@darshpatel</span>
               </div>
             </div>
           </div>
@@ -732,7 +774,7 @@ export function AboutPage() {
                 className="inline-flex items-center gap-1.5 rounded-none border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-bold text-white transition hover:border-white/20 hover:bg-white/10"
               >
                 <MessageSquare className="h-3.5 w-3.5" />
-                <span>Talk to Chiku &amp; ZRX47</span>
+                <span>Talk to Chiku, ZYRO &amp; Darsh</span>
                 <ArrowRight className="h-3.5 w-3.5" />
               </a>
             </div>
