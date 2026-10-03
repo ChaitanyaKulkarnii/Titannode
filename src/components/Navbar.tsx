@@ -7,7 +7,6 @@ import {
   FileText
 } from "lucide-react";
 import logo from "@/assets/logo-new.png";
-import palworldLogo from "@/assets/palworld-nav-logo.png";
 import { useCurrency, type Currency } from "@/lib/currency";
 import { cn } from "@/lib/utils";
 
@@ -41,7 +40,6 @@ function DiscordIcon({ className }: { className?: string }) {
 
 const hostingServices: DropdownItem[] = [
   { label: "Minecraft Hosting", to: "/minecraft", description: "From ₹10/mo • NVMe", badge: "Hot", icon: Box },
-  { label: "Palworld Hosting", to: "/palworld", description: "From ₹300/mo • NVMe", badge: "New", image: palworldLogo },
   { label: "VPS Hosting", to: "/vps-hosting", description: "Intel Gold & AMD EPYC", badge: "NVMe", icon: Server },
   { label: "Windows RDP", to: "/rdp-hosting", description: "Full Admin Access", icon: Monitor },
   { label: "Discord Bots", to: "/bot-hosting", description: "Node.js, Python & Java", icon: Bot },
