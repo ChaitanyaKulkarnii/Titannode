@@ -14,9 +14,12 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AupRouteImport } from './routes/aup'
 import { Route as BotHostingRouteImport } from './routes/bot-hosting'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as Cs2RouteImport } from './routes/cs2'
 import { Route as FaqsRouteImport } from './routes/faqs'
+import { Route as FivemRouteImport } from './routes/fivem'
 import { Route as FreeHostingRouteImport } from './routes/free-hosting'
 import { Route as GameHostingRouteImport } from './routes/game-hosting'
+import { Route as HytaleRouteImport } from './routes/hytale'
 import { Route as InfrastructureRouteImport } from './routes/infrastructure'
 import { Route as MinecraftRouteImport } from './routes/minecraft'
 import { Route as PalworldRouteImport } from './routes/palworld'
@@ -53,9 +56,19 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Cs2Route = Cs2RouteImport.update({
+  id: '/cs2',
+  path: '/cs2',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FaqsRoute = FaqsRouteImport.update({
   id: '/faqs',
   path: '/faqs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FivemRoute = FivemRouteImport.update({
+  id: '/fivem',
+  path: '/fivem',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FreeHostingRoute = FreeHostingRouteImport.update({
@@ -66,6 +79,11 @@ const FreeHostingRoute = FreeHostingRouteImport.update({
 const GameHostingRoute = GameHostingRouteImport.update({
   id: '/game-hosting',
   path: '/game-hosting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HytaleRoute = HytaleRouteImport.update({
+  id: '/hytale',
+  path: '/hytale',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InfrastructureRoute = InfrastructureRouteImport.update({
@@ -125,9 +143,12 @@ export interface FileRoutesByFullPath {
   '/aup': typeof AupRoute
   '/bot-hosting': typeof BotHostingRoute
   '/contact': typeof ContactRoute
+  '/cs2': typeof Cs2Route
   '/faqs': typeof FaqsRoute
+  '/fivem': typeof FivemRoute
   '/free-hosting': typeof FreeHostingRoute
   '/game-hosting': typeof GameHostingRoute
+  '/hytale': typeof HytaleRoute
   '/infrastructure': typeof InfrastructureRoute
   '/minecraft': typeof MinecraftRoute
   '/palworld': typeof PalworldRoute
@@ -145,9 +166,12 @@ export interface FileRoutesByTo {
   '/aup': typeof AupRoute
   '/bot-hosting': typeof BotHostingRoute
   '/contact': typeof ContactRoute
+  '/cs2': typeof Cs2Route
   '/faqs': typeof FaqsRoute
+  '/fivem': typeof FivemRoute
   '/free-hosting': typeof FreeHostingRoute
   '/game-hosting': typeof GameHostingRoute
+  '/hytale': typeof HytaleRoute
   '/infrastructure': typeof InfrastructureRoute
   '/minecraft': typeof MinecraftRoute
   '/palworld': typeof PalworldRoute
@@ -166,9 +190,12 @@ export interface FileRoutesById {
   '/aup': typeof AupRoute
   '/bot-hosting': typeof BotHostingRoute
   '/contact': typeof ContactRoute
+  '/cs2': typeof Cs2Route
   '/faqs': typeof FaqsRoute
+  '/fivem': typeof FivemRoute
   '/free-hosting': typeof FreeHostingRoute
   '/game-hosting': typeof GameHostingRoute
+  '/hytale': typeof HytaleRoute
   '/infrastructure': typeof InfrastructureRoute
   '/minecraft': typeof MinecraftRoute
   '/palworld': typeof PalworldRoute
@@ -188,9 +215,12 @@ export interface FileRouteTypes {
     | '/aup'
     | '/bot-hosting'
     | '/contact'
+    | '/cs2'
     | '/faqs'
+    | '/fivem'
     | '/free-hosting'
     | '/game-hosting'
+    | '/hytale'
     | '/infrastructure'
     | '/minecraft'
     | '/palworld'
@@ -208,9 +238,12 @@ export interface FileRouteTypes {
     | '/aup'
     | '/bot-hosting'
     | '/contact'
+    | '/cs2'
     | '/faqs'
+    | '/fivem'
     | '/free-hosting'
     | '/game-hosting'
+    | '/hytale'
     | '/infrastructure'
     | '/minecraft'
     | '/palworld'
@@ -228,9 +261,12 @@ export interface FileRouteTypes {
     | '/aup'
     | '/bot-hosting'
     | '/contact'
+    | '/cs2'
     | '/faqs'
+    | '/fivem'
     | '/free-hosting'
     | '/game-hosting'
+    | '/hytale'
     | '/infrastructure'
     | '/minecraft'
     | '/palworld'
@@ -249,9 +285,12 @@ export interface RootRouteChildren {
   AupRoute: typeof AupRoute
   BotHostingRoute: typeof BotHostingRoute
   ContactRoute: typeof ContactRoute
+  Cs2Route: typeof Cs2Route
   FaqsRoute: typeof FaqsRoute
+  FivemRoute: typeof FivemRoute
   FreeHostingRoute: typeof FreeHostingRoute
   GameHostingRoute: typeof GameHostingRoute
+  HytaleRoute: typeof HytaleRoute
   InfrastructureRoute: typeof InfrastructureRoute
   MinecraftRoute: typeof MinecraftRoute
   PalworldRoute: typeof PalworldRoute
@@ -301,11 +340,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cs2': {
+      id: '/cs2'
+      path: '/cs2'
+      fullPath: '/cs2'
+      preLoaderRoute: typeof Cs2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/faqs': {
       id: '/faqs'
       path: '/faqs'
       fullPath: '/faqs'
       preLoaderRoute: typeof FaqsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fivem': {
+      id: '/fivem'
+      path: '/fivem'
+      fullPath: '/fivem'
+      preLoaderRoute: typeof FivemRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/free-hosting': {
@@ -320,6 +373,13 @@ declare module '@tanstack/react-router' {
       path: '/game-hosting'
       fullPath: '/game-hosting'
       preLoaderRoute: typeof GameHostingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hytale': {
+      id: '/hytale'
+      path: '/hytale'
+      fullPath: '/hytale'
+      preLoaderRoute: typeof HytaleRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/infrastructure': {
@@ -401,9 +461,12 @@ const rootRouteChildren: RootRouteChildren = {
   AupRoute: AupRoute,
   BotHostingRoute: BotHostingRoute,
   ContactRoute: ContactRoute,
+  Cs2Route: Cs2Route,
   FaqsRoute: FaqsRoute,
+  FivemRoute: FivemRoute,
   FreeHostingRoute: FreeHostingRoute,
   GameHostingRoute: GameHostingRoute,
+  HytaleRoute: HytaleRoute,
   InfrastructureRoute: InfrastructureRoute,
   MinecraftRoute: MinecraftRoute,
   PalworldRoute: PalworldRoute,

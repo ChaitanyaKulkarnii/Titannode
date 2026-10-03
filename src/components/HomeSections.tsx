@@ -278,14 +278,14 @@ import hytaleCard from "@/assets/games/hytale.jpg";
 
 const games = [
   { name: "Minecraft", img: minecraftCard, href: "/minecraft", priceUsd: 1, tag: "Most Popular" },
+  { name: "Palworld", img: palworldCard, href: "/palworld", priceUsd: 300 / 83, tag: "Popular" },
+  { name: "Counter-Strike 2", img: cs2Card, href: "/cs2", priceUsd: 100 / 83, tag: "Popular" },
+  { name: "Hytale", img: hytaleCard, href: "/hytale", priceUsd: 110 / 83, tag: "New" },
+  { name: "FiveM (GTA V)", img: fivemCard, href: "/fivem", priceUsd: 120 / 83, tag: "Popular" },
   { name: "Rust", img: rustCard, href: "/game-hosting", priceUsd: 2, tag: "Popular" },
   { name: "ARK: Survival Evolved", img: arkCard, href: "/game-hosting", priceUsd: 2 },
   { name: "Valheim", img: valheimCard, href: "/game-hosting", priceUsd: 2 },
-  { name: "Palworld", img: palworldCard, href: "/palworld", priceUsd: 300 / 83, tag: "Popular" },
   { name: "Terraria", img: terrariaCard, href: "/game-hosting", priceUsd: 2 },
-  { name: "Counter-Strike 2", img: cs2Card, href: "/game-hosting", priceUsd: 3, tag: "Popular" },
-  { name: "FiveM (GTA V)", img: fivemCard, href: "/game-hosting", priceUsd: 2 },
-  { name: "Hytale", img: hytaleCard, href: "/game-hosting", priceUsd: 2, tag: "Upcoming" },
 ];
 
 export function GamesSection() {
