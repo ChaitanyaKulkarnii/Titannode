@@ -7,6 +7,7 @@ import {
   FileText
 } from "lucide-react";
 import logo from "@/assets/logo-new.png";
+import palworldLogo from "@/assets/palworld-nav-logo.png";
 import { useCurrency, type Currency } from "@/lib/currency";
 import { cn } from "@/lib/utils";
 
@@ -16,6 +17,7 @@ interface DropdownItem {
   description?: string;
   badge?: string;
   icon?: React.ComponentType<{ className?: string }>;
+  image?: string;
   isExternal?: boolean;
 }
 
@@ -39,7 +41,7 @@ function DiscordIcon({ className }: { className?: string }) {
 
 const hostingServices: DropdownItem[] = [
   { label: "Minecraft Hosting", to: "/minecraft", description: "From ₹10/mo • NVMe", badge: "Hot", icon: Box },
-  { label: "Palworld Hosting", to: "/palworld", description: "From ₹300/mo • NVMe", badge: "New", icon: Gamepad2 },
+  { label: "Palworld Hosting", to: "/palworld", description: "From ₹300/mo • NVMe", badge: "New", image: palworldLogo },
   { label: "VPS Hosting", to: "/vps-hosting", description: "Intel Gold & AMD EPYC", badge: "NVMe", icon: Server },
   { label: "Windows RDP", to: "/rdp-hosting", description: "Full Admin Access", icon: Monitor },
   { label: "Discord Bots", to: "/bot-hosting", description: "Node.js, Python & Java", icon: Bot },
@@ -365,11 +367,15 @@ export function Navbar() {
                                   className="group flex items-center justify-between rounded-sm px-3 py-2.5 text-sm transition-all duration-150 text-zinc-300 hover:bg-white/[0.05] hover:text-white"
                                 >
                                   <div className="flex items-center gap-3.5 min-w-0">
-                                    {link.icon && (
+                                    {link.image ? (
+                                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-[#121316] border border-zinc-800 p-1 group-hover:bg-[#1a1c22] group-hover:border-zinc-700 transition-all duration-150 shadow-sm">
+                                        <img src={link.image} alt="" className="h-5 w-auto max-w-[36px] object-contain drop-shadow-[0_0_8px_rgba(0,176,255,0.4)]" />
+                                      </span>
+                                    ) : link.icon ? (
                                       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-[#121316] border border-zinc-800 text-zinc-400 group-hover:bg-[#1a1c22] group-hover:border-zinc-700 group-hover:text-white transition-all duration-150 shadow-sm">
                                         <link.icon className="h-6 w-6 text-zinc-400 group-hover:text-white transition-colors" />
                                       </span>
-                                    )}
+                                    ) : null}
                                     <div className="min-w-0">
                                       <div className="font-bold text-sm text-zinc-100 group-hover:text-white transition-colors flex items-center gap-2">
                                         {link.label}
@@ -399,7 +405,16 @@ export function Navbar() {
                                 )}
                               >
                                 <div className="flex items-center gap-3.5 min-w-0">
-                                  {link.icon && (
+                                  {link.image ? (
+                                    <span className={cn(
+                                      "flex h-11 w-11 shrink-0 items-center justify-center rounded-md border p-1 transition-all duration-150 shadow-sm",
+                                      active
+                                        ? "bg-zinc-800 border-zinc-600"
+                                        : "bg-[#121316] border-zinc-800 group-hover:bg-[#1a1c22] group-hover:border-zinc-700"
+                                    )}>
+                                      <img src={link.image} alt="" className="h-5 w-auto max-w-[36px] object-contain drop-shadow-[0_0_8px_rgba(0,176,255,0.4)]" />
+                                    </span>
+                                  ) : link.icon ? (
                                     <span className={cn(
                                       "flex h-11 w-11 shrink-0 items-center justify-center rounded-md border transition-all duration-150 shadow-sm",
                                       active
@@ -408,7 +423,7 @@ export function Navbar() {
                                     )}>
                                       <link.icon className={cn("h-6 w-6 transition-colors", active ? "text-white" : "text-zinc-400 group-hover:text-white")} />
                                     </span>
-                                  )}
+                                  ) : null}
                                   <div className="min-w-0">
                                     <div className="font-bold text-sm text-zinc-100 group-hover:text-white transition-colors flex items-center gap-2">
                                       {link.label}
@@ -644,11 +659,15 @@ export function Navbar() {
                               className="group flex items-center justify-between rounded-md p-2.5 text-sm transition-all text-zinc-300 hover:bg-white/[0.05] hover:text-white active:bg-white/[0.08]"
                             >
                               <div className="flex items-center gap-3 min-w-0">
-                                {link.icon && (
+                                {link.image ? (
+                                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#121316] border border-zinc-800 p-1 group-hover:bg-[#1a1c22] group-hover:border-zinc-700 transition-all shadow-sm">
+                                    <img src={link.image} alt="" className="h-4.5 w-auto max-w-[32px] object-contain drop-shadow-[0_0_8px_rgba(0,176,255,0.4)]" />
+                                  </span>
+                                ) : link.icon ? (
                                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#121316] border border-zinc-800 text-zinc-400 group-hover:bg-[#1a1c22] group-hover:border-zinc-700 group-hover:text-white transition-all shadow-sm">
                                     <link.icon className="h-5 w-5 text-zinc-400 group-hover:text-white transition-colors" />
                                   </span>
-                                )}
+                                ) : null}
                                 <div className="min-w-0">
                                   <div className="font-bold text-sm text-zinc-100 group-hover:text-white flex items-center gap-2">
                                     <span>{link.label}</span>
@@ -678,7 +697,22 @@ export function Navbar() {
                             )}
                           >
                             <div className="flex items-center gap-3 min-w-0">
-                              {link.icon && (
+                              {link.image ? (
+                                <span
+                                  className={cn(
+                                    "flex h-10 w-10 shrink-0 items-center justify-center rounded-md border p-1 transition-all shadow-sm",
+                                    active
+                                      ? "bg-zinc-800 border-zinc-600"
+                                      : "bg-[#121316] border-zinc-800 group-hover:bg-[#1a1c22]"
+                                  )}
+                                >
+                                  <img
+                                    src={link.image}
+                                    alt=""
+                                    className="h-4.5 w-auto max-w-[32px] object-contain drop-shadow-[0_0_8px_rgba(0,176,255,0.4)]"
+                                  />
+                                </span>
+                              ) : link.icon ? (
                                 <span
                                   className={cn(
                                     "flex h-10 w-10 shrink-0 items-center justify-center rounded-md border transition-all shadow-sm",
@@ -694,7 +728,7 @@ export function Navbar() {
                                     )}
                                   />
                                 </span>
-                              )}
+                              ) : null}
                               <div className="min-w-0">
                                 <div className="font-bold text-sm text-zinc-100 group-hover:text-white flex items-center gap-2">
                                   <span>{link.label}</span>

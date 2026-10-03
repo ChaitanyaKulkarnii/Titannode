@@ -27,7 +27,7 @@ export const Route = createFileRoute("/palworld")({
       {
         name: "description",
         content:
-          "High-performance Palworld server hosting with Budget and Premium Ryzen tiers starting at ₹300/mo. Titan Starter to Titan Max plans with NVMe Gen4, automated RAM management and DDoS protection.",
+          "High-performance Palworld server hosting with Budget and Premium tiers starting at ₹300/mo. Titan Starter to Titan Max plans with NVMe Gen4, automated RAM management and DDoS protection.",
       },
     ],
   }),
@@ -38,7 +38,7 @@ export type PalTier = "budget" | "premium";
 
 const tierOptions: { id: PalTier; label: string; icon: typeof Zap; color: string }[] = [
   { id: "budget", label: "Budget Tier", icon: Server, color: "cyan" },
-  { id: "premium", label: "Premium Tier (Ryzen 9)", icon: Flame, color: "violet" },
+  { id: "premium", label: "Premium Tier", icon: Flame, color: "violet" },
 ];
 
 const features = [
@@ -60,10 +60,9 @@ const makePlan = (
   popular?: boolean
 ): PlanCardData & { tier: PalTier } => ({
   name,
-  subtitle: tier === "budget" ? "Budget Palworld Server" : "Ryzen 9 Premium Server",
+  subtitle: tier === "budget" ? "Budget Palworld Server" : "Premium Palworld Server",
   price: priceInr / 83,
   topBannerLogo: palworldLogo,
-  iconNode: <Gamepad2 className="h-5 w-5 text-[#00b0ff]" />,
   popular,
   tier,
   specs: [

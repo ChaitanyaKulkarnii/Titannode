@@ -85,11 +85,11 @@ export function PlanCard({ plan }: { plan: PlanCardData }) {
               style={{ imageRendering: "pixelated" }}
             />
           </div>
-        ) : (
+        ) : plan.iconNode ? (
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-none border border-white/10 bg-white/5 shadow-inner">
             {plan.iconNode}
           </div>
-        )}
+        ) : null}
         <div className="min-w-0">
           <h3 className="truncate text-xl font-extrabold tracking-tight text-white leading-tight">{plan.name}</h3>
           <p className="mt-0.5 truncate text-[11px] font-medium uppercase tracking-wider text-muted-foreground">{plan.subtitle}</p>
