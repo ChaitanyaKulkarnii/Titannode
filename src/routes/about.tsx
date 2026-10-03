@@ -43,7 +43,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "The raw, unvarnished story of TitanNodes. Built by Chiku, ZYRO & Darsh Patel after scams, Discord sabotage, and ₹15,000 in painful lessons. 0% overselling guaranteed.",
+          "The raw, unvarnished story of TitanNodes. Built by Chiku, Daksh & ZYRO after scams, Discord sabotage, and ₹15,000 in painful lessons. 0% overselling guaranteed.",
       },
     ],
   }),
@@ -91,7 +91,7 @@ export function AboutPage() {
 
           <p className="mx-auto mt-4 sm:mt-6 max-w-3xl text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed">
             TitanNodes wasn&apos;t funded by venture capital. It was forged through serial hosting scams, an unauthorized Discord bot nuke by a former partner, phishing attacks, and an agonizing ₹15,000 out-of-pocket loss on cheap oversold VPS nodes. 
-            <span className="text-white font-semibold"> This is the real story of how Chiku, ZYRO, and Darsh Patel built a zero-overselling infrastructure standard.</span>
+            <span className="text-white font-semibold"> This is the real story of how Chiku, Daksh, and ZYRO built a zero-overselling infrastructure standard.</span>
           </p>
 
           {/* Quick Metrics Bar */}
@@ -298,7 +298,7 @@ export function AboutPage() {
                 </div>
 
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                  When ZYRO and Darsh Patel partnered with Chiku to revive the host, they attempted to compete with low-ball prices by leasing cheap bulk VPS nodes. The provider claimed &quot;High Performance 64GB RAM&quot;, but in reality, the memory was swapped aggressively over saturated SATA links. Players suffered severe lag, and refunds piled up immediately.
+                  When Daksh and ZYRO partnered with Chiku to revive the host, they attempted to compete with low-ball prices by leasing cheap bulk VPS nodes. The provider claimed &quot;High Performance 64GB RAM&quot;, but in reality, the memory was swapped aggressively over saturated SATA links. Players suffered severe lag, and refunds piled up immediately.
                 </p>
 
                 {/* Monospace Financial Receipt */}
@@ -562,7 +562,7 @@ export function AboutPage() {
               </div>
               <h3 className="font-space-grotesk text-xl font-bold text-white">3. Direct Founder Ticket Ownership</h3>
               <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal">
-                No outsourced bots or copy-pasted replies. Chiku, ZYRO, and Darsh Patel personally read and answer Discord support tickets every single day with real technical triage and under 15-minute response times.
+                No outsourced bots or copy-pasted replies. Chiku, Daksh, and ZYRO personally read and answer Discord support tickets every single day with real technical triage and under 15-minute response times.
               </p>
             </div>
 
@@ -600,140 +600,156 @@ export function AboutPage() {
             </div>
           </div>
 
-          {/* Signatures & Ratification Verification Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-5">
-            {/* Chiku Signature Card */}
-            <div className="rounded-none border border-white/10 bg-[#0a0e17] p-5 space-y-3 transition hover:border-white/20">
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 font-bold">
-                  Digitized Founder Signature
+          {/* Executive Leadership & Ratification Signatures */}
+          <div className="mt-14 sm:mt-20 pt-10 border-t border-white/10">
+            <div className="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div>
+                <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#00b0ff] font-bold block mb-1">
+                  Executive Ownership
                 </span>
-                <span className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                  Active on Discord
-                </span>
+                <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                  Digitized Leadership Signatures
+                </h3>
               </div>
-              <div className="py-2 overflow-hidden">
-                <svg
-                  viewBox="0 0 200 55"
-                  className="h-12 w-44 text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.2)]"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M 24 38 C 16 34 12 18 24 12 C 34 7 38 24 32 40 C 28 47 22 47 20 42 C 18 36 28 26 38 26 C 42 26 44 32 42 38 C 41 42 45 42 48 35 L 51 18 L 49 38 C 49 41 53 41 56 37 C 58 34 62 28 65 28 C 68 28 67 36 69 39 C 71 41 75 40 77 36 C 79 31 82 17 83 12 L 81 39 C 81 42 85 39 89 33 C 93 27 95 33 93 37 C 92 40 96 40 100 35 C 103 30 106 30 105 36 C 104 40 108 40 112 36" />
-                  <circle cx="67" cy="18" r="1.6" fill="currentColor" />
-                  <path d="M 16 48 C 45 44 95 43 145 45 C 152 45 145 50 130 51" strokeWidth="1.6" />
-                </svg>
-              </div>
-              <div className="pt-2 border-t border-white/5 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <img
-                    src={chikuAvatar}
-                    alt="Chiku Founder Logo"
-                    className="h-10 w-10 rounded-full object-cover border border-white/10 shadow shrink-0"
-                  />
-                  <div>
-                    <span className="font-space-grotesk text-base font-bold text-white block">Chiku</span>
-                    <span className="text-xs text-zinc-400">Founder &amp; Chief Architect</span>
-                  </div>
-                </div>
-                <span className="text-xs font-mono text-zinc-500">@chiku</span>
-              </div>
+              <span className="text-xs font-mono text-zinc-500">
+                Ratified on Genesis Covenant
+              </span>
             </div>
 
-            {/* ZYRO Signature Card */}
-            <div className="rounded-none border border-white/10 bg-[#0a0e17] p-5 space-y-3 transition hover:border-white/20">
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 font-bold">
-                  Digitized Founder Signature
-                </span>
-                <span className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                  Active on Discord
-                </span>
-              </div>
-              <div className="py-2 overflow-hidden">
-                <svg
-                  viewBox="0 0 200 55"
-                  className="h-12 w-44 text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.2)]"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M 22 18 L 48 18 L 24 40 L 52 40" />
-                  <path d="M 32 29 L 44 29" strokeWidth="2" />
-                  <path d="M 58 40 L 60 16 C 63 15 76 14 77 24 C 78 32 68 33 63 32 C 67 33 76 37 82 40" />
-                  <path d="M 90 20 L 108 39 M 108 21 L 91 39" />
-                  <path d="M 120 18 L 115 30 L 132 30 M 128 20 L 128 40" />
-                  <path d="M 138 20 L 156 20 L 146 40" />
-                  <path d="M 142 29 L 152 29" strokeWidth="1.6" />
-                  <path d="M 20 48 C 55 46 110 45 165 46 C 172 46 158 51 142 51" strokeWidth="1.6" />
-                </svg>
-              </div>
-              <div className="pt-2 border-t border-white/5 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 shrink-0 rounded-full bg-[#5865F2]/20 border border-[#5865F2]/40 flex items-center justify-center text-[#858dfa] font-bold text-sm shadow">
-                    Z
-                  </div>
-                  <div>
-                    <span className="font-space-grotesk text-base font-bold text-white block">ZYRO</span>
-                    <span className="text-xs text-zinc-400">Co-Owner &amp; Operations</span>
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* 1. Chiku - Founder */}
+              <div className="rounded-none border border-white/10 bg-[#0a0e17] p-5 space-y-3 transition hover:border-white/20">
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 font-bold">
+                    Digitized Founder Signature
+                  </span>
+                  <span className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400">
+                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                    Active on Discord
+                  </span>
                 </div>
-                <span className="text-xs font-mono text-zinc-500">@zyro</span>
+                <div className="py-2 overflow-hidden">
+                  <svg
+                    viewBox="0 0 200 55"
+                    className="h-12 w-44 text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.2)]"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M 24 38 C 16 34 12 18 24 12 C 34 7 38 24 32 40 C 28 47 22 47 20 42 C 18 36 28 26 38 26 C 42 26 44 32 42 38 C 41 42 45 42 48 35 L 51 18 L 49 38 C 49 41 53 41 56 37 C 58 34 62 28 65 28 C 68 28 67 36 69 39 C 71 41 75 40 77 36 C 79 31 82 17 83 12 L 81 39 C 81 42 85 39 89 33 C 93 27 95 33 93 37 C 92 40 96 40 100 35 C 103 30 106 30 105 36 C 104 40 108 40 112 36" />
+                    <circle cx="67" cy="18" r="1.6" fill="currentColor" />
+                    <path d="M 16 48 C 45 44 95 43 145 45 C 152 45 145 50 130 51" strokeWidth="1.6" />
+                  </svg>
+                </div>
+                <div className="pt-2 border-t border-white/5 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={chikuAvatar}
+                      alt="Chiku Founder Logo"
+                      className="h-10 w-10 rounded-full object-cover border border-white/10 shadow shrink-0"
+                    />
+                    <div>
+                      <span className="font-space-grotesk text-base font-bold text-white block">Chiku</span>
+                      <span className="text-xs text-zinc-400">Founder &amp; Chief Architect</span>
+                    </div>
+                  </div>
+                  <span className="text-xs font-mono text-zinc-500">@chiku</span>
+                </div>
               </div>
-            </div>
 
-            {/* Darsh Patel Signature Card */}
-            <div className="rounded-none border border-white/10 bg-[#0a0e17] p-5 space-y-3 transition hover:border-white/20">
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 font-bold">
-                  Digitized Founder Signature
-                </span>
-                <span className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                  Active on Discord
-                </span>
-              </div>
-              <div className="py-2 overflow-hidden">
-                <svg
-                  viewBox="0 0 200 55"
-                  className="h-12 w-44 text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.2)]"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M 22 18 L 22 42 C 22 42 36 43 44 36 C 51 29 48 18 34 18 L 22 18" />
-                  <path d="M 52 36 C 56 28 64 28 66 34 C 68 38 70 42 74 35 C 78 28 84 28 86 34 L 88 42" strokeWidth="2" />
-                  <path d="M 98 20 L 98 42 C 98 42 110 43 116 36 C 122 29 114 22 100 22" />
-                  <path d="M 124 32 C 130 26 138 26 140 32 C 142 38 146 42 152 34 L 156 20" strokeWidth="2" />
-                  <path d="M 18 48 C 50 45 105 44 160 46 C 168 46 155 51 138 51" strokeWidth="1.6" />
-                </svg>
-              </div>
-              <div className="pt-2 border-t border-white/5 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 shrink-0 rounded-full bg-[#00b0ff]/20 border border-[#00b0ff]/40 flex items-center justify-center text-[#00b0ff] font-bold text-sm shadow">
-                    DP
-                  </div>
-                  <div>
-                    <span className="font-space-grotesk text-base font-bold text-white block">Darsh Patel</span>
-                    <span className="text-xs text-zinc-400">Co-Owner</span>
-                  </div>
+              {/* 2. Daksh Patel - Owner */}
+              <div className="rounded-none border border-white/10 bg-[#0a0e17] p-5 space-y-3 transition hover:border-white/20">
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 font-bold">
+                    Digitized Owner Signature
+                  </span>
+                  <span className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400">
+                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                    Active on Discord
+                  </span>
                 </div>
-                <span className="text-xs font-mono text-zinc-500">@darshpatel</span>
+                <div className="py-2 overflow-hidden">
+                  <svg
+                    viewBox="0 0 200 55"
+                    className="h-12 w-44 text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.2)]"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M 22 18 L 22 42 C 22 42 36 43 44 36 C 51 29 48 18 34 18 L 22 18" />
+                    <path d="M 52 36 C 56 28 64 28 66 34 C 68 38 70 42 74 35 C 78 28 84 28 86 34 L 88 42" strokeWidth="2" />
+                    <path d="M 98 20 L 98 42 C 98 42 110 43 116 36 C 122 29 114 22 100 22" />
+                    <path d="M 124 32 C 130 26 138 26 140 32 C 142 38 146 42 152 34 L 156 20" strokeWidth="2" />
+                    <path d="M 18 48 C 50 45 105 44 160 46 C 168 46 155 51 138 51" strokeWidth="1.6" />
+                  </svg>
+                </div>
+                <div className="pt-2 border-t border-white/5 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 shrink-0 rounded-full bg-[#00b0ff]/20 border border-[#00b0ff]/40 flex items-center justify-center text-[#00b0ff] font-bold text-sm shadow">
+                      DP
+                    </div>
+                    <div>
+                      <span className="font-space-grotesk text-base font-bold text-white block">Daksh Patel</span>
+                      <span className="text-xs text-zinc-400">Owner</span>
+                    </div>
+                  </div>
+                  <span className="text-xs font-mono text-zinc-500">@daksh</span>
+                </div>
+              </div>
+
+              {/* 3. ZYRO - Co-Owner */}
+              <div className="rounded-none border border-white/10 bg-[#0a0e17] p-5 space-y-3 transition hover:border-white/20">
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 font-bold">
+                    Digitized Co-Owner Signature
+                  </span>
+                  <span className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400">
+                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                    Active on Discord
+                  </span>
+                </div>
+                <div className="py-2 overflow-hidden">
+                  <svg
+                    viewBox="0 0 200 55"
+                    className="h-12 w-44 text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.2)]"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M 22 18 L 48 18 L 24 40 L 52 40" />
+                    <path d="M 32 29 L 44 29" strokeWidth="2" />
+                    <path d="M 58 40 L 60 16 C 63 15 76 14 77 24 C 78 32 68 33 63 32 C 67 33 76 37 82 40" />
+                    <path d="M 90 20 L 108 39 M 108 21 L 91 39" />
+                    <path d="M 120 18 L 115 30 L 132 30 M 128 20 L 128 40" />
+                    <path d="M 138 20 L 156 20 L 146 40" />
+                    <path d="M 142 29 L 152 29" strokeWidth="1.6" />
+                    <path d="M 20 48 C 55 46 110 45 165 46 C 172 46 158 51 142 51" strokeWidth="1.6" />
+                  </svg>
+                </div>
+                <div className="pt-2 border-t border-white/5 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 shrink-0 rounded-full bg-[#5865F2]/20 border border-[#5865F2]/40 flex items-center justify-center text-[#858dfa] font-bold text-sm shadow">
+                      Z
+                    </div>
+                    <div>
+                      <span className="font-space-grotesk text-base font-bold text-white block">ZYRO</span>
+                      <span className="text-xs text-zinc-400">Co-Owner</span>
+                    </div>
+                  </div>
+                  <span className="text-xs font-mono text-zinc-500">@zyro</span>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Direct Founder Access & Hash Verification Bar */}
-          <div className="mt-5 rounded-none border border-white/10 bg-[#0a0e17] p-4 flex flex-wrap items-center justify-between gap-4">
+          <div className="mt-6 rounded-none border border-white/10 bg-[#0a0e17] p-4 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="flex h-9 w-9 items-center justify-center rounded-none border border-white/10 bg-white/5 text-emerald-400">
                 <Fingerprint className="h-4 w-4" />
@@ -774,7 +790,7 @@ export function AboutPage() {
                 className="inline-flex items-center gap-1.5 rounded-none border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-bold text-white transition hover:border-white/20 hover:bg-white/10"
               >
                 <MessageSquare className="h-3.5 w-3.5" />
-                <span>Talk to Chiku, ZYRO &amp; Darsh</span>
+                <span>Talk to Chiku, Daksh &amp; ZYRO</span>
                 <ArrowRight className="h-3.5 w-3.5" />
               </a>
             </div>
