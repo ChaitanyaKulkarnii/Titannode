@@ -15,7 +15,7 @@ function TermsPage() {
       <div className="space-y-8">
         <section>
           <p className="text-base leading-relaxed">
-            These Terms of Service (&quot;Terms&quot;) form a legally binding agreement between you (&quot;User&quot;, &quot;Customer&quot;, &quot;Client&quot;) and <strong>TitanNodes</strong> (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;). These Terms govern your access to and use of our website (<a href="https://titannodes.in" className="text-primary hover:underline">https://titannodes.in</a>), billing panel, APIs, servers, infrastructure, and all related services.
+            These Terms of Service (&quot;Terms&quot;) form a legally binding agreement between you (&quot;User&quot;, &quot;Customer&quot;, &quot;Client&quot;) and <strong>TitanNodes</strong> (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;). These Terms govern your access to and use of our website (<a href="https://titannodes.fun" className="text-primary hover:underline">https://titannodes.fun</a>), billing panel, APIs, servers, infrastructure, and all related services.
           </p>
           <p className="mt-3 text-base leading-relaxed">
             By registering, purchasing, or using our services, you agree to these Terms, our Privacy Policy, Acceptable Use Policy (AUP), and Refund Policy. If you do not agree, you must discontinue use immediately.

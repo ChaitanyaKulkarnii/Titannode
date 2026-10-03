@@ -15,7 +15,7 @@ function PrivacyPage() {
       <div className="space-y-8">
         <section>
           <p className="text-base leading-relaxed">
-            <strong>TitanNodes</strong> (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;) is committed to protecting your privacy and handling your personal data in a transparent and secure manner. This Privacy Policy explains how we collect, use, store, disclose, and safeguard your information when you access our website (<a href="https://titannodes.in" className="text-primary hover:underline">https://titannodes.in</a>), client portal, control panels, APIs, and hosting services.
+            <strong>TitanNodes</strong> (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;) is committed to protecting your privacy and handling your personal data in a transparent and secure manner. This Privacy Policy explains how we collect, use, store, disclose, and safeguard your information when you access our website (<a href="https://titannodes.fun" className="text-primary hover:underline">https://titannodes.fun</a>), client portal, control panels, APIs, and hosting services.
           </p>
         </section>
 
