@@ -65,11 +65,11 @@ export function PlanCard({ plan }: { plan: PlanCardData }) {
 
       {/* Top Banner Logo if specified */}
       {plan.topBannerLogo && (
-        <div className="relative z-10 -mx-5 sm:-mx-5.5 -mt-5 sm:-mt-5.5 mb-4 flex h-14 items-center justify-center border-b border-white/10 bg-black/60 px-4 py-2 backdrop-blur-md">
+        <div className="relative z-10 -mx-5 sm:-mx-5.5 -mt-5 sm:-mt-5.5 mb-4 flex h-16 items-center justify-center border-b border-white/10 bg-[#060a12]/95 px-4 py-2.5 backdrop-blur-md">
           <img
             src={plan.topBannerLogo}
-            alt=""
-            className="h-8 w-auto max-w-[85%] object-contain drop-shadow-[0_2px_10px_rgba(255,255,255,0.25)]"
+            alt="Palworld"
+            className="h-10 sm:h-11 w-auto max-w-[90%] object-contain drop-shadow-[0_2px_12px_rgba(0,176,255,0.4)]"
           />
         </div>
       )}
