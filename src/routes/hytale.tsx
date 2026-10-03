@@ -76,22 +76,22 @@ const makePlan = (
 
 const allPlans: (PlanCardData & { tier: HytaleTier })[] = [
   // Budget Tier (Intel Xeon Platinum 8269CY)
-  makePlan("Titan Starter", "4 GiB DDR4", "100% Xeon Platinum", "20 GiB NVMe", 110, "budget"),
-  makePlan("Titan Pro", "6 GiB DDR4", "200% Xeon Platinum", "30 GiB NVMe", 150, "budget"),
-  makePlan("Titan Hero", "8 GiB DDR4", "300% Xeon Platinum", "40 GiB NVMe", 190, "budget", true),
-  makePlan("Titan Legend", "12 GiB DDR4", "400% Xeon Platinum", "50 GiB NVMe", 270, "budget"),
-  makePlan("Titan Star", "16 GiB DDR4", "500% Xeon Platinum", "60 GiB NVMe", 350, "budget"),
-  makePlan("Titan Ultra", "24 GiB DDR4", "600% Xeon Platinum", "80 GiB NVMe", 500, "budget"),
-  makePlan("Titan Max", "32 GiB DDR4", "700% Xeon Platinum", "100 GiB NVMe", 650, "budget"),
+  makePlan("Titan Starter", "4 GiB DDR4", "100% CPU", "20 GiB NVMe", 110, "budget"),
+  makePlan("Titan Pro", "6 GiB DDR4", "200% CPU", "30 GiB NVMe", 150, "budget"),
+  makePlan("Titan Hero", "8 GiB DDR4", "300% CPU", "40 GiB NVMe", 190, "budget", true),
+  makePlan("Titan Legend", "12 GiB DDR4", "400% CPU", "50 GiB NVMe", 270, "budget"),
+  makePlan("Titan Star", "16 GiB DDR4", "500% CPU", "60 GiB NVMe", 350, "budget"),
+  makePlan("Titan Ultra", "24 GiB DDR4", "600% CPU", "80 GiB NVMe", 500, "budget"),
+  makePlan("Titan Max", "32 GiB DDR4", "700% CPU", "100 GiB NVMe", 650, "budget"),
 
   // Premium Tier (AMD Ryzen 9 9950X / DDR5 5600MHz RAM & Gen4 NVMe)
-  makePlan("Titan Starter", "4 GiB DDR5 (5600MHz)", "150% Ryzen 9", "30 GiB NVMe Gen4", 180, "premium"),
-  makePlan("Titan Pro", "6 GiB DDR5 (5600MHz)", "250% Ryzen 9", "45 GiB NVMe Gen4", 250, "premium"),
-  makePlan("Titan Hero", "8 GiB DDR5 (5600MHz)", "350% Ryzen 9", "60 GiB NVMe Gen4", 320, "premium", true),
-  makePlan("Titan Legend", "12 GiB DDR5 (5600MHz)", "450% Ryzen 9", "80 GiB NVMe Gen4", 460, "premium"),
-  makePlan("Titan Star", "16 GiB DDR5 (5600MHz)", "550% Ryzen 9", "100 GiB NVMe Gen4", 590, "premium"),
-  makePlan("Titan Ultra", "24 GiB DDR5 (5600MHz)", "700% Ryzen 9", "140 GiB NVMe Gen4", 840, "premium"),
-  makePlan("Titan Max", "32 GiB DDR5 (5600MHz)", "800% Ryzen 9", "180 GiB NVMe Gen4", 1090, "premium"),
+  makePlan("Titan Starter", "4 GiB DDR5 (5600MHz)", "150% CPU", "30 GiB NVMe Gen4", 180, "premium"),
+  makePlan("Titan Pro", "6 GiB DDR5 (5600MHz)", "250% CPU", "45 GiB NVMe Gen4", 250, "premium"),
+  makePlan("Titan Hero", "8 GiB DDR5 (5600MHz)", "350% CPU", "60 GiB NVMe Gen4", 320, "premium", true),
+  makePlan("Titan Legend", "12 GiB DDR5 (5600MHz)", "450% CPU", "80 GiB NVMe Gen4", 460, "premium"),
+  makePlan("Titan Star", "16 GiB DDR5 (5600MHz)", "550% CPU", "100 GiB NVMe Gen4", 590, "premium"),
+  makePlan("Titan Ultra", "24 GiB DDR5 (5600MHz)", "700% CPU", "140 GiB NVMe Gen4", 840, "premium"),
+  makePlan("Titan Max", "32 GiB DDR5 (5600MHz)", "800% CPU", "180 GiB NVMe Gen4", 1090, "premium"),
 ];
 
 const hytaleFeatures = [
