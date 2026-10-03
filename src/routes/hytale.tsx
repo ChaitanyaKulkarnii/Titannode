@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PlanCard, type PlanCardData } from "@/components/PlanCard";
@@ -12,6 +13,8 @@ import {
   Sparkles,
   Code2,
   Sliders,
+  Flame,
+  Activity,
 } from "lucide-react";
 import hytaleHero from "@/assets/games/hytale.jpg";
 import hytaleLogo from "@/assets/hytale-logo.png";
@@ -23,12 +26,19 @@ export const Route = createFileRoute("/hytale")({
       {
         name: "description",
         content:
-          "High-performance Hytale server hosting powered by Intel Xeon Platinum 8269CY starting at ₹110/mo. Titan Starter to Titan Max plans with NVMe Gen4, full modding support and enterprise DDoS protection.",
+          "High-performance Hytale server hosting with Budget (Intel Xeon Platinum) and Premium (Ryzen 9 DDR5) tiers starting at ₹110/mo. Titan Starter to Titan Max plans with NVMe Gen4 and enterprise DDoS protection.",
       },
     ],
   }),
   component: HytalePage,
 });
+
+export type HytaleTier = "budget" | "premium";
+
+const tierOptions: { id: HytaleTier; label: string; icon: typeof Server }[] = [
+  { id: "budget", label: "Budget Tier", icon: Server },
+  { id: "premium", label: "Premium Tier", icon: Flame },
+];
 
 const features = [
   "Pre-configured World Engine",
@@ -45,13 +55,15 @@ const makePlan = (
   cpu: string,
   storage: string,
   priceInr: number,
+  tier: HytaleTier,
   popular?: boolean
-): PlanCardData => ({
+): PlanCardData & { tier: HytaleTier } => ({
   name,
-  subtitle: "Budget Hytale Server",
+  subtitle: tier === "budget" ? "Budget Hytale Server" : "Premium Hytale Server",
   price: priceInr / 83,
   topBannerLogo: hytaleLogo,
   popular,
+  tier,
   specs: [
     { icon: Server, label: "RAM", value: ram },
     { icon: Cpu, label: "CPU", value: cpu },
@@ -59,16 +71,27 @@ const makePlan = (
     { icon: Shield, label: "Anti-DDoS", value: "10Tbps+ Path.net" },
   ],
   features,
+  orderLink: "https://discord.gg/8hxmzySAsT",
 });
 
-const plans: PlanCardData[] = [
-  makePlan("Titan Starter", "4 GiB DDR4", "100% Xeon Platinum", "20 GiB NVMe", 110),
-  makePlan("Titan Pro", "6 GiB DDR4", "200% Xeon Platinum", "30 GiB NVMe", 150),
-  makePlan("Titan Hero", "8 GiB DDR4", "300% Xeon Platinum", "40 GiB NVMe", 190, true),
-  makePlan("Titan Legend", "12 GiB DDR4", "400% Xeon Platinum", "50 GiB NVMe", 270),
-  makePlan("Titan Star", "16 GiB DDR4", "500% Xeon Platinum", "60 GiB NVMe", 350),
-  makePlan("Titan Ultra", "24 GiB DDR4", "600% Xeon Platinum", "80 GiB NVMe", 500),
-  makePlan("Titan Max", "32 GiB DDR4", "700% Xeon Platinum", "100 GiB NVMe", 650),
+const allPlans: (PlanCardData & { tier: HytaleTier })[] = [
+  // Budget Tier (Intel Xeon Platinum 8269CY)
+  makePlan("Titan Starter", "4 GiB DDR4", "100% Xeon Platinum", "20 GiB NVMe", 110, "budget"),
+  makePlan("Titan Pro", "6 GiB DDR4", "200% Xeon Platinum", "30 GiB NVMe", 150, "budget"),
+  makePlan("Titan Hero", "8 GiB DDR4", "300% Xeon Platinum", "40 GiB NVMe", 190, "budget", true),
+  makePlan("Titan Legend", "12 GiB DDR4", "400% Xeon Platinum", "50 GiB NVMe", 270, "budget"),
+  makePlan("Titan Star", "16 GiB DDR4", "500% Xeon Platinum", "60 GiB NVMe", 350, "budget"),
+  makePlan("Titan Ultra", "24 GiB DDR4", "600% Xeon Platinum", "80 GiB NVMe", 500, "budget"),
+  makePlan("Titan Max", "32 GiB DDR4", "700% Xeon Platinum", "100 GiB NVMe", 650, "budget"),
+
+  // Premium Tier (AMD Ryzen 9 9950X / DDR5 5600MHz RAM & Gen4 NVMe)
+  makePlan("Titan Starter", "4 GiB DDR5 (5600MHz)", "150% Ryzen 9", "30 GiB NVMe Gen4", 180, "premium"),
+  makePlan("Titan Pro", "6 GiB DDR5 (5600MHz)", "250% Ryzen 9", "45 GiB NVMe Gen4", 250, "premium"),
+  makePlan("Titan Hero", "8 GiB DDR5 (5600MHz)", "350% Ryzen 9", "60 GiB NVMe Gen4", 320, "premium", true),
+  makePlan("Titan Legend", "12 GiB DDR5 (5600MHz)", "450% Ryzen 9", "80 GiB NVMe Gen4", 460, "premium"),
+  makePlan("Titan Star", "16 GiB DDR5 (5600MHz)", "550% Ryzen 9", "100 GiB NVMe Gen4", 590, "premium"),
+  makePlan("Titan Ultra", "24 GiB DDR5 (5600MHz)", "700% Ryzen 9", "140 GiB NVMe Gen4", 840, "premium"),
+  makePlan("Titan Max", "32 GiB DDR5 (5600MHz)", "800% Ryzen 9", "180 GiB NVMe Gen4", 1090, "premium"),
 ];
 
 const hytaleFeatures = [
@@ -95,6 +118,9 @@ const hytaleFeatures = [
 ];
 
 function HytalePage() {
+  const [tier, setTier] = useState<HytaleTier>("budget");
+  const filteredPlans = allPlans.filter((p) => p.tier === tier);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -111,7 +137,7 @@ function HytalePage() {
         <div className="relative mx-auto flex min-h-[50vh] sm:min-h-[60vh] max-w-7xl flex-col items-center justify-center px-4 py-16 sm:py-24 text-center">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-black/60 px-4 py-1.5 text-xs font-semibold text-emerald-400 backdrop-blur-md shadow-[0_0_15px_rgba(16,185,129,0.25)]">
             <Sparkles className="h-3.5 w-3.5" />
-            <span>Dedicated Hytale Host • Intel Xeon Platinum 8269CY</span>
+            <span>Dedicated Hytale Host • Budget &amp; Premium Ryzen 9</span>
           </div>
 
           <div className="mb-4 flex items-center justify-center">
@@ -135,24 +161,63 @@ function HytalePage() {
 
       {/* Plans Section */}
       <section id="plans" className="mx-auto max-w-7xl px-4 py-12 sm:py-20">
-        <div className="mb-8 text-center">
+        <div className="mb-4 text-center">
           <p className="mb-2 inline-flex items-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-emerald-400">
             <span className="h-px w-6 sm:w-8 bg-emerald-400/40" />
-            Intel Xeon Platinum 8269CY Plans
+            Official TitanNodes Configurations
             <span className="h-px w-6 sm:w-8 bg-emerald-400/40" />
           </p>
           <h2 className="text-2xl font-extrabold sm:text-4xl md:text-5xl text-white">
             Choose Your Hytale Plan
           </h2>
           <p className="mt-2 text-xs sm:text-sm text-muted-foreground">
-            Budget-friendly, high-performance NVMe game servers starting at just ₹110/mo.
+            Switch between high-value Budget and ultra-performance Ryzen 9 Premium tiers.
           </p>
+        </div>
+
+        {/* Tier Switcher Buttons */}
+        <div className="my-6 sm:my-10 flex justify-center">
+          <div className="inline-flex flex-wrap justify-center gap-2 rounded-2xl border border-white/10 bg-card/40 p-1.5 backdrop-blur shadow-inner">
+            {tierOptions.map((t) => {
+              const active = tier === t.id;
+              let activeClass = "";
+              if (active) {
+                if (t.id === "budget") {
+                  activeClass = "bg-emerald-500 text-white shadow-lg shadow-emerald-500/30 font-bold";
+                } else {
+                  activeClass = "bg-purple-600 text-white shadow-lg shadow-purple-600/30 font-bold";
+                }
+              } else {
+                activeClass = "text-muted-foreground hover:text-foreground hover:bg-white/5";
+              }
+
+              return (
+                <button
+                  key={t.id}
+                  onClick={() => setTier(t.id)}
+                  className={`inline-flex items-center gap-2 rounded-xl px-5 py-2.5 sm:px-7 sm:py-3 text-xs sm:text-sm font-semibold transition-all duration-200 ${activeClass}`}
+                >
+                  <t.icon className="h-4 w-4" /> {t.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Tier Info Banner */}
+        <div className="mb-8 flex justify-center">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#060a12] px-4 py-1.5 text-xs text-zinc-400">
+            <Activity className="h-3.5 w-3.5 text-emerald-400" />
+            {tier === "budget"
+              ? "Budget Tier: Powered by Intel® Xeon® Platinum 8269CY starting at ₹110/mo"
+              : "Premium Tier: AMD Ryzen™ 9 9950X / 7950X @ 5.7GHz with DDR5 5600MHz RAM"}
+          </span>
         </div>
 
         {/* Plans Grid */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {plans.map((p) => (
-            <PlanCard key={p.name} plan={p} />
+          {filteredPlans.map((p) => (
+            <PlanCard key={`${p.tier}-${p.name}`} plan={p} />
           ))}
         </div>
       </section>
