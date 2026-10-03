@@ -3,6 +3,9 @@ import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import chikuAvatar from "@/assets/chiku-avatar.png";
+import chikuSignature from "@/assets/signatures/chiku-signature.png";
+import dakshSignature from "@/assets/signatures/daksh-signature.png";
+import zyroSignature from "@/assets/signatures/zyro-signature.png";
 import {
   Server,
   Cpu,
@@ -628,20 +631,12 @@ export function AboutPage() {
                     Active on Discord
                   </span>
                 </div>
-                <div className="py-2 overflow-hidden">
-                  <svg
-                    viewBox="0 0 200 55"
-                    className="h-12 w-44 text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.2)]"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M 24 38 C 16 34 12 18 24 12 C 34 7 38 24 32 40 C 28 47 22 47 20 42 C 18 36 28 26 38 26 C 42 26 44 32 42 38 C 41 42 45 42 48 35 L 51 18 L 49 38 C 49 41 53 41 56 37 C 58 34 62 28 65 28 C 68 28 67 36 69 39 C 71 41 75 40 77 36 C 79 31 82 17 83 12 L 81 39 C 81 42 85 39 89 33 C 93 27 95 33 93 37 C 92 40 96 40 100 35 C 103 30 106 30 105 36 C 104 40 108 40 112 36" />
-                    <circle cx="67" cy="18" r="1.6" fill="currentColor" />
-                    <path d="M 16 48 C 45 44 95 43 145 45 C 152 45 145 50 130 51" strokeWidth="1.6" />
-                  </svg>
+                <div className="py-2 flex items-center h-14 overflow-hidden">
+                  <img
+                    src={chikuSignature}
+                    alt="Chiku Signature"
+                    className="h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(0,176,255,0.4)]"
+                  />
                 </div>
                 <div className="pt-2 border-t border-white/5 flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -670,22 +665,12 @@ export function AboutPage() {
                     Active on Discord
                   </span>
                 </div>
-                <div className="py-2 overflow-hidden">
-                  <svg
-                    viewBox="0 0 200 55"
-                    className="h-12 w-44 text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.2)]"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M 22 18 L 22 42 C 22 42 36 43 44 36 C 51 29 48 18 34 18 L 22 18" />
-                    <path d="M 52 36 C 56 28 64 28 66 34 C 68 38 70 42 74 35 C 78 28 84 28 86 34 L 88 42" strokeWidth="2" />
-                    <path d="M 98 20 L 98 42 C 98 42 110 43 116 36 C 122 29 114 22 100 22" />
-                    <path d="M 124 32 C 130 26 138 26 140 32 C 142 38 146 42 152 34 L 156 20" strokeWidth="2" />
-                    <path d="M 18 48 C 50 45 105 44 160 46 C 168 46 155 51 138 51" strokeWidth="1.6" />
-                  </svg>
+                <div className="py-2 flex items-center h-14 overflow-hidden">
+                  <img
+                    src={dakshSignature}
+                    alt="Daksh Patel Signature"
+                    className="h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(0,176,255,0.4)]"
+                  />
                 </div>
                 <div className="pt-2 border-t border-white/5 flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -712,25 +697,12 @@ export function AboutPage() {
                     Active on Discord
                   </span>
                 </div>
-                <div className="py-2 overflow-hidden">
-                  <svg
-                    viewBox="0 0 200 55"
-                    className="h-12 w-44 text-white drop-shadow-[0_0_6px_rgba(255,255,255,0.2)]"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M 22 18 L 48 18 L 24 40 L 52 40" />
-                    <path d="M 32 29 L 44 29" strokeWidth="2" />
-                    <path d="M 58 40 L 60 16 C 63 15 76 14 77 24 C 78 32 68 33 63 32 C 67 33 76 37 82 40" />
-                    <path d="M 90 20 L 108 39 M 108 21 L 91 39" />
-                    <path d="M 120 18 L 115 30 L 132 30 M 128 20 L 128 40" />
-                    <path d="M 138 20 L 156 20 L 146 40" />
-                    <path d="M 142 29 L 152 29" strokeWidth="1.6" />
-                    <path d="M 20 48 C 55 46 110 45 165 46 C 172 46 158 51 142 51" strokeWidth="1.6" />
-                  </svg>
+                <div className="py-2 flex items-center h-14 overflow-hidden">
+                  <img
+                    src={zyroSignature}
+                    alt="ZYRO Signature"
+                    className="h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(0,176,255,0.4)]"
+                  />
                 </div>
                 <div className="pt-2 border-t border-white/5 flex items-center justify-between">
                   <div className="flex items-center gap-3">
