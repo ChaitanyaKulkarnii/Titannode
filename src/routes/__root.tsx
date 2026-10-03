@@ -79,12 +79,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "TitanNodes — High-Performance Hosting" },
       { property: "og:description", content: "TitanNodes — High-Performance VPS, RDP, Game & Bot Hosting" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:image", content: "https://titannode-main-2.vercel.app/logo.png" },
+      { property: "og:image:width", content: "1024" },
+      { property: "og:image:height", content: "1024" },
+      { property: "og:image:alt", content: "TitanNodes Logo" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "TitanNodes" },
       { name: "twitter:title", content: "TitanNodes — High-Performance Hosting" },
       { name: "twitter:description", content: "TitanNodes — High-Performance VPS, RDP, Game & Bot Hosting" },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/vtfIPeCBWphe0Ufks5j5edeRv262/social-images/social-1778741841831-904416bf80f6e29c7c24b7fd4c4ea40c-modified_(1).webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/vtfIPeCBWphe0Ufks5j5edeRv262/social-images/social-1778741841831-904416bf80f6e29c7c24b7fd4c4ea40c-modified_(1).webp" },
+      { name: "twitter:image", content: "https://titannode-main-2.vercel.app/logo.png" },
     ],
     links: [
       {
