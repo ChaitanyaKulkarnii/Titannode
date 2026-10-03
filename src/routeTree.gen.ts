@@ -19,6 +19,7 @@ import { Route as FreeHostingRouteImport } from './routes/free-hosting'
 import { Route as GameHostingRouteImport } from './routes/game-hosting'
 import { Route as InfrastructureRouteImport } from './routes/infrastructure'
 import { Route as MinecraftRouteImport } from './routes/minecraft'
+import { Route as PalworldRouteImport } from './routes/palworld'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as RdpHostingRouteImport } from './routes/rdp-hosting'
 import { Route as RefundRouteImport } from './routes/refund'
@@ -77,6 +78,11 @@ const MinecraftRoute = MinecraftRouteImport.update({
   path: '/minecraft',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PalworldRoute = PalworldRouteImport.update({
+  id: '/palworld',
+  path: '/palworld',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -124,6 +130,7 @@ export interface FileRoutesByFullPath {
   '/game-hosting': typeof GameHostingRoute
   '/infrastructure': typeof InfrastructureRoute
   '/minecraft': typeof MinecraftRoute
+  '/palworld': typeof PalworldRoute
   '/privacy': typeof PrivacyRoute
   '/rdp-hosting': typeof RdpHostingRoute
   '/refund': typeof RefundRoute
@@ -143,6 +150,7 @@ export interface FileRoutesByTo {
   '/game-hosting': typeof GameHostingRoute
   '/infrastructure': typeof InfrastructureRoute
   '/minecraft': typeof MinecraftRoute
+  '/palworld': typeof PalworldRoute
   '/privacy': typeof PrivacyRoute
   '/rdp-hosting': typeof RdpHostingRoute
   '/refund': typeof RefundRoute
@@ -163,6 +171,7 @@ export interface FileRoutesById {
   '/game-hosting': typeof GameHostingRoute
   '/infrastructure': typeof InfrastructureRoute
   '/minecraft': typeof MinecraftRoute
+  '/palworld': typeof PalworldRoute
   '/privacy': typeof PrivacyRoute
   '/rdp-hosting': typeof RdpHostingRoute
   '/refund': typeof RefundRoute
@@ -184,6 +193,7 @@ export interface FileRouteTypes {
     | '/game-hosting'
     | '/infrastructure'
     | '/minecraft'
+    | '/palworld'
     | '/privacy'
     | '/rdp-hosting'
     | '/refund'
@@ -203,6 +213,7 @@ export interface FileRouteTypes {
     | '/game-hosting'
     | '/infrastructure'
     | '/minecraft'
+    | '/palworld'
     | '/privacy'
     | '/rdp-hosting'
     | '/refund'
@@ -222,6 +233,7 @@ export interface FileRouteTypes {
     | '/game-hosting'
     | '/infrastructure'
     | '/minecraft'
+    | '/palworld'
     | '/privacy'
     | '/rdp-hosting'
     | '/refund'
@@ -242,6 +254,7 @@ export interface RootRouteChildren {
   GameHostingRoute: typeof GameHostingRoute
   InfrastructureRoute: typeof InfrastructureRoute
   MinecraftRoute: typeof MinecraftRoute
+  PalworldRoute: typeof PalworldRoute
   PrivacyRoute: typeof PrivacyRoute
   RdpHostingRoute: typeof RdpHostingRoute
   RefundRoute: typeof RefundRoute
@@ -323,6 +336,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MinecraftRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/palworld': {
+      id: '/palworld'
+      path: '/palworld'
+      fullPath: '/palworld'
+      preLoaderRoute: typeof PalworldRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
@@ -386,6 +406,7 @@ const rootRouteChildren: RootRouteChildren = {
   GameHostingRoute: GameHostingRoute,
   InfrastructureRoute: InfrastructureRoute,
   MinecraftRoute: MinecraftRoute,
+  PalworldRoute: PalworldRoute,
   PrivacyRoute: PrivacyRoute,
   RdpHostingRoute: RdpHostingRoute,
   RefundRoute: RefundRoute,

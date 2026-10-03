@@ -281,7 +281,7 @@ const games = [
   { name: "Rust", img: rustCard, href: "/game-hosting", priceUsd: 2, tag: "Popular" },
   { name: "ARK: Survival Evolved", img: arkCard, href: "/game-hosting", priceUsd: 2 },
   { name: "Valheim", img: valheimCard, href: "/game-hosting", priceUsd: 2 },
-  { name: "Palworld", img: palworldCard, href: "/game-hosting", priceUsd: 3 },
+  { name: "Palworld", img: palworldCard, href: "/palworld", priceUsd: 300 / 83, tag: "Popular" },
   { name: "Terraria", img: terrariaCard, href: "/game-hosting", priceUsd: 2 },
   { name: "Counter-Strike 2", img: cs2Card, href: "/game-hosting", priceUsd: 3, tag: "Popular" },
   { name: "FiveM (GTA V)", img: fivemCard, href: "/game-hosting", priceUsd: 2 },

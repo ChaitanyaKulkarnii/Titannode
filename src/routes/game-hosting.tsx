@@ -43,7 +43,7 @@ const games: Game[] = [
   { name: "ARK: Survival Evolved", image: ark, startingUsd: 2, platforms: ["pc"], to: "/game-hosting" },
   { name: "Terraria", image: terraria, startingUsd: 2, platforms: ["pc", "mobile"], to: "/game-hosting" },
   { name: "Valheim", image: valheim, startingUsd: 2, platforms: ["pc"], to: "/game-hosting" },
-  { name: "Palworld", image: palworld, startingUsd: 3, platforms: ["pc"], to: "/game-hosting" },
+  { name: "Palworld", image: palworld, startingUsd: 300 / 83, platforms: ["pc"], popular: true, to: "/palworld" },
   { name: "Counter-Strike 2", image: cs2, startingUsd: 3, platforms: ["pc"], popular: true, to: "/game-hosting" },
   { name: "Hytale", image: hytale, startingUsd: 2, platforms: ["pc"], to: "/game-hosting" },
 ];

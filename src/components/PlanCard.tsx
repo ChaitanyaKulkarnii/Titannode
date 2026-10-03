@@ -14,6 +14,7 @@ export interface PlanCardData {
   subtitle: string;
   price: number;          // USD
   image?: string;         // square icon (e.g. minecraft block)
+  topBannerLogo?: string; // logo image banner displayed at top of card
   iconNode?: React.ReactNode;
   popular?: boolean;
   specs: PlanSpec[];      // 4 specs (label/value)
@@ -59,6 +60,17 @@ export function PlanCard({ plan }: { plan: PlanCardData }) {
       {plan.popular && (
         <div className="absolute top-0 right-0 z-20 rounded-none bg-[#039be5] px-3 py-0.5 text-[9px] font-black uppercase tracking-widest text-white shadow-md">
           Most Popular
+        </div>
+      )}
+
+      {/* Top Banner Logo if specified */}
+      {plan.topBannerLogo && (
+        <div className="relative z-10 -mx-5 sm:-mx-5.5 -mt-5 sm:-mt-5.5 mb-4 flex h-14 items-center justify-center border-b border-white/10 bg-black/60 px-4 py-2 backdrop-blur-md">
+          <img
+            src={plan.topBannerLogo}
+            alt=""
+            className="h-8 w-auto max-w-[85%] object-contain drop-shadow-[0_2px_10px_rgba(255,255,255,0.25)]"
+          />
         </div>
       )}
 
