@@ -184,6 +184,7 @@ export function ServicesSection() {
       icon: Gamepad2,
       specLabel: "HARDWARE",
       specValue: "AMD Ryzen 9950X",
+      img: minecraftHero,
     },
     {
       title: "VPS Hosting",
@@ -192,6 +193,7 @@ export function ServicesSection() {
       icon: Server,
       specLabel: "ACCESS",
       specValue: "KVM Root & NVMe",
+      img: vpsHero,
     },
     {
       title: "Web Hosting",
@@ -200,6 +202,7 @@ export function ServicesSection() {
       icon: Globe,
       specLabel: "SERVER",
       specValue: "LiteSpeed & SSL",
+      img: webHero,
     },
     {
       title: "Bot Hosting",
@@ -208,6 +211,7 @@ export function ServicesSection() {
       icon: Bot,
       specLabel: "RUNTIME",
       specValue: "Node / Python / PM2",
+      img: botHero,
     },
   ];
   return (
@@ -227,6 +231,16 @@ export function ServicesSection() {
             <div className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-400/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
             <div>
+              {s.img && (
+                <div className="relative mb-4 -mx-5 -mt-5 h-28 overflow-hidden border-b border-zinc-800/80">
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#090a0d] via-[#090a0d]/30 to-transparent" />
+                </div>
+              )}
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex h-10 w-10 items-center justify-center rounded border border-zinc-800 bg-black/60 text-white transition duration-300 group-hover:border-zinc-600">
                   <s.icon className="h-5 w-5" />
