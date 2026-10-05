@@ -23,7 +23,7 @@ import palworldLogo from "@/assets/palworld-logo.png";
 export const Route = createFileRoute("/palworld")({
   head: () => ({
     meta: [
-      { title: "Palworld Dedicated Server Hosting — TitanNodes" },
+      { title: "Palworld Dedicated Server Hosting — TitanNode" },
       {
         name: "description",
         content:
@@ -167,7 +167,7 @@ function PalworldPage() {
         <div className="mb-4 text-center">
           <p className="mb-2 inline-flex items-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#00b0ff]">
             <span className="h-px w-6 sm:w-8 bg-[#00b0ff]/40" />
-            Official TitanNodes Configurations
+            Official TitanNode Configurations
             <span className="h-px w-6 sm:w-8 bg-[#00b0ff]/40" />
           </p>
           <h2 className="text-2xl font-extrabold sm:text-4xl md:text-5xl text-white">

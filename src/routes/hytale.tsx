@@ -22,7 +22,7 @@ import hytaleLogo from "@/assets/hytale-logo.png";
 export const Route = createFileRoute("/hytale")({
   head: () => ({
     meta: [
-      { title: "Hytale Dedicated Server Hosting — TitanNodes" },
+      { title: "Hytale Dedicated Server Hosting — TitanNode" },
       {
         name: "description",
         content:
@@ -164,7 +164,7 @@ function HytalePage() {
         <div className="mb-4 text-center">
           <p className="mb-2 inline-flex items-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-emerald-400">
             <span className="h-px w-6 sm:w-8 bg-emerald-400/40" />
-            Official TitanNodes Configurations
+            Official TitanNode Configurations
             <span className="h-px w-6 sm:w-8 bg-emerald-400/40" />
           </p>
           <h2 className="text-2xl font-extrabold sm:text-4xl md:text-5xl text-white">
@@ -227,7 +227,7 @@ function HytalePage() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12 text-center">
             <p className="text-xs font-semibold uppercase tracking-widest text-emerald-400">Engineered For Creators</p>
-            <h2 className="mt-2 text-2xl font-extrabold sm:text-4xl text-white">Why Host Hytale On TitanNodes?</h2>
+            <h2 className="mt-2 text-2xl font-extrabold sm:text-4xl text-white">Why Host Hytale On TitanNode?</h2>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {hytaleFeatures.map((f, i) => (

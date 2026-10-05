@@ -9,7 +9,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "TitanNodes — Minecraft, VPS, Web & Bot Hosting" },
+      { title: "TitanNode — Minecraft, VPS, Web & Bot Hosting" },
       {
         name: "description",
         content:

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InfoPage } from "@/components/InfoPage";
 
 export const Route = createFileRoute("/privacy")({
-  head: () => ({ meta: [{ title: "Privacy Policy — TitanNodes" }] }),
+  head: () => ({ meta: [{ title: "Privacy Policy — TitanNode" }] }),
   component: PrivacyPage,
 });
 
@@ -10,12 +10,12 @@ function PrivacyPage() {
   return (
     <InfoPage
       title="Privacy Policy"
-      subtitle="Last Updated: 27th May 2026 — How TitanNodes protects and processes your personal data."
+      subtitle="Last Updated: 27th May 2026 — How TitanNode protects and processes your personal data."
     >
       <div className="space-y-8">
         <section>
           <p className="text-base leading-relaxed">
-            <strong>TitanNodes</strong> (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;) is committed to protecting your privacy and handling your personal data in a transparent and secure manner. This Privacy Policy explains how we collect, use, store, disclose, and safeguard your information when you access our website (<a href="https://titannodes.fun" className="text-primary hover:underline">https://titannodes.fun</a>), client portal, control panels, APIs, and hosting services.
+            <strong>TitanNode</strong> (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;) is committed to protecting your privacy and handling your personal data in a transparent and secure manner. This Privacy Policy explains how we collect, use, store, disclose, and safeguard your information when you access our website (<a href="https://titannode.fun" className="text-primary hover:underline">https://titannode.fun</a>), client portal, control panels, APIs, and hosting services.
           </p>
         </section>
 
@@ -28,7 +28,7 @@ function PrivacyPage() {
             <li>Users of our free and paid hosting services</li>
             <li>Affiliates, partners, and support ticket submitters</li>
           </ul>
-          <p className="mt-2 text-sm text-muted-foreground">It does not apply to third-party services not owned or operated directly by TitanNodes.</p>
+          <p className="mt-2 text-sm text-muted-foreground">It does not apply to third-party services not owned or operated directly by TitanNode.</p>
         </section>
 
         <section>
@@ -89,7 +89,7 @@ function PrivacyPage() {
         <section>
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">5. Payment Processing</h2>
           <p className="text-muted-foreground leading-relaxed">
-            All financial transactions are processed securely viaPCI-compliant third-party gateways (such as Stripe, PayPal, Razorpay, or UPI gateways). TitanNodes never stores or retains complete credit card numbers or banking passwords on its servers.
+            All financial transactions are processed securely viaPCI-compliant third-party gateways (such as Stripe, PayPal, Razorpay, or UPI gateways). TitanNode never stores or retains complete credit card numbers or banking passwords on its servers.
           </p>
         </section>
 
@@ -135,7 +135,7 @@ function PrivacyPage() {
         <section>
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">10. Contact Us</h2>
           <p className="text-muted-foreground leading-relaxed">
-            For privacy inquiries or data rights requests, please open a support ticket in your TitanNodes client dashboard or contact our privacy compliance team via official support channels.
+            For privacy inquiries or data rights requests, please open a support ticket in your TitanNode client dashboard or contact our privacy compliance team via official support channels.
           </p>
         </section>
       </div>

@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InfoPage } from "@/components/InfoPage";
 
 export const Route = createFileRoute("/refund")({
-  head: () => ({ meta: [{ title: "Refund Policy — TitanNodes" }] }),
+  head: () => ({ meta: [{ title: "Refund Policy — TitanNode" }] }),
   component: RefundPage,
 });
 
@@ -15,7 +15,7 @@ function RefundPage() {
       <div className="space-y-8">
         <section>
           <p className="text-base leading-relaxed text-muted-foreground">
-            This Refund Policy outlines the terms and conditions under which refunds may or may not be issued for services purchased from <strong>TitanNodes</strong> (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;). By placing an order or subscribing to any TitanNodes service, you acknowledge and agree to this policy.
+            This Refund Policy outlines the terms and conditions under which refunds may or may not be issued for services purchased from <strong>TitanNode</strong> (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;). By placing an order or subscribing to any TitanNode service, you acknowledge and agree to this policy.
           </p>
         </section>
 
@@ -52,7 +52,7 @@ function RefundPage() {
           </h2>
           <ul className="list-disc pl-6 space-y-1.5 text-sm sm:text-base text-muted-foreground font-normal">
             <li>Refund requests must be formally submitted within <u><strong>5 days (120 hours)</strong></u> of initial invoice payment via a support ticket.</li>
-            <li>Refunds are strictly reserved for <u><strong>first-time customers</strong></u>. If you have previously purchased or used any TitanNodes service under the same account, payment details, or email, subsequent orders are non-refundable.</li>
+            <li>Refunds are strictly reserved for <u><strong>first-time customers</strong></u>. If you have previously purchased or used any TitanNode service under the same account, payment details, or email, subsequent orders are non-refundable.</li>
             <li>Recurring subscription renewal payments are <u><strong>strictly non-refundable</strong></u>.</li>
             <li>Refunds are not automatically issued upon cancellation; you must open a support ticket with the Billing Department to formally request a refund.</li>
           </ul>
@@ -97,7 +97,7 @@ function RefundPage() {
           <div className="p-4 rounded-xl border border-red-500/20 bg-red-500/10 text-red-200 space-y-2">
             <p className="font-bold text-red-400">Warning Regarding Unauthorized Disputes:</p>
             <p className="text-sm leading-relaxed">
-              Filing a chargeback or payment dispute with your bank, credit card issuer, or PayPal without contacting TitanNodes support first will result in immediate suspension of all active services, account termination, permanent IP ban, and forfeiture of all stored data.
+              Filing a chargeback or payment dispute with your bank, credit card issuer, or PayPal without contacting TitanNode support first will result in immediate suspension of all active services, account termination, permanent IP ban, and forfeiture of all stored data.
             </p>
           </div>
         </section>

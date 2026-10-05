@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InfoPage } from "@/components/InfoPage";
 
 export const Route = createFileRoute("/terms")({
-  head: () => ({ meta: [{ title: "Terms of Service — TitanNodes" }] }),
+  head: () => ({ meta: [{ title: "Terms of Service — TitanNode" }] }),
   component: TermsPage,
 });
 
@@ -10,12 +10,12 @@ function TermsPage() {
   return (
     <InfoPage
       title="Terms of Service"
-      subtitle="Last Updated: 27th May 2026 — Please read these terms carefully before using TitanNodes services."
+      subtitle="Last Updated: 27th May 2026 — Please read these terms carefully before using TitanNode services."
     >
       <div className="space-y-8">
         <section>
           <p className="text-base leading-relaxed">
-            These Terms of Service (&quot;Terms&quot;) form a legally binding agreement between you (&quot;User&quot;, &quot;Customer&quot;, &quot;Client&quot;) and <strong>TitanNodes</strong> (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;). These Terms govern your access to and use of our website (<a href="https://titannodes.fun" className="text-primary hover:underline">https://titannodes.fun</a>), billing panel, APIs, servers, infrastructure, and all related services.
+            These Terms of Service (&quot;Terms&quot;) form a legally binding agreement between you (&quot;User&quot;, &quot;Customer&quot;, &quot;Client&quot;) and <strong>TitanNode</strong> (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;). These Terms govern your access to and use of our website (<a href="https://titannode.fun" className="text-primary hover:underline">https://titannode.fun</a>), billing panel, APIs, servers, infrastructure, and all related services.
           </p>
           <p className="mt-3 text-base leading-relaxed">
             By registering, purchasing, or using our services, you agree to these Terms, our Privacy Policy, Acceptable Use Policy (AUP), and Refund Policy. If you do not agree, you must discontinue use immediately.
@@ -45,7 +45,7 @@ function TermsPage() {
 
         <section>
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">3. Services Provided</h2>
-          <p className="text-muted-foreground mb-2">TitanNodes provides:</p>
+          <p className="text-muted-foreground mb-2">TitanNode provides:</p>
           <ul className="list-disc pl-6 space-y-1.5 text-muted-foreground">
             <li>Free hosting &amp; trials</li>
             <li>Shared web hosting</li>
@@ -63,7 +63,7 @@ function TermsPage() {
             <li>No uptime guarantees or automated backup guarantees apply to free plans.</li>
             <li>Resources may be limited, throttled, or modified at any time.</li>
             <li>Incomplete or inactive accounts may be deleted automatically after extended inactivity.</li>
-            <li>Advertisements or TitanNodes branding may be displayed on free services.</li>
+            <li>Advertisements or TitanNode branding may be displayed on free services.</li>
             <li>Free plans strictly prohibit crypto mining, file storage abuse, proxy/VPN networks, pirated software, adult content, high CPU scripts, and automated bots.</li>
             <li>Free accounts violating any terms may be suspended immediately without notice.</li>
           </ul>
@@ -86,7 +86,7 @@ function TermsPage() {
             <li>If your service includes root or administrative access, you are solely responsible for server security.</li>
             <li>You must maintain firewalls, security configurations, and operating system updates.</li>
             <li>Misconfigured servers causing network abuse or high load may be suspended.</li>
-            <li>TitanNodes does not provide unmanaged system administration unless custom support is purchased.</li>
+            <li>TitanNode does not provide unmanaged system administration unless custom support is purchased.</li>
           </ul>
         </section>
 
@@ -107,7 +107,7 @@ function TermsPage() {
           <ul className="list-disc pl-6 space-y-1.5 text-muted-foreground">
             <li>You are solely responsible for managing and monitoring your account, including active services, renewal dates, unpaid invoices, and credit balance.</li>
             <li>You agree to log in regularly to review active services, upcoming renewals, outstanding invoices, and account balances.</li>
-            <li>TitanNodes is not liable for suspension, termination, service interruption, or data loss caused by failure to check or pay invoices on time. Not logging into your account is not a valid excuse.</li>
+            <li>TitanNode is not liable for suspension, termination, service interruption, or data loss caused by failure to check or pay invoices on time. Not logging into your account is not a valid excuse.</li>
             <li>You must maintain sufficient credit balance or valid payment methods to prevent service interruptions.</li>
             <li>While invoice reminder emails are sent automatically, you are responsible for ensuring your registered email address is valid and monitored. Failure to receive email notifications does not excuse missed payments.</li>
             <li>Hosted data may be permanently purged following suspension due to non-payment.</li>
@@ -154,7 +154,7 @@ function TermsPage() {
         <section>
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">12. Abuse Complaints</h2>
           <ul className="list-disc pl-6 space-y-1.5 text-muted-foreground">
-            <li>Abuse reports received by TitanNodes must be resolved within 24 hours of notice.</li>
+            <li>Abuse reports received by TitanNode must be resolved within 24 hours of notice.</li>
             <li>Failure to respond or resolve abuse tickets leads to immediate service suspension.</li>
             <li>Repeat violations result in permanent account termination.</li>
           </ul>
@@ -163,7 +163,7 @@ function TermsPage() {
         <section>
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">13. Staff Harassment Policy</h2>
           <ul className="list-disc pl-6 space-y-1.5 text-muted-foreground">
-            <li>Harassment, threats, insults, profanity, or abusive conduct toward TitanNodes staff via tickets, live chat, email, or Discord will result in immediate service termination without refund.</li>
+            <li>Harassment, threats, insults, profanity, or abusive conduct toward TitanNode staff via tickets, live chat, email, or Discord will result in immediate service termination without refund.</li>
             <li>We maintain a strict zero-tolerance policy against staff harassment.</li>
           </ul>
         </section>
@@ -172,7 +172,7 @@ function TermsPage() {
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">14. Data &amp; Backups</h2>
           <ul className="list-disc pl-6 space-y-1.5 text-muted-foreground">
             <li>You are solely responsible for maintaining external off-site backups of your data.</li>
-            <li>TitanNodes does not guarantee data restoration or retention.</li>
+            <li>TitanNode does not guarantee data restoration or retention.</li>
             <li>We are not liable for data loss caused by hardware failure, cyberattacks, user misconfiguration, or non-payment deletion.</li>
           </ul>
         </section>
@@ -180,7 +180,7 @@ function TermsPage() {
         <section>
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">15. Service Level Agreement (SLA)</h2>
           <ul className="list-disc pl-6 space-y-1.5 text-muted-foreground">
-            <li>Paid services carry a 99% monthly network uptime guarantee.</li>
+            <li>Paid services carry a 98% monthly network uptime guarantee.</li>
             <li>SLA credit claims must be submitted via support ticket within 7 days of the incident.</li>
             <li>Approved credits apply exclusively to future invoice renewals.</li>
             <li>Exclusions include scheduled maintenance, third-party outages, user misconfigurations, and DDoS attacks exceeding standard mitigation limits. Free plans are excluded.</li>
@@ -190,7 +190,7 @@ function TermsPage() {
         <section>
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">16. Dedicated IP Policy</h2>
           <ul className="list-disc pl-6 space-y-1.5 text-muted-foreground">
-            <li>Assigned IP addresses remain the exclusive property of TitanNodes or upstream providers.</li>
+            <li>Assigned IP addresses remain the exclusive property of TitanNode or upstream providers.</li>
             <li>IP misuse leading to blacklisting results in immediate IP revocation without refund.</li>
           </ul>
         </section>
@@ -200,7 +200,7 @@ function TermsPage() {
           <ul className="list-disc pl-6 space-y-1.5 text-muted-foreground">
             <li>Self-referrals and fraudulent referral campaigns are strictly forbidden.</li>
             <li>Commissions are reversed if referred orders are refunded or disputed.</li>
-            <li>TitanNodes reserves the right to terminate affiliate accounts violating referral guidelines.</li>
+            <li>TitanNode reserves the right to terminate affiliate accounts violating referral guidelines.</li>
           </ul>
         </section>
 
@@ -215,28 +215,28 @@ function TermsPage() {
         <section>
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">19. Intellectual Property</h2>
           <p className="text-muted-foreground leading-relaxed">
-            All TitanNodes branding, logos, software, control panels, and custom designs remain the sole intellectual property of TitanNodes. Unauthorized copying or redistribution is strictly prohibited.
+            All TitanNode branding, logos, software, control panels, and custom designs remain the sole intellectual property of TitanNode. Unauthorized copying or redistribution is strictly prohibited.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">20. Limitation of Liability</h2>
           <p className="text-muted-foreground leading-relaxed">
-            To the maximum extent permitted by applicable law, TitanNodes shall not be liable for any indirect, incidental, or consequential damages resulting from service usage or downtime. Total aggregate liability is strictly capped at the total amount paid by you to TitanNodes in the preceding 30 days.
+            To the maximum extent permitted by applicable law, TitanNode shall not be liable for any indirect, incidental, or consequential damages resulting from service usage or downtime. Total aggregate liability is strictly capped at the total amount paid by you to TitanNode in the preceding 30 days.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">21. Indemnification</h2>
           <p className="text-muted-foreground leading-relaxed">
-            You agree to defend, indemnify, and hold harmless TitanNodes and its operators from any claims, damages, liabilities, costs, or legal fees arising from your use of our services or violation of these Terms.
+            You agree to defend, indemnify, and hold harmless TitanNode and its operators from any claims, damages, liabilities, costs, or legal fees arising from your use of our services or violation of these Terms.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">22. Force Majeure</h2>
           <p className="text-muted-foreground leading-relaxed">
-            TitanNodes is not liable for performance delays or failures resulting from causes beyond reasonable control, including natural disasters, warfare, power grid outages, upstream fiber cuts, or government regulations.
+            TitanNode is not liable for performance delays or failures resulting from causes beyond reasonable control, including natural disasters, warfare, power grid outages, upstream fiber cuts, or government regulations.
           </p>
         </section>
 
@@ -257,7 +257,7 @@ function TermsPage() {
         <section>
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">25. Entire Agreement</h2>
           <p className="text-muted-foreground leading-relaxed">
-            These Terms of Service, along with our Privacy Policy, Acceptable Use Policy, and Refund Policy, constitute the complete agreement between you and TitanNodes regarding your use of our services.
+            These Terms of Service, along with our Privacy Policy, Acceptable Use Policy, and Refund Policy, constitute the complete agreement between you and TitanNode regarding your use of our services.
           </p>
         </section>
       </div>

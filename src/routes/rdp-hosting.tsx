@@ -9,7 +9,7 @@ import vpsHero from "@/assets/hero/vps.jpg";
 export const Route = createFileRoute("/rdp-hosting")({
   head: () => ({
     meta: [
-      { title: "Windows RDP Hosting — Intel Gold 6154 — TitanNodes" },
+      { title: "Windows RDP Hosting — Intel Gold 6154 — TitanNode" },
       {
         name: "description",
         content:

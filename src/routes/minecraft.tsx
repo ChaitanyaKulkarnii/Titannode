@@ -21,7 +21,7 @@ import barrierIcon from "@/assets/mc-icons/barrier.svg";
 export const Route = createFileRoute("/minecraft")({
   head: () => ({
     meta: [
-      { title: "Minecraft Server Hosting — TitanNodes" },
+      { title: "Minecraft Server Hosting — TitanNode" },
       { name: "description", content: "Budget, Premium, Powerful & Legacy Minecraft server hosting starting at ₹10/mo. DDoS protected, instant setup, 24/7 support." },
     ],
   }),

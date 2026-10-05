@@ -1,4 +1,4 @@
-# TitanNodes Hosting & Deployment Guide (cPanel & VPS)
+# TitanNode Hosting & Deployment Guide (cPanel & VPS)
 
 This guide provides simple, step-by-step commands to deploy this website on **cPanel Shared Hosting**, **cPanel Node.js App**, or any **Linux VPS**.
 
@@ -44,17 +44,17 @@ If you have a standard cPanel hosting account (Apache/Nginx):
 
 If your cPanel features **Setup Node.js App**:
 
-1. Upload the entire project directory to cPanel (e.g. `/home/username/titannodes-app`).
+1. Upload the entire project directory to cPanel (e.g. `/home/username/titannode-app`).
 2. Open **Setup Node.js App** in cPanel:
    - **Node.js Version**: 18.x or 20.x+
    - **Application Mode**: Production
-   - **Application Root**: `titannodes-app`
+   - **Application Root**: `titannode-app`
    - **Application URL**: `yourdomain.com`
    - **Application Startup File**: `server.js`
 3. Click **Create** or **Save**.
 4. Open cPanel **Terminal** or SSH into your server:
    ```bash
-   cd titannodes-app
+   cd titannode-app
    npm install
    npm run build
    ```
@@ -75,15 +75,15 @@ sudo npm install -g pm2
 
 ### 2. Clone & Build
 ```bash
-git clone <your-repo-url> titannodes-app
-cd titannodes-app
+git clone <your-repo-url> titannode-app
+cd titannode-app
 npm install
 npm run build
 ```
 
 ### 3. Start Production Server with PM2
 ```bash
-PORT=8080 pm2 start server.js --name "titannodes-web"
+PORT=8080 pm2 start server.js --name "titannode-web"
 pm2 save
 pm2 startup
 ```

@@ -60,7 +60,7 @@ const legalLinks: DropdownItem[] = [
   { label: "Privacy Policy", to: "/privacy", description: "Data Safeguards", icon: Lock },
   { label: "Refund Policy", to: "/refund", description: "5-Day Tiered Policy", icon: CreditCard },
   { label: "Acceptable Use", to: "/aup", description: "Network Policy", icon: Scale },
-  { label: "Service Level (SLA)", to: "/sla", description: "99.0% Uptime SLA", icon: Award },
+  { label: "Service Level (SLA)", to: "/sla", description: "98.0% Uptime SLA", icon: Award },
 ];
 
 const menuGroups: DropdownGroup[] = [
@@ -77,11 +77,11 @@ function Brand({ onClick }: { onClick?: () => void }) {
     <Link to="/" onClick={onClick} className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
       <img
         src={logo}
-        alt="TitanNodes"
+        alt="TitanNode"
         className="h-8 w-8 sm:h-9 sm:w-9 lg:h-10 lg:w-10 rounded-md bg-black object-cover border border-zinc-800 transition group-hover:border-zinc-700"
       />
       <span className="text-lg sm:text-xl font-extrabold tracking-tight text-white">
-        Titan<span className="text-zinc-400 group-hover:text-white transition-colors">Nodes</span>
+        Titan<span className="text-zinc-400 group-hover:text-white transition-colors">Node</span>
       </span>
     </Link>
   );
@@ -180,10 +180,10 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
         </button>
 
         <div className="flex items-center gap-3 mb-6 pr-8">
-          <img src={logo} alt="TitanNodes" className="h-10 w-10 rounded-md bg-black object-cover border border-zinc-800 shrink-0" />
+          <img src={logo} alt="TitanNode" className="h-10 w-10 rounded-md bg-black object-cover border border-zinc-800 shrink-0" />
           <div>
             <h3 className="text-base sm:text-lg font-bold text-white leading-tight">
-              TitanNodes Portal
+              TitanNode Portal
             </h3>
             <p className="text-xs text-zinc-400">Account &amp; Game Server Management</p>
           </div>

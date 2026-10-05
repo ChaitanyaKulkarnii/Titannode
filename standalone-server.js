@@ -118,5 +118,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, HOST, () => {
-  console.log(`🚀 TitanNodes Web Server running at http://${HOST}:${PORT}`);
+  console.log(`🚀 TitanNode Web Server running at http://${HOST}:${PORT}`);
 });

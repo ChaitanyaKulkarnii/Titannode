@@ -4,8 +4,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import chikuAvatar from "@/assets/chiku-avatar.png";
 import chikuSignature from "@/assets/signatures/chiku-signature.png";
-import dakshSignature from "@/assets/signatures/daksh-signature.png";
 import zyroSignature from "@/assets/signatures/zyro-signature.png";
+import darkSignature from "@/assets/signatures/dark-signature.png";
 import {
   Server,
   Cpu,
@@ -42,11 +42,11 @@ import {
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — The Real Story of TitanNodes" },
+      { title: "About Us — The Real Story of TitanNode" },
       {
         name: "description",
         content:
-          "The raw, unvarnished story of TitanNodes. Built by Chiku, Daksh & ZYRO after scams, Discord sabotage, and ₹15,000 in painful lessons. 0% overselling guaranteed.",
+          "The raw, unvarnished story of TitanNode. Built by Chiku, ZYRO & Dark after scams, Discord sabotage, and ₹15,000 in painful lessons. 0% overselling guaranteed.",
       },
     ],
   }),
@@ -93,8 +93,8 @@ export function AboutPage() {
           </h1>
 
           <p className="mx-auto mt-4 sm:mt-6 max-w-3xl text-sm sm:text-base md:text-lg text-zinc-300 leading-relaxed">
-            TitanNodes wasn&apos;t funded by venture capital. It was forged through serial hosting scams, an unauthorized Discord bot nuke by a former partner, phishing attacks, and an agonizing ₹15,000 out-of-pocket loss on cheap oversold VPS nodes. 
-            <span className="text-white font-semibold"> This is the real story of how Chiku, Daksh, and ZYRO built a zero-overselling infrastructure standard.</span>
+            TitanNode wasn&apos;t funded by venture capital. It was forged through serial hosting scams, an unauthorized Discord bot nuke by a former partner, phishing attacks, and an agonizing ₹15,000 out-of-pocket loss on cheap oversold VPS nodes. 
+            <span className="text-white font-semibold"> This is the real story of how Chiku, ZYRO, and Dark built a zero-overselling infrastructure standard.</span>
           </p>
 
           {/* Quick Metrics Bar */}
@@ -202,7 +202,7 @@ export function AboutPage() {
           </div>
 
           {/* Active Artifact Display */}
-          <div className="rounded-none border border-white/10 bg-[#0a0e17] p-6 sm:p-10 shadow-2xl">
+          <div>
             {/* ARTIFACT 1: DISCORD NUKE INCIDENT */}
             {activeReceiptTab === "discord_nuke" && (
               <div className="space-y-6">
@@ -250,7 +250,7 @@ export function AboutPage() {
                           I have stayed awake for 36 straight hours rewriting our bot permissions from zero. We have revoked every external API token, enabled 2FA hardware keys, and separated all server nodes onto isolated subnets.
                         </p>
                         <p className="font-semibold text-white">
-                          TitanNodes is not quitting. If you lost anything during this attack, open a ticket directly with me — I will compensate every single hour.
+                          TitanNode is not quitting. If you lost anything during this attack, open a ticket directly with me — I will compensate every single hour.
                         </p>
                       </div>
 
@@ -301,7 +301,7 @@ export function AboutPage() {
                 </div>
 
                 <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                  When Daksh and ZYRO partnered with Chiku to revive the host, they attempted to compete with low-ball prices by leasing cheap bulk VPS nodes. The provider claimed &quot;High Performance 64GB RAM&quot;, but in reality, the memory was swapped aggressively over saturated SATA links. Players suffered severe lag, and refunds piled up immediately.
+                  When ZYRO and Dark partnered with Chiku to revive the host, they attempted to compete with low-ball prices by leasing cheap bulk VPS nodes. The provider claimed &quot;High Performance 64GB RAM&quot;, but in reality, the memory was swapped aggressively over saturated SATA links. Players suffered severe lag, and refunds piled up immediately.
                 </p>
 
                 {/* Monospace Financial Receipt */}
@@ -311,7 +311,7 @@ export function AboutPage() {
                   </div>
 
                   <div className="text-center border-b border-white/10 pb-4 mb-4">
-                    <p className="font-bold text-white tracking-widest uppercase">TITANNODES HISTORICAL AUDIT</p>
+                    <p className="font-bold text-white tracking-widest uppercase">TITANNODE HISTORICAL AUDIT</p>
                     <p className="text-zinc-500 text-[11px]">Date Range: April 2024 – July 2024</p>
                   </div>
 
@@ -390,7 +390,7 @@ export function AboutPage() {
                       &quot;Moved 3 servers with 50+ players. Constant 20 TPS.&quot;
                     </h4>
                     <p className="text-xs text-zinc-300 leading-relaxed">
-                      &quot;Been hosting Minecraft networks for 6 years. TitanNodes is legitimately the only host in this price tier that doesn&apos;t lie about RAM. 48 players online during our ender dragon fight and TPS did not drop below 19.9. Chiku answered my Discord ticket at 2 AM in 5 minutes.&quot;
+                      &quot;Been hosting Minecraft networks for 6 years. TitanNode is legitimately the only host in this price tier that doesn&apos;t lie about RAM. 48 players online during our ender dragon fight and TPS did not drop below 19.9. Chiku answered my Discord ticket at 2 AM in 5 minutes.&quot;
                     </p>
                     <div className="pt-2 text-[10px] text-emerald-400 border-t border-white/5 font-mono">
                       <span>Architecture: AMD Ryzen 9 7950X3D • 1:1 Dedicated DDR5 • Gen4 NVMe</span>
@@ -460,7 +460,7 @@ export function AboutPage() {
 
 
         {/* SECTION: OUR JOURNEY */}
-        <div className="rounded-none border border-white/10 bg-[#0a0e17] p-5 sm:p-8 md:p-12">
+        <div>
           {/* Header */}
           <div className="flex items-center gap-3.5 mb-10">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#142642] text-[#38bdf8] shrink-0 border border-blue-500/10">
@@ -500,7 +500,7 @@ export function AboutPage() {
                   Platform Growth
                 </h3>
                 <p className="text-sm text-zinc-400 leading-relaxed font-normal pt-1 max-w-3xl">
-                  Launched the Titan Nodes control panel, S3 object storage, Nextcloud personal cloud, and environment hosting. Crossed 300+ active servers.
+                  Launched the Titan Node control panel, S3 object storage, Nextcloud personal cloud, and environment hosting. Crossed 300+ active servers.
                 </p>
               </div>
             </div>
@@ -516,7 +516,7 @@ export function AboutPage() {
                   Enterprise DDoS and New Services
                 </h3>
                 <p className="text-sm text-zinc-400 leading-relaxed font-normal pt-1 max-w-3xl">
-                  Upgraded to 10 Tbps DDoS protection across all plans. Added Hytale hosting pre-orders. Launched the Titan Nodes docs and admin platform.
+                  Upgraded to 10 Tbps DDoS protection across all plans. Added Hytale hosting pre-orders. Launched the Titan Node docs and admin platform.
                 </p>
               </div>
             </div>
@@ -565,7 +565,7 @@ export function AboutPage() {
               </div>
               <h3 className="font-space-grotesk text-xl font-bold text-white">3. Direct Founder Ticket Ownership</h3>
               <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal">
-                No outsourced bots or copy-pasted replies. Chiku, Daksh, and ZYRO personally read and answer Discord support tickets every single day with real technical triage and under 15-minute response times.
+                No outsourced bots or copy-pasted replies. Chiku, ZYRO, and Dark personally read and answer Discord support tickets every single day with real technical triage and under 15-minute response times.
               </p>
             </div>
 
@@ -654,43 +654,11 @@ export function AboutPage() {
                 </div>
               </div>
 
-              {/* 2. Daksh Patel - Owner */}
+              {/* 2. ZYRO - Owner */}
               <div className="rounded-none border border-white/10 bg-[#0a0e17] p-5 space-y-3 transition hover:border-white/20">
                 <div className="flex items-center justify-between">
                   <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 font-bold">
                     Digitized Owner Signature
-                  </span>
-                  <span className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400">
-                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                    Active on Discord
-                  </span>
-                </div>
-                <div className="py-2 flex items-center h-14 overflow-hidden">
-                  <img
-                    src={dakshSignature}
-                    alt="Daksh Patel Signature"
-                    className="h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(0,176,255,0.4)]"
-                  />
-                </div>
-                <div className="pt-2 border-t border-white/5 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 shrink-0 rounded-full bg-[#00b0ff]/20 border border-[#00b0ff]/40 flex items-center justify-center text-[#00b0ff] font-bold text-sm shadow">
-                      DP
-                    </div>
-                    <div>
-                      <span className="font-space-grotesk text-base font-bold text-white block">Daksh Patel</span>
-                      <span className="text-xs text-zinc-400">Owner</span>
-                    </div>
-                  </div>
-                  <span className="text-xs font-mono text-zinc-500">@daksh</span>
-                </div>
-              </div>
-
-              {/* 3. ZYRO - Co-Owner */}
-              <div className="rounded-none border border-white/10 bg-[#0a0e17] p-5 space-y-3 transition hover:border-white/20">
-                <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 font-bold">
-                    Digitized Co-Owner Signature
                   </span>
                   <span className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400">
                     <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -706,15 +674,47 @@ export function AboutPage() {
                 </div>
                 <div className="pt-2 border-t border-white/5 flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 shrink-0 rounded-full bg-[#5865F2]/20 border border-[#5865F2]/40 flex items-center justify-center text-[#858dfa] font-bold text-sm shadow">
+                    <div className="h-10 w-10 shrink-0 rounded-full bg-[#00b0ff]/20 border border-[#00b0ff]/40 flex items-center justify-center text-[#00b0ff] font-bold text-sm shadow">
                       Z
                     </div>
                     <div>
                       <span className="font-space-grotesk text-base font-bold text-white block">ZYRO</span>
-                      <span className="text-xs text-zinc-400">Co-Owner</span>
+                      <span className="text-xs text-zinc-400">Owner</span>
                     </div>
                   </div>
                   <span className="text-xs font-mono text-zinc-500">@zyro</span>
+                </div>
+              </div>
+
+              {/* 3. Dark - Co-Owner */}
+              <div className="rounded-none border border-white/10 bg-[#0a0e17] p-5 space-y-3 transition hover:border-white/20">
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400 font-bold">
+                    Digitized Co-Owner Signature
+                  </span>
+                  <span className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400">
+                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                    Active on Discord
+                  </span>
+                </div>
+                <div className="py-2 flex items-center h-14 overflow-hidden">
+                  <img
+                    src={darkSignature}
+                    alt="Dark Signature"
+                    className="h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(0,176,255,0.4)]"
+                  />
+                </div>
+                <div className="pt-2 border-t border-white/5 flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 shrink-0 rounded-full bg-[#5865F2]/20 border border-[#5865F2]/40 flex items-center justify-center text-[#858dfa] font-bold text-sm shadow">
+                      D
+                    </div>
+                    <div>
+                      <span className="font-space-grotesk text-base font-bold text-white block">Dark</span>
+                      <span className="text-xs text-zinc-400">Co-Owner</span>
+                    </div>
+                  </div>
+                  <span className="text-xs font-mono text-zinc-500">@dark</span>
                 </div>
               </div>
             </div>
@@ -762,7 +762,7 @@ export function AboutPage() {
                 className="inline-flex items-center gap-1.5 rounded-none border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-bold text-white transition hover:border-white/20 hover:bg-white/10"
               >
                 <MessageSquare className="h-3.5 w-3.5" />
-                <span>Talk to Chiku, Daksh &amp; ZYRO</span>
+                <span>Talk to Chiku, ZYRO &amp; Dark</span>
                 <ArrowRight className="h-3.5 w-3.5" />
               </a>
             </div>

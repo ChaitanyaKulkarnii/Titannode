@@ -5,7 +5,7 @@ import { Clock } from "lucide-react";
 
 export const Route = createFileRoute("/infrastructure")({
   head: () => ({
-    meta: [{ title: "Infrastructure — Coming Soon — TitanNodes" }],
+    meta: [{ title: "Infrastructure — Coming Soon — TitanNode" }],
   }),
   component: InfrastructurePage,
 });

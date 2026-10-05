@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InfoPage } from "@/components/InfoPage";
 
 export const Route = createFileRoute("/faqs")({
-  head: () => ({ meta: [{ title: "FAQs — TitanNodes" }] }),
+  head: () => ({ meta: [{ title: "FAQs — TitanNode" }] }),
   component: () => (
     <InfoPage title="Frequently Asked Questions" subtitle="Quick answers to the questions we hear most.">
       <h3>How fast is deployment?</h3>

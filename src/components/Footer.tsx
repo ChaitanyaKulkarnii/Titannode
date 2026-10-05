@@ -78,9 +78,9 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-8 sm:gap-10 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2.5">
-              <img src={logo} alt="TitanNodes" className="h-9 w-9 rounded-full bg-white/5 object-cover ring-1 ring-white/20" />
+              <img src={logo} alt="TitanNode" className="h-9 w-9 rounded-full bg-white/5 object-cover ring-1 ring-white/20" />
               <span className="text-lg font-extrabold tracking-tight">
-                <span className="text-primary">Titan</span><span className="text-white">Nodes</span>
+                <span className="text-primary">Titan</span><span className="text-white">Node</span>
               </span>
             </div>
             <p className="mt-3 sm:mt-4 max-w-xs text-xs sm:text-sm leading-relaxed text-muted-foreground">
@@ -103,7 +103,7 @@ export function Footer() {
           ))}
         </div>
         <div className="mt-10 sm:mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/5 pt-6 text-center sm:text-left md:flex-row">
-          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} TitanNodes. All rights reserved.</p>
+          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} TitanNode. All rights reserved.</p>
           <p className="text-xs font-medium text-green-400">Website is made by Gandhali Kulkarni</p>
         </div>
       </div>

@@ -22,10 +22,10 @@ import abstractCardBg from "@/assets/textures/abstract-card-bg.jpg";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us — TitanNodes" },
+      { title: "Contact Us — TitanNode" },
       {
         name: "description",
-        content: "Get in touch with the TitanNodes team for 24/7 support, enterprise sales, or abuse reports.",
+        content: "Get in touch with the TitanNode team for 24/7 support, enterprise sales, or abuse reports.",
       },
     ],
   }),
@@ -38,7 +38,7 @@ const contactChannels = [
     title: "Technical Support",
     role: "Hardware & Server Operations",
     desc: "For server crashes, panel issues, network routing, or node maintenance.",
-    contact: "support@titannodes.fun",
+    contact: "support@titannode.fun",
     actionType: "email",
     tag: "< 15m Response",
     tagColor: "text-sky-400 border-sky-500/30 bg-sky-500/10",
@@ -49,7 +49,7 @@ const contactChannels = [
     title: "Business & Sales",
     role: "Enterprise & Bulk Infrastructure",
     desc: "Custom dedicated node configs, enterprise SLAs, and volume discounts.",
-    contact: "business@titannodes.fun",
+    contact: "business@titannode.fun",
     actionType: "email",
     tag: "Custom Solutions",
     tagColor: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10",
@@ -60,7 +60,7 @@ const contactChannels = [
     title: "Abuse & Security",
     role: "SOC & Network Incident Response",
     desc: "Report network abuse, DMCA notices, phishing, or emergency security alerts.",
-    contact: "abuse@titannodes.fun",
+    contact: "abuse@titannode.fun",
     actionType: "email",
     tag: "Priority Escalation",
     tagColor: "text-amber-400 border-amber-500/30 bg-amber-500/10",
@@ -86,7 +86,7 @@ const faqs = [
   },
   {
     q: "Can I request custom hardware or IP subnets?",
-    a: "Yes. Reach out to our Business & Sales desk (business@titannodes.fun) with your memory, vCore, or custom BGP/IP announcement requirements.",
+    a: "Yes. Reach out to our Business & Sales desk (business@titannode.fun) with your memory, vCore, or custom BGP/IP announcement requirements.",
   },
   {
     q: "Where can I monitor live infrastructure health?",
@@ -146,7 +146,7 @@ function ContactPage() {
           </div>
 
           <h1 className="mt-5 text-4xl font-black tracking-tight sm:text-6xl md:text-7xl">
-            Get In Touch With <span className="text-[#00b0ff] drop-shadow-[0_2px_15px_rgba(0,176,255,0.3)]">TitanNodes</span>
+            Get In Touch With <span className="text-[#00b0ff] drop-shadow-[0_2px_15px_rgba(0,176,255,0.3)]">TitanNode</span>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">

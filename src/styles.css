@@ -34,7 +34,7 @@
   --color-success: var(--success);
 }
 
-/* TitanNodes palette: deep black + sky blue brand, green price accent */
+/* TitanNode palette: deep black + sky blue brand, green price accent */
 :root {
   --radius: 0.75rem;
   --background: oklch(0.12 0.01 240);

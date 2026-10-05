@@ -8,7 +8,7 @@ import botHero from "@/assets/hero/bot.jpg";
 export const Route = createFileRoute("/bot-hosting")({
   head: () => ({
     meta: [
-      { title: "Discord Bot Hosting — TitanNodes" },
+      { title: "Discord Bot Hosting — TitanNode" },
       { name: "description", content: "Premium Discord bot hosting starting at ₹25/mo. 24/7 uptime, NVMe Gen-4 storage, Node.js & Python support." },
     ],
   }),

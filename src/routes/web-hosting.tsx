@@ -8,7 +8,7 @@ import webHero from "@/assets/hero/web.jpg";
 export const Route = createFileRoute("/web-hosting")({
   head: () => ({
     meta: [
-      { title: "Web Hosting — TitanNodes" },
+      { title: "Web Hosting — TitanNode" },
       { name: "description", content: "Lightning-fast cPanel web hosting starting at $1/mo. NVMe SSD, free SSL, 1-click WordPress & unlimited bandwidth." },
     ],
   }),

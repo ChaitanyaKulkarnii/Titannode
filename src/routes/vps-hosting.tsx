@@ -12,7 +12,7 @@ import vpsHero from "@/assets/hero/vps.jpg";
 export const Route = createFileRoute("/vps-hosting")({
   head: () => ({
     meta: [
-      { title: "VPS Hosting — Intel Gold 6154, AMD EPYC & Ryzen — TitanNodes" },
+      { title: "VPS Hosting — Intel Gold 6154, AMD EPYC & Ryzen — TitanNode" },
       {
         name: "description",
         content:

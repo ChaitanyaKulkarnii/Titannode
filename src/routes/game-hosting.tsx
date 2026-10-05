@@ -18,7 +18,7 @@ import { useCurrency } from "@/lib/currency";
 export const Route = createFileRoute("/game-hosting")({
   head: () => ({
     meta: [
-      { title: "Game Server Hosting — TitanNodes" },
+      { title: "Game Server Hosting — TitanNode" },
       { name: "description", content: "Premium game server hosting for Minecraft, Rust, FiveM, ARK, Terraria, Valheim, Palworld, CS2, Hytale and more." },
     ],
   }),
@@ -81,7 +81,7 @@ function GameHostingPage() {
             Game Server<br />Hosting
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-base text-muted-foreground md:text-lg">
-            At <span className="font-semibold text-foreground">TitanNodes</span>, we provide{" "}
+            At <span className="font-semibold text-foreground">TitanNode</span>, we provide{" "}
             <span className="font-semibold text-foreground">premium game server hosting</span>{" "}
             for over 9 of the most popular games you can think of.
           </p>

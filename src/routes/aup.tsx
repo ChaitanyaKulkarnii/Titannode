@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { InfoPage } from "@/components/InfoPage";
 
 export const Route = createFileRoute("/aup")({
-  head: () => ({ meta: [{ title: "Acceptable Use Policy — TitanNodes" }] }),
+  head: () => ({ meta: [{ title: "Acceptable Use Policy — TitanNode" }] }),
   component: AupPage,
 });
 
@@ -15,18 +15,18 @@ function AupPage() {
       <div className="space-y-8">
         <section>
           <p className="text-base leading-relaxed">
-            This Acceptable Use Policy (&quot;AUP&quot;) governs the use of all services provided by <strong>TitanNodes</strong> (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;). This policy applies to all clients utilizing web hosting, game hosting, VPS, dedicated servers, dedicated IPs, bot hosting, and network infrastructure. Violations result in immediate service suspension or permanent account termination without refund.
+            This Acceptable Use Policy (&quot;AUP&quot;) governs the use of all services provided by <strong>TitanNode</strong> (&quot;Company&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;). This policy applies to all clients utilizing web hosting, game hosting, VPS, dedicated servers, dedicated IPs, bot hosting, and network infrastructure. Violations result in immediate service suspension or permanent account termination without refund.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">1. General Principles</h2>
-          <p className="text-muted-foreground mb-2">You agree to utilize TitanNodes infrastructure responsibly, lawfully, and in a manner that does not compromise network security or degrade performance for other tenants. You maintain full responsibility for all content hosted under your account credentials.</p>
+          <p className="text-muted-foreground mb-2">You agree to utilize TitanNode infrastructure responsibly, lawfully, and in a manner that does not compromise network security or degrade performance for other tenants. You maintain full responsibility for all content hosted under your account credentials.</p>
         </section>
 
         <section>
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">2. Strictly Prohibited Content (All Services)</h2>
-          <p className="text-muted-foreground mb-2">The following content is strictly forbidden across all TitanNodes services:</p>
+          <p className="text-muted-foreground mb-2">The following content is strictly forbidden across all TitanNode services:</p>
           <ul className="list-disc pl-6 space-y-1.5 text-muted-foreground">
             <li>Malware, ransomware, spyware, keyloggers, or trojan distribution</li>
             <li>Phishing portals, spoofed banking pages, or credential harvesting forms</li>
@@ -79,7 +79,7 @@ function AupPage() {
         <section>
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">6. Dedicated IP Reputation</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Assigned IP addresses remain the property of TitanNodes. Using IPs for spam campaigns, blackhat SEO, open proxies, or illicit activities causing IP reputation blacklisting will result in immediate IP revocation without refund.
+            Assigned IP addresses remain the property of TitanNode. Using IPs for spam campaigns, blackhat SEO, open proxies, or illicit activities causing IP reputation blacklisting will result in immediate IP revocation without refund.
           </p>
         </section>
 
@@ -91,7 +91,7 @@ function AupPage() {
         <section>
           <h2 className="text-xl font-bold text-white border-b border-white/10 pb-2 mb-3">8. Abuse Notice Resolution</h2>
           <ul className="list-disc pl-6 space-y-1.5 text-muted-foreground">
-            <li>Standard abuse complaints sent to TitanNodes must be investigated and resolved by the client within <strong>24 hours</strong> of notice.</li>
+            <li>Standard abuse complaints sent to TitanNode must be investigated and resolved by the client within <strong>24 hours</strong> of notice.</li>
             <li>Failure to respond to abuse tickets within 24 hours results in automatic account suspension.</li>
             <li>Zero-tolerance violations (malware, phishing, CSAM, DDoS attacks) result in immediate termination without advance notice.</li>
           </ul>
