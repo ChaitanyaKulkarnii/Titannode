@@ -22,19 +22,19 @@ export const Route = createFileRoute("/minecraft")({
   head: () => ({
     meta: [
       { title: "Minecraft Server Hosting — TitanNode" },
-      { name: "description", content: "Budget, Premium, Powerful & Legacy Minecraft server hosting starting at ₹10/mo. DDoS protected, instant setup, 24/7 support." },
+      { name: "description", content: "Budget, Premium, Deluxe & Legacy Minecraft server hosting starting at ₹38/mo. DDoS protected, instant setup, 24/7 support." },
     ],
   }),
   component: MinecraftPage,
 });
 
-export type Tier = "legacy" | "budget" | "premium" | "powerful";
+export type Tier = "legacy" | "budget" | "premium" | "deluxe";
 
 const tierOptions: { id: Tier; label: string; icon: typeof Zap; color: string }[] = [
   { id: "legacy", label: "Legacy", icon: Shield, color: "cyan" },
   { id: "budget", label: "Budget", icon: Server, color: "emerald" },
   { id: "premium", label: "Premium", icon: Zap, color: "success" },
-  { id: "powerful", label: "Powerful", icon: Cpu, color: "violet" },
+  { id: "deluxe", label: "Deluxe", icon: Cpu, color: "violet" },
 ];
 
 const features = [
@@ -52,7 +52,7 @@ const make = (
 ): PlanCardData & { tier: Tier } => ({
   name,
   subtitle: `${tier.charAt(0).toUpperCase() + tier.slice(1)} Minecraft Server`,
-  price: priceInr / 83,
+  price: priceInr / 86.5,
   image,
   popular,
   tier,
@@ -67,52 +67,53 @@ const make = (
 });
 
 const plans: (PlanCardData & { tier: Tier })[] = [
+  // Legacy Tier
+  make("Stone", "2 GB RAM", "100% CPU", "10 GB NVMe", "1 Auto Backup", 38, stoneIcon, "legacy"),
+  make("Coal", "4 GB RAM", "150% CPU", "20 GB NVMe", "2 Auto Backups", 75, coalIcon, "legacy"),
+  make("Iron", "6 GB RAM", "200% CPU", "30 GB NVMe", "2 Auto Backups", 100, ironIcon, "legacy"),
+  make("Gold", "8 GB RAM", "250% CPU", "40 GB NVMe", "3 Auto Backups", 147, goldIcon, "legacy"),
+  make("Lapis", "12 GB RAM", "300% CPU", "50 GB NVMe", "3 Auto Backups", 220, lapisIcon, "legacy"),
+  make("Redstone", "16 GB RAM", "350% CPU", "60 GB NVMe", "4 Auto Backups", 300, redstoneIcon, "legacy"),
+  make("Diamond", "24 GB RAM", "500% CPU", "80 GB NVMe", "5 Auto Backups", 410, diamondIcon, "legacy", true),
+  make("Netherite", "32 GB RAM", "650% CPU", "100 GB NVMe", "6 Auto Backups", 600, netheriteIcon, "legacy"),
+  make("Bedrock", "48 GB RAM", "800% CPU", "120 GB NVMe", "8 Auto Backups", 750, bedrockIcon, "legacy"),
+  make("Beacon", "64 GB RAM", "1000% CPU", "150 GB NVMe", "10 Auto Backups", 900, beaconIcon, "legacy"),
+
   // Budget Tier
-  make("Stone", "2 GiB DDR4 (3200 MHz)", "50% CPU", "5 GiB NVMe (GEN-4)", "1", 20, stoneIcon, "budget"),
-  make("Coal", "4 GiB DDR4 (3200 MHz)", "100% CPU", "15 GiB NVMe (GEN-4)", "2", 40, coalIcon, "budget"),
-  make("Iron", "6 GiB DDR4 (3200 MHz)", "150% CPU", "20 GiB NVMe (GEN-4)", "2", 60, ironIcon, "budget"),
-  make("Gold", "8 GiB DDR4 (3200 MHz)", "200% CPU", "25 GiB NVMe (GEN-4)", "3", 80, goldIcon, "budget"),
-  make("Lapis", "12 GiB DDR4 (3200 MHz)", "300% CPU", "40 GiB NVMe (GEN-4)", "3", 120, lapisIcon, "budget"),
-  make("Redstone", "16 GiB DDR4 (3200 MHz)", "350% CPU", "60 GiB NVMe (GEN-4)", "4", 160, redstoneIcon, "budget"),
-  make("Diamond", "32 GiB DDR4 (3200 MHz)", "400% CPU", "80 GiB NVMe (GEN-4)", "5", 320, diamondIcon, "budget", true),
-  make("Netherite", "48 GiB DDR4 (3200 MHz)", "450% CPU", "90 GiB NVMe (GEN-4)", "6", 480, netheriteIcon, "budget"),
-  make("Bedrock", "64 GiB DDR4 (3200 MHz)", "500% CPU", "100 GiB NVMe (GEN-4)", "8", 640, bedrockIcon, "budget"),
-  make("Barrier", "∞ GiB DDR4 (3200 MHz)", "∞% CPU", "∞ GiB NVMe (GEN-4)", "Unlimited", 950, barrierIcon, "budget"),
+  make("Stone", "2 GB RAM", "100% CPU", "10 GB NVMe", "1 Auto Backup", 49, stoneIcon, "budget"),
+  make("Coal", "4 GB RAM", "150% CPU", "20 GB NVMe", "2 Auto Backups", 89, coalIcon, "budget"),
+  make("Iron", "6 GB RAM", "200% CPU", "30 GB NVMe", "2 Auto Backups", 129, ironIcon, "budget"),
+  make("Gold", "8 GB RAM", "250% CPU", "40 GB NVMe", "3 Auto Backups", 169, goldIcon, "budget"),
+  make("Lapis", "12 GB RAM", "300% CPU", "50 GB NVMe", "3 Auto Backups", 249, lapisIcon, "budget"),
+  make("Redstone", "16 GB RAM", "350% CPU", "60 GB NVMe", "4 Auto Backups", 329, redstoneIcon, "budget"),
+  make("Diamond", "24 GB RAM", "500% CPU", "80 GB NVMe", "5 Auto Backups", 450, diamondIcon, "budget", true),
+  make("Netherite", "32 GB RAM", "650% CPU", "100 GB NVMe", "6 Auto Backups", 600, netheriteIcon, "budget"),
+  make("Bedrock", "48 GB RAM", "800% CPU", "120 GB NVMe", "8 Auto Backups", 829, bedrockIcon, "budget"),
+  make("Beacon", "64 GB RAM", "1000% CPU", "150 GB NVMe", "10 Auto Backups", 950, beaconIcon, "budget"),
 
   // Premium Tier
-  make("Stone", "2 GiB DDR4 (3200 MHz)", "50% CPU", "5 GiB NVMe (GEN-4)", "1", 60, stoneIcon, "premium"),
-  make("Coal", "4 GiB DDR4 (3200 MHz)", "100% CPU", "15 GiB NVMe (GEN-4)", "2", 120, coalIcon, "premium"),
-  make("Iron", "6 GiB DDR4 (3200 MHz)", "150% CPU", "20 GiB NVMe (GEN-4)", "2", 180, ironIcon, "premium"),
-  make("Gold", "8 GiB DDR4 (3200 MHz)", "200% CPU", "25 GiB NVMe (GEN-4)", "3", 240, goldIcon, "premium"),
-  make("Lapis", "10 GiB DDR4 (3200 MHz)", "250% CPU", "40 GiB NVMe (GEN-4)", "3", 300, lapisIcon, "premium"),
-  make("Redstone", "12 GiB DDR4 (3200 MHz)", "300% CPU", "60 GiB NVMe (GEN-4)", "4", 360, redstoneIcon, "premium"),
-  make("Diamond", "16 GiB DDR4 (3200 MHz)", "350% CPU", "80 GiB NVMe (GEN-4)", "5", 480, diamondIcon, "premium", true),
-  make("Netherite", "24 GiB DDR4 (3200 MHz)", "400% CPU", "90 GiB NVMe (GEN-4)", "6", 720, netheriteIcon, "premium"),
-  make("Bedrock", "32 GiB DDR4 (3200 MHz)", "500% CPU", "100 GiB NVMe (GEN-4)", "8", 960, bedrockIcon, "premium"),
-  make("Barrier", "∞ GiB DDR4 (3200 MHz)", "∞% CPU", "∞ GiB NVMe (GEN-4)", "Unlimited", 1670, barrierIcon, "premium"),
+  make("Stone", "2 GB RAM", "100% CPU", "10 GB NVMe", "1 Auto Backup", 89, stoneIcon, "premium"),
+  make("Coal", "4 GB RAM", "150% CPU", "20 GB NVMe", "2 Auto Backups", 169, coalIcon, "premium"),
+  make("Iron", "6 GB RAM", "200% CPU", "30 GB NVMe", "2 Auto Backups", 249, ironIcon, "premium"),
+  make("Gold", "8 GB RAM", "250% CPU", "40 GB NVMe", "3 Auto Backups", 325, goldIcon, "premium"),
+  make("Lapis", "12 GB RAM", "300% CPU", "50 GB NVMe", "3 Auto Backups", 480, lapisIcon, "premium"),
+  make("Redstone", "16 GB RAM", "350% CPU", "60 GB NVMe", "4 Auto Backups", 630, redstoneIcon, "premium"),
+  make("Diamond", "24 GB RAM", "500% CPU", "80 GB NVMe", "5 Auto Backups", 940, diamondIcon, "premium", true),
+  make("Netherite", "32 GB RAM", "650% CPU", "100 GB NVMe", "6 Auto Backups", 1200, netheriteIcon, "premium"),
+  make("Bedrock", "48 GB RAM", "800% CPU", "120 GB NVMe", "8 Auto Backups", 1700, bedrockIcon, "premium"),
+  make("Beacon", "64 GB RAM", "1000% CPU", "150 GB NVMe", "10 Auto Backups", 2200, beaconIcon, "premium"),
 
-  // Powerful Tier (Exact User Specified DDR5 4300MHz Plans & Photos)
-  make("Stone", "2 GiB DDR5 (4300 MHz)", "50% CPU", "5 GiB NVMe (GEN-4)", "1", 180, stoneIcon, "powerful"),
-  make("Coal", "4 GiB DDR5 (4300 MHz)", "100% CPU", "15 GiB NVMe (GEN-4)", "2", 360, coalIcon, "powerful"),
-  make("Iron", "6 GiB DDR5 (4300 MHz)", "150% CPU", "20 GiB NVMe (GEN-4)", "2", 560, ironIcon, "powerful"),
-  make("Gold", "8 GiB DDR5 (4300 MHz)", "200% CPU", "25 GiB NVMe (GEN-4)", "3", 720, goldIcon, "powerful"),
-  make("Lapis", "10 GiB DDR5 (4300 MHz)", "250% CPU", "40 GiB NVMe (GEN-4)", "3", 900, lapisIcon, "powerful"),
-  make("Redstone", "12 GiB DDR5 (4300 MHz)", "300% CPU", "60 GiB NVMe (GEN-4)", "4", 1100, redstoneIcon, "powerful"),
-  make("Diamond", "16 GiB DDR5 (4300 MHz)", "350% CPU", "80 GiB NVMe (GEN-4)", "5", 1500, diamondIcon, "powerful", true),
-  make("Netherite", "24 GiB DDR5 (4300 MHz)", "∞% CPU", "90 GiB NVMe (GEN-4)", "6", 2450, netheriteIcon, "powerful"),
-  make("Bedrock", "32 GiB DDR5 (4300 MHz)", "∞% CPU", "100 GiB NVMe (GEN-4)", "8", 3370, bedrockIcon, "powerful"),
-  make("Barrier", "∞ GiB DDR5 (4300 MHz)", "∞% CPU", "∞ GiB NVMe (GEN-4)", "Unlimited", 4370, barrierIcon, "powerful"),
-
-  // Legacy Tier (Same specs as Premium @ ₹5/GB RAM)
-  make("Stone", "2 GiB DDR4 (3200 MHz)", "50% CPU", "5 GiB NVMe (GEN-4)", "1", 10, stoneIcon, "legacy"),
-  make("Coal", "4 GiB DDR4 (3200 MHz)", "100% CPU", "15 GiB NVMe (GEN-4)", "2", 20, coalIcon, "legacy"),
-  make("Iron", "6 GiB DDR4 (3200 MHz)", "150% CPU", "20 GiB NVMe (GEN-4)", "2", 30, ironIcon, "legacy"),
-  make("Gold", "8 GiB DDR4 (3200 MHz)", "200% CPU", "25 GiB NVMe (GEN-4)", "3", 40, goldIcon, "legacy"),
-  make("Lapis", "10 GiB DDR4 (3200 MHz)", "250% CPU", "40 GiB NVMe (GEN-4)", "3", 50, lapisIcon, "legacy"),
-  make("Redstone", "12 GiB DDR4 (3200 MHz)", "300% CPU", "60 GiB NVMe (GEN-4)", "4", 60, redstoneIcon, "legacy"),
-  make("Diamond", "16 GiB DDR4 (3200 MHz)", "350% CPU", "80 GiB NVMe (GEN-4)", "5", 80, diamondIcon, "legacy", true),
-  make("Netherite", "24 GiB DDR4 (3200 MHz)", "400% CPU", "90 GiB NVMe (GEN-4)", "6", 120, netheriteIcon, "legacy"),
-  make("Bedrock", "32 GiB DDR4 (3200 MHz)", "500% CPU", "100 GiB NVMe (GEN-4)", "8", 160, bedrockIcon, "legacy"),
+  // Deluxe Tier
+  make("Stone", "2 GB RAM", "100% CPU", "10 GB NVMe", "1 Auto Backup", 250, stoneIcon, "deluxe"),
+  make("Coal", "4 GB RAM", "150% CPU", "20 GB NVMe", "2 Auto Backups", 500, coalIcon, "deluxe"),
+  make("Iron", "6 GB RAM", "200% CPU", "30 GB NVMe", "2 Auto Backups", 750, ironIcon, "deluxe"),
+  make("Gold", "8 GB RAM", "250% CPU", "40 GB NVMe", "3 Auto Backups", 1000, goldIcon, "deluxe"),
+  make("Lapis", "12 GB RAM", "300% CPU", "50 GB NVMe", "3 Auto Backups", 1450, lapisIcon, "deluxe"),
+  make("Redstone", "16 GB RAM", "350% CPU", "60 GB NVMe", "4 Auto Backups", 1900, redstoneIcon, "deluxe"),
+  make("Diamond", "24 GB RAM", "500% CPU", "80 GB NVMe", "5 Auto Backups", 2700, diamondIcon, "deluxe", true),
+  make("Netherite", "32 GB RAM", "650% CPU", "100 GB NVMe", "6 Auto Backups", 3600, netheriteIcon, "deluxe"),
+  make("Bedrock", "48 GB RAM", "800% CPU", "120 GB NVMe", "8 Auto Backups", 4200, bedrockIcon, "deluxe"),
+  make("Beacon", "64 GB RAM", "1000% CPU", "150 GB NVMe", "10 Auto Backups", 5600, beaconIcon, "deluxe"),
 ];
 
 function MinecraftPage() {
@@ -128,9 +129,9 @@ function MinecraftPage() {
         <img
           src={minecraftHero}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover opacity-65 brightness-[1.4]"
+          className="absolute inset-0 h-full w-full object-cover opacity-80 brightness-[1.2]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/35 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/25 to-background" />
         <div className="relative mx-auto flex min-h-[45vh] sm:min-h-[55vh] max-w-7xl flex-col items-center justify-center px-4 py-14 sm:py-24 text-center">
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight">
             Let's play <span className="gradient-text-violet">Minecraft</span>
@@ -162,7 +163,7 @@ function MinecraftPage() {
               const active = tier === t.id;
               let activeClass = "";
               if (active) {
-                if (t.id === "powerful") activeClass = "bg-[#00b0ff] text-white shadow-lg shadow-[#00b0ff]/30 font-bold";
+                if (t.id === "deluxe") activeClass = "bg-[#00b0ff] text-white shadow-lg shadow-[#00b0ff]/30 font-bold";
                 else if (t.id === "legacy") activeClass = "bg-[#38bdf8] text-slate-950 shadow-lg shadow-[#38bdf8]/20";
                 else if (t.id === "budget") activeClass = "bg-[#0284c7] text-white shadow-lg shadow-[#0284c7]/20";
                 else if (t.id === "premium") activeClass = "bg-[#039be5] text-white shadow-lg shadow-[#039be5]/30 font-bold";

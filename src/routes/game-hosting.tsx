@@ -37,7 +37,7 @@ interface Game {
 }
 
 const games: Game[] = [
-  { name: "Minecraft", image: minecraftHero, startingUsd: 1, platforms: ["pc", "mobile", "console"], popular: true, to: "/minecraft" },
+  { name: "Minecraft", image: minecraftHero, startingUsd: 38 / 86.5, platforms: ["pc", "mobile", "console"], popular: true, to: "/minecraft" },
   { name: "Palworld", image: palworld, startingUsd: 300 / 83, platforms: ["pc"], popular: true, to: "/palworld" },
   { name: "Counter-Strike 2", image: cs2, startingUsd: 100 / 83, platforms: ["pc"], popular: true, to: "/cs2" },
   { name: "Hytale", image: hytale, startingUsd: 110 / 83, platforms: ["pc"], popular: true, to: "/hytale" },
@@ -138,7 +138,7 @@ function GameHostingPage() {
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#08090c] via-[#08090c]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#08090c]/90 via-[#08090c]/20 to-transparent" />
                 {/* Crisp top hairline highlight on hover */}
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-400/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10" />
 

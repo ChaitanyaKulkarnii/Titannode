@@ -9,11 +9,11 @@ import vpsHero from "@/assets/hero/vps.jpg";
 export const Route = createFileRoute("/rdp-hosting")({
   head: () => ({
     meta: [
-      { title: "Windows RDP Hosting — Intel Gold 6154 — TitanNode" },
+      { title: "Windows RDP Hosting — Intel Platinum — TitanNode" },
       {
         name: "description",
         content:
-          "High-performance Windows RDP hosting in Noida, India. Intel Gold 6154 @3Ghz CPUs, DDR4 ECC RAM, NVMe storage, Unmetered bandwidth & Advance DDoS mitigation.",
+          "High-performance Windows RDP hosting in Noida, India. Intel Platinum CPUs, DDR4 ECC RAM, NVMe storage, Unmetered bandwidth & Advance DDoS mitigation.",
       },
     ],
   }),
@@ -29,7 +29,7 @@ const makeRdpPlan = (
   popular?: boolean
 ): PlanCardData => ({
   name,
-  subtitle: "Intel Gold 6154 RDP",
+  subtitle: "Intel Platinum RDP",
   price: priceInr / 83,
   iconNode: <MonitorSmartphone className="h-6 w-6 text-primary" />,
   popular,
@@ -40,7 +40,7 @@ const makeRdpPlan = (
     { icon: Globe, label: "Bandwidth", value: "Unmetered (1 Gbps)" },
   ],
   features: [
-    "Intel Gold 6154 @3Ghz",
+    "Intel Platinum Processor",
     "Located in Noida, IN",
     "Advance DDoS Mitigation",
     "Windows Server 2022",
@@ -65,18 +65,18 @@ function RdpPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <section className="relative w-full overflow-hidden">
-        <img src={vpsHero} alt="" className="absolute inset-0 h-full w-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/60 to-background" />
+        <img src={vpsHero} alt="" className="absolute inset-0 h-full w-full object-cover opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
         <div className="relative mx-auto flex min-h-[55vh] max-w-7xl flex-col items-center justify-center px-4 py-24 text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold backdrop-blur-md">
             <MapPin className="h-3.5 w-3.5 text-success" />
             <span>Noida, IN Data Center</span>
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight md:text-6xl">
-            Windows <span className="gradient-text-violet">Intel Gold 6154 RDP</span>
+            Windows <span className="gradient-text-violet">Intel Platinum RDP</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground md:text-lg">
-            Full admin Windows RDP access on Intel Gold 6154 @3Ghz processors, NVMe storage, and 1 Gbps unmetered bandwidth in Noida, India.
+            Full admin Windows RDP access on Intel Platinum processors, NVMe storage, and 1 Gbps unmetered bandwidth in Noida, India.
           </p>
         </div>
       </section>

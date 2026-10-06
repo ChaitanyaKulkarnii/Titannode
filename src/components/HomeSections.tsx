@@ -19,12 +19,12 @@ const tabs: { key: TabKey; label: string; icon: typeof Gamepad2; href: string; t
     key: "minecraft", label: "Minecraft Hosting", icon: Gamepad2, href: "/minecraft",
     title: "Minecraft Server Hosting",
     subtitle: "High-performance Minecraft server hosting with DDoS protection and 24/7 support.",
-    priceUsd: 10 / 83, bg: minecraftHero,
+    priceUsd: 38 / 86.5, bg: minecraftHero,
   },
   {
     key: "vps", label: "VPS Hosting", icon: Server, href: "/vps-hosting",
     title: "VPS Server Hosting",
-    subtitle: "Full root access with dedicated resources, NVMe storage and Intel Gold 6154 processors.",
+    subtitle: "Full root access with dedicated resources, NVMe storage and Intel Platinum & AMD EPYC 7F72 processors.",
     priceUsd: 380 / 83, bg: vpsHero,
   },
   {
@@ -76,7 +76,7 @@ export function HeroSection() {
           />
         ))}
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/65 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/40 to-background" />
 
       <div className="relative mx-auto flex min-h-[75vh] sm:min-h-[85vh] max-w-7xl flex-col items-center justify-center px-4 py-14 sm:py-24 text-center">
         <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs backdrop-blur-md">
@@ -146,7 +146,7 @@ const features = [
   { icon: Shield, title: "DDoS Protection", desc: "Enterprise-grade mitigation capable of filtering up to 17Tbps+. Stay online during the most intense attacks." },
   { icon: Activity, title: "99.9% Uptime", desc: "Tier 3+ certified data centers with redundant power, cooling and network links." },
   { icon: Clock, title: "24/7 Support", desc: "Real-world experts at your service. Average response time under 15 minutes, day or night." },
-  { icon: Cpu, title: "Powerful Hardware", desc: "Latest-gen AMD EPYC™ processors and enterprise NVMe Gen4 storage for maximum performance." },
+  { icon: Cpu, title: "Powerful Hardware", desc: "Enterprise AMD Ryzen™ 9 9950X, AMD EPYC™ 7F72, and Intel Platinum processors with ultra-fast NVMe Gen4 storage." },
   { icon: MapPin, title: "Global Locations", desc: "Globally distributed network with premium peerage for optimized gaming traffic." },
 ];
 
@@ -277,7 +277,7 @@ import fivemCard from "@/assets/games/fivem.jpg";
 import hytaleCard from "@/assets/games/hytale.jpg";
 
 const games = [
-  { name: "Minecraft", img: minecraftCard, href: "/minecraft", priceUsd: 1, tag: "Most Popular" },
+  { name: "Minecraft", img: minecraftCard, href: "/minecraft", priceUsd: 38 / 86.5, tag: "Most Popular" },
   { name: "Palworld", img: palworldCard, href: "/palworld", priceUsd: 300 / 83, tag: "Popular" },
   { name: "Counter-Strike 2", img: cs2Card, href: "/cs2", priceUsd: 100 / 83, tag: "Popular" },
   { name: "Hytale", img: hytaleCard, href: "/hytale", priceUsd: 110 / 83, tag: "New" },
@@ -316,7 +316,7 @@ export function GamesSection() {
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             {/* Smooth dark cinematic gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#08090c] via-[#08090c]/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#08090c]/90 via-[#08090c]/20 to-transparent" />
 
             {/* Crisp top hairline highlight on hover */}
             <div className="pointer-events-none absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-zinc-400/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

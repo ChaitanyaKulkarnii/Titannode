@@ -59,8 +59,8 @@ function BotPage() {
 
       {/* Hero */}
       <section className="relative w-full overflow-hidden">
-        <img src={botHero} alt="" className="absolute inset-0 h-full w-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/60 to-background" />
+        <img src={botHero} alt="" className="absolute inset-0 h-full w-full object-cover opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
         <div className="relative mx-auto flex min-h-[55vh] max-w-7xl flex-col items-center justify-center px-4 py-24 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-6xl">
             Premium <span className="gradient-text-violet">Discord Bot</span> Hosting

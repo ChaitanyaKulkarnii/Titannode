@@ -8,15 +8,18 @@ import flagIN from "@/assets/flags/india.png";
 import flagSG from "@/assets/flags/singapore.png";
 import flagDE from "@/assets/flags/germany.png";
 import vpsHero from "@/assets/hero/vps.jpg";
+import intelLogo from "@/assets/vps-logos/intel-xeon.png";
+import epycLogo from "@/assets/vps-logos/amd-epyc.png";
+import ryzenLogo from "@/assets/vps-logos/amd-ryzen.png";
 
 export const Route = createFileRoute("/vps-hosting")({
   head: () => ({
     meta: [
-      { title: "VPS Hosting — Intel Gold 6154, AMD EPYC & Ryzen — TitanNode" },
+      { title: "VPS Hosting — Intel Platinum, AMD EPYC 7F72 & Ryzen 9 9950X — TitanNode" },
       {
         name: "description",
         content:
-          "High-performance KVM VPS hosting. Select Intel Gold 6154, AMD EPYC, or AMD Ryzen CPUs across India, Singapore, and Germany datacenters.",
+          "High-performance KVM VPS hosting powered exclusively by Intel Platinum, AMD EPYC 7F72, and AMD Ryzen 9 9950X processors across datacenters.",
       },
     ],
   }),
@@ -48,9 +51,9 @@ const locations: LocationOption[] = [
 ];
 
 const cpuOptions: CpuOption[] = [
-  { id: "intel", label: "Intel Gold 6154", badge: "Intel - Standard", subtitle: "High Clock Enterprise Intel Gold Cores" },
-  { id: "epyc", label: "AMD EPYC - Premium", badge: "AMD EPYC - Premium", subtitle: "Multi-Core High Density Compute" },
-  { id: "ryzen", label: "AMD Ryzen™ - Premium", badge: "AMD Ryzen™ - Premium", subtitle: "Ultra-High Single-Thread Performance" },
+  { id: "intel", label: "Intel Platinum", badge: "Intel Platinum", subtitle: "High-Performance Enterprise Intel Platinum Cores" },
+  { id: "epyc", label: "AMD EPYC 7F72", badge: "AMD EPYC 7F72", subtitle: "Multi-Core High Density Enterprise Compute" },
+  { id: "ryzen", label: "AMD Ryzen™ 9 9950X", badge: "Ryzen 9 9950X", subtitle: "Flagship Ultra-High Single-Thread Performance" },
 ];
 
 interface ConfigDetail {
@@ -68,12 +71,21 @@ const makePlan = (
   priceInr: number,
   locationName: string,
   cpuName: string,
+  cpuLogo?: string,
   popular?: boolean
 ): PlanCardData => ({
   name,
   subtitle,
   price: priceInr / 83,
-  iconNode: <ServerIcon className="h-6 w-6 text-primary" />,
+  iconNode: cpuLogo ? (
+    <img
+      src={cpuLogo}
+      alt={cpuName}
+      className="h-9 w-9 object-contain rounded-xs drop-shadow-sm"
+    />
+  ) : (
+    <ServerIcon className="h-6 w-6 text-primary" />
+  ),
   popular,
   specs: [
     { icon: Cpu, label: "vCPU", value: `${vCores} vCores` },
@@ -92,94 +104,89 @@ const makePlan = (
 });
 
 const configMap: Record<`${LocationId}_${CpuId}`, ConfigDetail> = {
-  // INDIA - INTEL GOLD 6154 (DEFAULT & UNTOUCHED)
+  // INDIA - INTEL PLATINUM
   india_intel: {
-    note: "Our India Intel Gold / Xeon plans come with 4 CPU options. You can choose any available option based on current stock by clicking on the 'Order Now' button.",
+    note: "Our India Intel Platinum plans deliver enterprise-grade performance and dedicated KVM virtualization.",
     cpuModels: [
-      "Intel® Gold 6154 @ 3.00 GHz",
-      "Intel® Xeon® Platinum 8168 @ 2.70 GHz",
-      "Intel® Xeon® E5-2673 v4 @ 2.30 GHz",
-      "Intel® Xeon® Platinum 8269CY @ 2.50 GHz",
+      "Intel® Xeon® Platinum @ 3.40 GHz Turbo",
     ],
     plans: [
-      makePlan("Plan 1", "Intel Gold 6154 KVM VPS", "2", "6 GB DDR4", "50 GB SSD", 380, "Delhi, IN", "Intel Gold 6154"),
-      makePlan("Plan 2", "Intel Gold 6154 KVM VPS", "2", "8 GB DDR4", "80 GB SSD", 480, "Delhi, IN", "Intel Gold 6154"),
-      makePlan("Plan 3", "Intel Gold 6154 KVM VPS", "4", "12 GB DDR4", "100 GB SSD", 670, "Delhi, IN", "Intel Gold 6154"),
-      makePlan("Plan 4", "Intel Gold 6154 KVM VPS", "6", "16 GB DDR4", "150 GB SSD", 999, "Delhi, IN", "Intel Gold 6154", true),
-      makePlan("Plan 5", "Intel Gold 6154 KVM VPS", "6", "24 GB DDR4", "200 GB SSD", 1500, "Delhi, IN", "Intel Gold 6154"),
-      makePlan("Plan 6", "Intel Gold 6154 KVM VPS", "8", "32 GB DDR4", "200 GB SSD", 1800, "Delhi, IN", "Intel Gold 6154"),
-      makePlan("Plan 7", "Intel Gold 6154 KVM VPS", "10", "48 GB DDR4", "300 GB SSD", 2000, "Delhi, IN", "Intel Gold 6154"),
-      makePlan("Plan 8", "Intel Gold 6154 KVM VPS", "12", "64 GB DDR4", "400 GB SSD", 2600, "Delhi, IN", "Intel Gold 6154"),
+      makePlan("Plan 1", "Intel Platinum KVM VPS", "2", "6 GB DDR4", "50 GB SSD", 380, "Delhi, IN", "Intel Platinum", intelLogo),
+      makePlan("Plan 2", "Intel Platinum KVM VPS", "2", "8 GB DDR4", "80 GB SSD", 480, "Delhi, IN", "Intel Platinum", intelLogo),
+      makePlan("Plan 3", "Intel Platinum KVM VPS", "4", "12 GB DDR4", "100 GB SSD", 670, "Delhi, IN", "Intel Platinum", intelLogo),
+      makePlan("Plan 4", "Intel Platinum KVM VPS", "6", "16 GB DDR4", "150 GB SSD", 999, "Delhi, IN", "Intel Platinum", intelLogo, true),
+      makePlan("Plan 5", "Intel Platinum KVM VPS", "6", "24 GB DDR4", "200 GB SSD", 1500, "Delhi, IN", "Intel Platinum", intelLogo),
+      makePlan("Plan 6", "Intel Platinum KVM VPS", "8", "32 GB DDR4", "200 GB SSD", 1800, "Delhi, IN", "Intel Platinum", intelLogo),
+      makePlan("Plan 7", "Intel Platinum KVM VPS", "10", "48 GB DDR4", "300 GB SSD", 2000, "Delhi, IN", "Intel Platinum", intelLogo),
+      makePlan("Plan 8", "Intel Platinum KVM VPS", "12", "64 GB DDR4", "400 GB SSD", 2600, "Delhi, IN", "Intel Platinum", intelLogo),
     ],
   },
 
-  // INDIA - AMD EPYC
+  // INDIA - AMD EPYC 7F72
   india_epyc: {
-    note: "Our India AMD EPYC plans come with 2 CPU options. You can choose any available option based on current stock by clicking on the 'Order Now' button.",
+    note: "Our India AMD EPYC 7F72 plans feature high-frequency enterprise computing with dedicated resources.",
     cpuModels: [
-      "EPYC 7F72 3.20 GHz Server",
-      "EPYC 7K62 2.60 GHz Server",
+      "AMD EPYC™ 7F72 @ 3.20 GHz (3.70 GHz Max Boost)",
     ],
     plans: [
-      makePlan("EPYC Premium XS", "AMD EPYC KVM VPS", "2", "6 GB DDR4 ECC", "50 GB NVMe SSD", 381.16, "India", "AMD EPYC - Premium"),
-      makePlan("EPYC Premium S", "AMD EPYC KVM VPS", "2", "8 GB DDR4 ECC", "80 GB NVMe SSD", 571.74, "India", "AMD EPYC - Premium"),
-      makePlan("EPYC Premium M", "AMD EPYC KVM VPS", "4", "12 GB DDR4 ECC", "100 GB NVMe SSD", 952.90, "India", "AMD EPYC - Premium"),
-      makePlan("EPYC Premium L", "AMD EPYC KVM VPS", "6", "16 GB DDR4 ECC", "150 GB NVMe SSD", 1143.48, "India", "AMD EPYC - Premium", true),
-      makePlan("EPYC Premium XL", "AMD EPYC KVM VPS", "6", "24 GB DDR4 ECC", "200 GB NVMe SSD", 1524.64, "India", "AMD EPYC - Premium"),
-      makePlan("EPYC Premium XXL", "AMD EPYC KVM VPS", "8", "32 GB DDR4 ECC", "300 GB NVMe SSD", 1905.80, "India", "AMD EPYC - Premium"),
-      makePlan("EPYC Premium 2XL", "AMD EPYC KVM VPS", "10", "48 GB DDR4 ECC", "350 GB NVMe SSD", 2477.54, "India", "AMD EPYC - Premium"),
-      makePlan("EPYC Premium 3XL", "AMD EPYC KVM VPS", "12", "64 GB DDR4 ECC", "400 GB NVMe SSD", 3335.15, "India", "AMD EPYC - Premium"),
+      makePlan("EPYC Premium XS", "AMD EPYC 7F72 KVM VPS", "2", "6 GB DDR4 ECC", "50 GB NVMe SSD", 381.16, "India", "AMD EPYC 7F72", epycLogo),
+      makePlan("EPYC Premium S", "AMD EPYC 7F72 KVM VPS", "2", "8 GB DDR4 ECC", "80 GB NVMe SSD", 571.74, "India", "AMD EPYC 7F72", epycLogo),
+      makePlan("EPYC Premium M", "AMD EPYC 7F72 KVM VPS", "4", "12 GB DDR4 ECC", "100 GB NVMe SSD", 952.90, "India", "AMD EPYC 7F72", epycLogo),
+      makePlan("EPYC Premium L", "AMD EPYC 7F72 KVM VPS", "6", "16 GB DDR4 ECC", "150 GB NVMe SSD", 1143.48, "India", "AMD EPYC 7F72", epycLogo, true),
+      makePlan("EPYC Premium XL", "AMD EPYC 7F72 KVM VPS", "6", "24 GB DDR4 ECC", "200 GB NVMe SSD", 1524.64, "India", "AMD EPYC 7F72", epycLogo),
+      makePlan("EPYC Premium XXL", "AMD EPYC 7F72 KVM VPS", "8", "32 GB DDR4 ECC", "300 GB NVMe SSD", 1905.80, "India", "AMD EPYC 7F72", epycLogo),
+      makePlan("EPYC Premium 2XL", "AMD EPYC 7F72 KVM VPS", "10", "48 GB DDR4 ECC", "350 GB NVMe SSD", 2477.54, "India", "AMD EPYC 7F72", epycLogo),
+      makePlan("EPYC Premium 3XL", "AMD EPYC 7F72 KVM VPS", "12", "64 GB DDR4 ECC", "400 GB NVMe SSD", 3335.15, "India", "AMD EPYC 7F72", epycLogo),
     ],
   },
 
-  // INDIA - AMD RYZEN
+  // INDIA - AMD RYZEN 9 9950X
   india_ryzen: {
-    note: "Our India AMD Ryzen™ Premium plans come with 2 CPU options. You can choose your preferred option based on your use case by clicking the 'Order Now' button.",
+    note: "Flagship gaming & ultra-high single-thread performance nodes powered exclusively by AMD Ryzen™ 9 9950X.",
     cpuModels: [
-      "AMD Ryzen™ 9 9900X (Performance Users | Up to 100 Gbps Protection)",
-      "AMD Ryzen™ 9 5900X (DDoS Protection Users | OVH VAC Up to 17 Tbps)",
+      "AMD Ryzen™ 9 9950X @ 4.30 GHz (5.70 GHz Max Boost)",
     ],
     plans: [
-      makePlan("Ryzen XS", "AMD Ryzen KVM VPS", "1", "4 GB DDR5 ECC", "50 GB NVMe SSD", 611.76, "India", "AMD Ryzen™ - Premium"),
-      makePlan("Ryzen S", "AMD Ryzen KVM VPS", "2", "8 GB DDR5 ECC", "80 GB NVMe SSD", 1048.19, "India", "AMD Ryzen™ - Premium"),
-      makePlan("Ryzen L", "AMD Ryzen KVM VPS", "4", "16 GB DDR5 ECC", "150 GB NVMe SSD", 1810.51, "India", "AMD Ryzen™ - Premium", true),
-      makePlan("AMD Ryzen XL", "AMD Ryzen KVM VPS", "5", "24 GB DDR5 ECC", "180 GB NVMe SSD", 2477.54, "India", "AMD Ryzen™ - Premium"),
-      makePlan("Ryzen XL", "AMD Ryzen KVM VPS", "6", "32 GB DDR5 ECC", "200 GB NVMe SSD", 3621.02, "India", "AMD Ryzen™ - Premium"),
-      makePlan("Ryzen VPS 2XL", "AMD Ryzen KVM VPS", "8", "48 GB DDR5 ECC", "250 GB NVMe SSD", 4764.50, "India", "AMD Ryzen™ - Premium"),
+      makePlan("Ryzen XS", "AMD Ryzen 9 9950X KVM VPS", "1", "4 GB DDR5 ECC", "50 GB NVMe SSD", 611.76, "India", "AMD Ryzen 9 9950X", ryzenLogo),
+      makePlan("Ryzen S", "AMD Ryzen 9 9950X KVM VPS", "2", "8 GB DDR5 ECC", "80 GB NVMe SSD", 1048.19, "India", "AMD Ryzen 9 9950X", ryzenLogo),
+      makePlan("Ryzen L", "AMD Ryzen 9 9950X KVM VPS", "4", "16 GB DDR5 ECC", "150 GB NVMe SSD", 1810.51, "India", "AMD Ryzen 9 9950X", ryzenLogo, true),
+      makePlan("AMD Ryzen XL", "AMD Ryzen 9 9950X KVM VPS", "5", "24 GB DDR5 ECC", "180 GB NVMe SSD", 2477.54, "India", "AMD Ryzen 9 9950X", ryzenLogo),
+      makePlan("Ryzen XL", "AMD Ryzen 9 9950X KVM VPS", "6", "32 GB DDR5 ECC", "200 GB NVMe SSD", 3621.02, "India", "AMD Ryzen 9 9950X", ryzenLogo),
+      makePlan("Ryzen VPS 2XL", "AMD Ryzen 9 9950X KVM VPS", "8", "48 GB DDR5 ECC", "250 GB NVMe SSD", 4764.50, "India", "AMD Ryzen 9 9950X", ryzenLogo),
     ],
   },
 
-  // SINGAPORE - AMD EPYC MILAN
+  // SINGAPORE - AMD EPYC 7F72
   singapore_epyc: {
-    note: "Singapore AMD EPYC Milan high-density cloud compute nodes featuring unmetered 1Gbps network transit.",
-    cpuModels: ["AMD EPYC™ Milan Series @ 3.30 GHz Turbo"],
+    note: "Singapore AMD EPYC 7F72 high-density cloud compute nodes featuring unmetered 1Gbps network transit.",
+    cpuModels: ["AMD EPYC™ 7F72 @ 3.20–3.70 GHz"],
     plans: [],
   },
   singapore_intel: {
-    note: "Equinix SG1 Singapore datacenter with direct Asia-Pacific Tier 1 fiber transit.",
-    cpuModels: ["Intel® Xeon® Gold Series"],
+    note: "Equinix SG1 Singapore datacenter with direct Asia-Pacific Tier 1 fiber transit on Intel Platinum.",
+    cpuModels: ["Intel® Platinum Series"],
     plans: [],
   },
   singapore_ryzen: {
-    note: "AMD Ryzen™ high-frequency Singapore nodes tailored for high TPS game servers.",
-    cpuModels: ["AMD Ryzen™ 9 Series"],
+    note: "AMD Ryzen™ 9 9950X high-frequency Singapore nodes tailored for high TPS game servers.",
+    cpuModels: ["AMD Ryzen™ 9 9950X @ 5.70 GHz Boost"],
     plans: [],
   },
 
   // GERMANY - AMD RYZEN
   germany_ryzen: {
-    note: "Frankfurt, Germany datacenter with AMD Ryzen™ 9 5900X processors and 17Tbps+ DDoS mitigation.",
-    cpuModels: ["AMD Ryzen™ 9 5900X @ 4.80 GHz Max Boost"],
+    note: "Frankfurt, Germany datacenter with AMD Ryzen™ 9 9950X processors and 17Tbps+ DDoS mitigation.",
+    cpuModels: ["AMD Ryzen™ 9 9950X @ 5.70 GHz Max Boost"],
     plans: [],
   },
   germany_intel: {
-    note: "EU Central datacenter (Frankfurt, DE) delivering high-speed connectivity across Europe.",
-    cpuModels: ["Intel® Gold Series"],
+    note: "EU Central datacenter (Frankfurt, DE) delivering high-speed connectivity across Europe on Intel Platinum.",
+    cpuModels: ["Intel® Platinum Series"],
     plans: [],
   },
   germany_epyc: {
-    note: "AMD EPYC high-density enterprise nodes in Frankfurt, Germany.",
-    cpuModels: ["AMD EPYC™ Series"],
+    note: "AMD EPYC 7F72 high-density enterprise nodes in Frankfurt, Germany.",
+    cpuModels: ["AMD EPYC™ 7F72 @ 3.20–3.70 GHz"],
     plans: [],
   },
 };
@@ -200,8 +207,8 @@ function VpsPage() {
 
       {/* Hero Header */}
       <section className="relative w-full overflow-hidden">
-        <img src={vpsHero} alt="" className="absolute inset-0 h-full w-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/60 to-background" />
+        <img src={vpsHero} alt="" className="absolute inset-0 h-full w-full object-cover opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
         <div className="relative mx-auto flex min-h-[50vh] max-w-7xl flex-col items-center justify-center px-4 py-20 text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold backdrop-blur-md">
             <MapPin className="h-3.5 w-3.5 text-success" />
@@ -273,9 +280,9 @@ function VpsPage() {
                         : "border border-white/10 bg-white/5 text-muted-foreground hover:bg-white/10 hover:text-white"
                     }`}
                   >
-                    {cpu.id === "intel" && <ServerIcon className={`h-4 w-4 ${isSelected ? "text-white" : "text-cyan-400"}`} />}
-                    {cpu.id === "epyc" && <Cpu className={`h-4 w-4 ${isSelected ? "text-white" : "text-sky-400"}`} />}
-                    {cpu.id === "ryzen" && <Zap className={`h-4 w-4 ${isSelected ? "text-white" : "text-emerald-400"}`} />}
+                    {cpu.id === "intel" && <img src={intelLogo} alt="Intel" className="h-4.5 w-4.5 object-contain rounded-xs shrink-0" />}
+                    {cpu.id === "epyc" && <img src={epycLogo} alt="EPYC" className="h-4.5 w-4.5 object-contain rounded-xs shrink-0" />}
+                    {cpu.id === "ryzen" && <img src={ryzenLogo} alt="Ryzen" className="h-4.5 w-4.5 object-contain rounded-xs shrink-0" />}
                     <span>{cpu.badge}</span>
                   </button>
                 );

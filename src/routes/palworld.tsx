@@ -132,9 +132,9 @@ function PalworldPage() {
         <img
           src={palworldHero}
           alt="Palworld Dedicated Server Hosting"
-          className="absolute inset-0 h-full w-full object-cover opacity-70 brightness-[1.05]"
+          className="absolute inset-0 h-full w-full object-cover opacity-80 brightness-[1.1]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050810]/75 via-[#050810]/55 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050810]/55 via-[#050810]/35 to-background" />
 
         <div className="relative mx-auto flex min-h-[50vh] sm:min-h-[62vh] max-w-7xl flex-col items-center justify-center px-4 py-16 sm:py-24 text-center">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#00b0ff]/30 bg-black/60 px-4 py-1.5 text-xs font-semibold text-[#00b0ff] backdrop-blur-md shadow-[0_0_15px_rgba(0,176,255,0.25)]">
@@ -213,7 +213,7 @@ function PalworldPage() {
             <Activity className="h-3.5 w-3.5 text-[#00b0ff]" />
             {tier === "budget"
               ? "Budget Tier: High value multi-core compute starting at ₹300/mo"
-              : "Premium Tier: AMD Ryzen™ 9 9950X / 7950X @ 5.7GHz with DDR5 5600MHz RAM"}
+              : "Premium Tier: AMD Ryzen™ 9 9950X @ 5.7GHz with DDR5 5600MHz RAM"}
           </span>
         </div>
 

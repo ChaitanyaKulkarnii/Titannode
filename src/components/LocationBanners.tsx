@@ -18,10 +18,10 @@ interface Location {
 }
 
 const locations: Location[] = [
-  { name: "Singapore", flag: flagSG, bg: singapore, accent: "from-red-500/40", cpus: ["AMD EPYC", "Intel Haswell"] },
-  { name: "India", flag: flagIN, bg: india, accent: "from-orange-500/50", cpus: ["AMD Ryzen 9950X", "Intel Gold 6154"], popular: true },
-  { name: "Germany", flag: flagDE, bg: germany, accent: "from-yellow-500/40", cpus: ["AMD EPYC", "Intel Gold 6150"] },
-  { name: "USA — California", flag: flagUS, bg: usa, accent: "from-blue-500/40", cpus: ["AMD EPYC 7413", "Intel Xeon E5"] },
+  { name: "Singapore", flag: flagSG, bg: singapore, accent: "from-red-500/40", cpus: ["AMD EPYC 7F72", "Intel Platinum"] },
+  { name: "India", flag: flagIN, bg: india, accent: "from-orange-500/50", cpus: ["AMD Ryzen 9 9950X", "Intel Platinum", "AMD EPYC 7F72"], popular: true },
+  { name: "Germany", flag: flagDE, bg: germany, accent: "from-yellow-500/40", cpus: ["AMD Ryzen 9 9950X", "AMD EPYC 7F72"] },
+  { name: "USA — California", flag: flagUS, bg: usa, accent: "from-blue-500/40", cpus: ["AMD EPYC 7F72", "Intel Platinum"] },
 ];
 
 export function LocationBanners() {

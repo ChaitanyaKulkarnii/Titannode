@@ -76,7 +76,7 @@ const makePlan = (
 });
 
 const allPlans: (PlanCardData & { tier: FiveMTier })[] = [
-  // Budget Tier (Intel Xeon Platinum 8269CY)
+  // Budget Tier (Intel Platinum)
   makePlan("Titan Starter", "4 GiB DDR4", "100% CPU", "20 GiB NVMe", 120, "budget"),
   makePlan("Titan Pro", "6 GiB DDR4", "200% CPU", "30 GiB NVMe", 160, "budget"),
   makePlan("Titan Hero", "8 GiB DDR4", "300% CPU", "40 GiB NVMe", 200, "budget", true),
@@ -131,9 +131,9 @@ function FiveMPage() {
         <img
           src={fivemHero}
           alt="FiveM Dedicated Server Hosting"
-          className="absolute inset-0 h-full w-full object-cover opacity-60 brightness-[1.05]"
+          className="absolute inset-0 h-full w-full object-cover opacity-75 brightness-[1.1]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050810]/80 via-[#050810]/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050810]/60 via-[#050810]/40 to-background" />
 
         <div className="relative mx-auto flex min-h-[50vh] sm:min-h-[60vh] max-w-7xl flex-col items-center justify-center px-4 py-16 sm:py-24 text-center">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#ff5500]/30 bg-black/60 px-4 py-1.5 text-xs font-semibold text-[#ff7722] backdrop-blur-md shadow-[0_0_15px_rgba(255,85,0,0.25)]">
@@ -210,8 +210,8 @@ function FiveMPage() {
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#060a12] px-4 py-1.5 text-xs text-zinc-400">
             <Activity className="h-3.5 w-3.5 text-[#ff7722]" />
             {tier === "budget"
-              ? "Budget Tier: Powered by Intel® Xeon® Platinum 8269CY starting at ₹120/mo"
-              : "Premium Tier: AMD Ryzen™ 9 9950X / 7950X @ 5.7GHz with DDR5 5600MHz RAM"}
+              ? "Budget Tier: Powered by Intel® Platinum starting at ₹120/mo"
+              : "Premium Tier: AMD Ryzen™ 9 9950X @ 5.7GHz with DDR5 5600MHz RAM"}
           </span>
         </div>
 

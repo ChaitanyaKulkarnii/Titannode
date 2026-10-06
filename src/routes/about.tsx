@@ -393,7 +393,7 @@ export function AboutPage() {
                       &quot;Been hosting Minecraft networks for 6 years. TitanNode is legitimately the only host in this price tier that doesn&apos;t lie about RAM. 48 players online during our ender dragon fight and TPS did not drop below 19.9. Chiku answered my Discord ticket at 2 AM in 5 minutes.&quot;
                     </p>
                     <div className="pt-2 text-[10px] text-emerald-400 border-t border-white/5 font-mono">
-                      <span>Architecture: AMD Ryzen 9 7950X3D • 1:1 Dedicated DDR5 • Gen4 NVMe</span>
+                      <span>Architecture: AMD Ryzen 9 9950X • 1:1 Dedicated DDR5 • Gen4 NVMe</span>
                     </div>
                   </div>
                 </div>
@@ -777,7 +777,7 @@ export function AboutPage() {
             Ready to experience honest hosting?
           </h3>
           <p className="text-xs sm:text-sm text-zinc-400 max-w-xl mx-auto leading-relaxed">
-            Deploy on high-frequency AMD Ryzen &amp; EPYC nodes backed by strict 0% overselling and direct founder support.
+            Deploy on high-frequency AMD Ryzen 9 9950X &amp; EPYC 7F72 nodes backed by strict 0% overselling and direct founder support.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
