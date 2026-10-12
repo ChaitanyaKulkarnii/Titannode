@@ -27,18 +27,19 @@ export const Route = createFileRoute("/cs2")({
       {
         name: "description",
         content:
-          "Competitive Counter-Strike 2 server hosting with Budget (Intel Xeon Platinum) and Premium (Ryzen 9 DDR5) tiers starting at ₹100/mo. Sub-tick precision, CounterStrikeSharp ready, FastDL and 10Tbps+ DDoS protection.",
+          "Competitive Counter-Strike 2 server hosting with Budget (Intel Xeon Platinum 8269CY), Premium, and Ryzen 9 tiers starting at ₹100/mo. Sub-tick precision, CounterStrikeSharp ready, FastDL and 10Tbps+ DDoS protection.",
       },
     ],
   }),
   component: CS2Page,
 });
 
-export type CS2Tier = "budget" | "premium";
+export type CS2Tier = "budget" | "premium" | "deluxe";
 
 const tierOptions: { id: CS2Tier; label: string; icon: typeof Server }[] = [
-  { id: "budget", label: "Budget Tier", icon: Server },
-  { id: "premium", label: "Premium Tier", icon: Flame },
+  { id: "budget", label: "Budget Plans", icon: Server },
+  { id: "premium", label: "Premium Plans", icon: Flame },
+  { id: "deluxe", label: "Deluxe Plans", icon: Zap },
 ];
 
 const features = [
@@ -60,15 +61,20 @@ const makePlan = (
   popular?: boolean
 ): PlanCardData & { tier: CS2Tier } => ({
   name,
-  subtitle: tier === "budget" ? "Budget CS2 Server" : "Premium CS2 Server",
-  price: priceInr / 83,
+  subtitle:
+    tier === "budget"
+      ? "Intel Xeon Platinum 8269CY"
+      : tier === "premium"
+      ? "Premium NVMe CS2 Server"
+      : "Ryzen 9 CS2 Server",
+  price: priceInr / 86.5,
   topBannerLogo: cs2Logo,
   popular,
   tier,
   specs: [
     { icon: Server, label: "RAM", value: ram },
     { icon: Cpu, label: "CPU", value: cpu },
-    { icon: HardDrive, label: "NVMe", value: storage },
+    { icon: HardDrive, label: "Storage", value: storage },
     { icon: Shield, label: "Anti-DDoS", value: "10Tbps+ Path.net" },
   ],
   features,
@@ -76,23 +82,32 @@ const makePlan = (
 });
 
 const allPlans: (PlanCardData & { tier: CS2Tier })[] = [
-  // Budget Tier (Intel Platinum)
-  makePlan("Titan Starter", "4 GiB DDR4", "100% CPU", "20 GiB NVMe", 100, "budget"),
-  makePlan("Titan Pro", "6 GiB DDR4", "200% CPU", "30 GiB NVMe", 130, "budget"),
-  makePlan("Titan Hero", "8 GiB DDR4", "300% CPU", "40 GiB NVMe", 170, "budget", true),
-  makePlan("Titan Legend", "12 GiB DDR4", "400% CPU", "50 GiB NVMe", 260, "budget"),
-  makePlan("Titan Star", "16 GiB DDR4", "500% CPU", "60 GiB NVMe", 330, "budget"),
-  makePlan("Titan Ultra", "24 GiB DDR4", "600% CPU", "80 GiB NVMe", 480, "budget"),
-  makePlan("Titan Max", "32 GiB DDR4", "700% CPU", "100 GiB NVMe", 620, "budget"),
+  // ───────── CS2 Budget Plans (Intel Xeon Platinum 8269CY) ─────────
+  makePlan("Titan Starter", "4 GB RAM", "100% CPU", "20 GB NVMe", 100, "budget"),
+  makePlan("Titan Scout", "6 GB RAM", "200% CPU", "30 GB NVMe", 130, "budget"),
+  makePlan("Titan Pro", "8 GB RAM", "300% CPU", "40 GB NVMe", 170, "budget", true),
+  makePlan("Titan Hero", "12 GB RAM", "400% CPU", "50 GB NVMe", 260, "budget"),
+  makePlan("Titan Champion", "16 GB RAM", "500% CPU", "60 GB NVMe", 330, "budget"),
+  makePlan("Titan Legend", "24 GB RAM", "600% CPU", "80 GB NVMe", 480, "budget"),
+  makePlan("Titan Max", "32 GB RAM", "700% CPU", "100 GB NVMe", 620, "budget"),
 
-  // Premium Tier (AMD Ryzen 9 9950X / DDR5 5600MHz RAM & Gen4 NVMe)
-  makePlan("Titan Starter", "4 GiB DDR5 (5600MHz)", "150% CPU", "30 GiB NVMe Gen4", 160, "premium"),
-  makePlan("Titan Pro", "6 GiB DDR5 (5600MHz)", "250% CPU", "45 GiB NVMe Gen4", 220, "premium"),
-  makePlan("Titan Hero", "8 GiB DDR5 (5600MHz)", "350% CPU", "60 GiB NVMe Gen4", 290, "premium", true),
-  makePlan("Titan Legend", "12 GiB DDR5 (5600MHz)", "450% CPU", "80 GiB NVMe Gen4", 430, "premium"),
-  makePlan("Titan Star", "16 GiB DDR5 (5600MHz)", "550% CPU", "100 GiB NVMe Gen4", 550, "premium"),
-  makePlan("Titan Ultra", "24 GiB DDR5 (5600MHz)", "700% CPU", "140 GiB NVMe Gen4", 790, "premium"),
-  makePlan("Titan Max", "32 GiB DDR5 (5600MHz)", "800% CPU", "180 GiB NVMe Gen4", 1020, "premium"),
+  // ───────── CS2 Premium Plans ─────────
+  makePlan("Titan Starter", "6 GB RAM", "100% CPU", "50 GB NVMe", 317, "premium"),
+  makePlan("Titan Pro", "8 GB RAM", "200% CPU", "70 GB NVMe", 523, "premium"),
+  makePlan("Titan Hero", "12 GB RAM", "300% CPU", "100 GB NVMe", 789, "premium", true),
+  makePlan("Titan Champion", "16 GB RAM", "400% CPU", "120 GB Storage", 997, "premium"),
+  makePlan("Titan Legend", "24 GB RAM", "500% CPU", "200 GB Storage", 1255, "premium"),
+  makePlan("Titan Star", "32 GB RAM", "750% CPU", "250 GB NVMe", 1370, "premium"),
+  makePlan("Titan Ultra", "48 GB RAM", "900% CPU", "300 GB NVMe", 1922, "premium"),
+  makePlan("Titan Max", "64 GB RAM", "1000% CPU", "350 GB NVMe", 2386, "premium"),
+
+  // ───────── CS2 Ryzen 9 Plans ─────────
+  makePlan("Titan Starter", "4 GB RAM", "100% CPU", "50 GB NVMe", 580, "deluxe"),
+  makePlan("Titan Pro", "8 GB RAM", "200% CPU", "70 GB NVMe", 960, "deluxe"),
+  makePlan("Titan Hero", "16 GB RAM", "300% CPU", "100 GB NVMe", 1590, "deluxe", true),
+  makePlan("Titan Champion", "24 GB RAM", "400% CPU", "120 GB Storage", 2100, "deluxe"),
+  makePlan("Titan Star", "32 GB RAM", "500% CPU", "200 GB Storage", 2860, "deluxe"),
+  makePlan("Titan Max", "48 GB RAM", "600% CPU", "250 GB NVMe", 3900, "deluxe"),
 ];
 
 const cs2Features = [
@@ -138,7 +153,7 @@ function CS2Page() {
         <div className="relative mx-auto flex min-h-[50vh] sm:min-h-[60vh] max-w-7xl flex-col items-center justify-center px-4 py-16 sm:py-24 text-center">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-black/60 px-4 py-1.5 text-xs font-semibold text-amber-400 backdrop-blur-md shadow-[0_0_15px_rgba(245,158,11,0.25)]">
             <Sparkles className="h-3.5 w-3.5" />
-            <span>Dedicated CS2 Host • Budget &amp; Premium Ryzen 9</span>
+            <span>Dedicated CS2 Host • Budget, Premium &amp; Ryzen 9</span>
           </div>
 
           <div className="mb-4 flex items-center justify-center">
@@ -172,7 +187,7 @@ function CS2Page() {
             Choose Your CS2 Plan
           </h2>
           <p className="mt-2 text-xs sm:text-sm text-muted-foreground">
-            Switch between high-value Budget and ultra-performance Ryzen 9 Premium tiers.
+            Switch between Intel® Xeon® Budget, high-speed NVMe Premium, and AMD Ryzen™ 9 tiers.
           </p>
         </div>
 
@@ -184,9 +199,11 @@ function CS2Page() {
               let activeClass = "";
               if (active) {
                 if (t.id === "budget") {
-                  activeClass = "bg-amber-500 text-white shadow-lg shadow-amber-500/30 font-bold";
+                  activeClass = "bg-[#f59e0b] text-black shadow-lg shadow-[#f59e0b]/30 font-bold";
+                } else if (t.id === "premium") {
+                  activeClass = "bg-[#38bdf8] text-black shadow-lg shadow-[#38bdf8]/35 font-bold";
                 } else {
-                  activeClass = "bg-[#a855f7] text-white shadow-lg shadow-[#a855f7]/30 font-bold";
+                  activeClass = "bg-[#8b5cf6] text-white shadow-lg shadow-[#8b5cf6]/30 font-bold";
                 }
               } else {
                 activeClass = "text-muted-foreground hover:text-foreground hover:bg-white/5";
@@ -210,15 +227,17 @@ function CS2Page() {
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#060a12] px-4 py-1.5 text-xs text-zinc-400">
             <Activity className="h-3.5 w-3.5 text-amber-400" />
             {tier === "budget"
-              ? "Budget Tier: Powered by Intel® Platinum starting at ₹100/mo"
-              : "Premium Tier: AMD Ryzen™ 9 9950X @ 5.7GHz with DDR5 5600MHz RAM"}
+              ? "Budget Plans: Powered by Intel® Xeon® Platinum 8269CY starting at ₹100/mo"
+              : tier === "premium"
+              ? "Premium Plans: High-performance NVMe starting at ₹317/mo"
+              : "Ryzen 9 Plans: Extreme AMD Ryzen™ 9 9950X esports compute starting at ₹580/mo"}
           </span>
         </div>
 
         {/* Plans Grid */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filteredPlans.map((p) => (
-            <PlanCard key={`${p.tier}-${p.name}`} plan={p} />
+            <PlanCard key={`${p.tier}-${p.name}-${p.price}`} plan={p} />
           ))}
         </div>
       </section>

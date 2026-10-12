@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" fill="none">
+  <!-- ARK Implant Diamond / "A" Crest -->
+  <g transform="translate(10, 6)">
+    <!-- Outer Hologram Glow / Shield Base -->
+    <path d="M 34,4 L 64,60 L 52,62 L 34,22 L 16,62 L 4,60 Z" fill="#00E5FF" opacity="0.9" />
+    <!-- Inner Core & Cross Diamond Pattern -->
+    <polygon points="34,16 48,46 34,56 20,46" fill="#090E17" stroke="#00E5FF" stroke-width="2" />
+    <polygon points="34,26 42,42 34,48 26,42" fill="#00E5FF" opacity="0.8" />
+    <line x1="34" y1="4" x2="34" y2="20" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" />
+    <circle cx="34" cy="37" r="2.5" fill="#FFFFFF" />
+  </g>
+  <!-- ARK Bold Sci-Fi Stencil Typography -->
+  <g fill="#FFFFFF" font-family="'Impact', 'Arial Black', sans-serif" font-weight="900" font-size="44" letter-spacing="3">
+    <text x="82" y="52">ARK</text>
+  </g>
+  <!-- Subtitle SURVIVAL EVOLVED in sleek glowing cyan monospace -->
+  <text x="180" y="36" fill="#00E5FF" font-family="'Courier New', monospace" font-size="10.5" font-weight="800" letter-spacing="2.5">SURVIVAL</text>
+  <text x="180" y="50" fill="#94A3B8" font-family="'Courier New', monospace" font-size="9" font-weight="700" letter-spacing="2">EVOLVED</text>
+</svg>

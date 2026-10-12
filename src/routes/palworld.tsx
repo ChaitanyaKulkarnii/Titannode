@@ -27,18 +27,19 @@ export const Route = createFileRoute("/palworld")({
       {
         name: "description",
         content:
-          "High-performance Palworld server hosting with Budget and Premium tiers starting at ₹300/mo. Titan Starter to Titan Max plans with NVMe Gen4, automated RAM management and DDoS protection.",
+          "High-performance Palworld server hosting with Budget, Premium, and Deluxe tiers starting at ₹300/mo. Titan Starter to Titan Max plans with NVMe Gen4, automated RAM management and DDoS protection.",
       },
     ],
   }),
   component: PalworldPage,
 });
 
-export type PalTier = "budget" | "premium";
+export type PalTier = "budget" | "premium" | "deluxe";
 
-const tierOptions: { id: PalTier; label: string; icon: typeof Zap; color: string }[] = [
-  { id: "budget", label: "Budget Tier", icon: Server, color: "cyan" },
-  { id: "premium", label: "Premium Tier", icon: Flame, color: "violet" },
+const tierOptions: { id: PalTier; label: string; icon: typeof Server }[] = [
+  { id: "budget", label: "Budget Plans", icon: Server },
+  { id: "premium", label: "Premium Plans", icon: Flame },
+  { id: "deluxe", label: "Deluxe Plans", icon: Zap },
 ];
 
 const features = [
@@ -60,8 +61,13 @@ const makePlan = (
   popular?: boolean
 ): PlanCardData & { tier: PalTier } => ({
   name,
-  subtitle: tier === "budget" ? "Budget Palworld Server" : "Premium Palworld Server",
-  price: priceInr / 83,
+  subtitle:
+    tier === "budget"
+      ? "Budget Palworld Server"
+      : tier === "premium"
+      ? "Premium NVMe Palworld Server"
+      : "Deluxe Palworld Server",
+  price: priceInr / 86.5,
   topBannerLogo: palworldLogo,
   popular,
   tier,
@@ -76,23 +82,31 @@ const makePlan = (
 });
 
 const allPlans: (PlanCardData & { tier: PalTier })[] = [
-  // Budget Tier (User exact specs & prices)
-  makePlan("Titan Starter", "8 GiB RAM", "200% CPU", "60 GiB NVMe", 300, "budget"),
-  makePlan("Titan Pro", "12 GiB RAM", "400% CPU", "80 GiB NVMe", 400, "budget"),
-  makePlan("Titan Hero", "16 GiB RAM", "500% CPU", "100 GiB NVMe", 600, "budget", true),
-  makePlan("Titan Legend", "24 GiB RAM", "600% CPU", "150 GiB NVMe", 800, "budget"),
-  makePlan("Titan Star", "32 GiB RAM", "700% CPU", "200 GiB NVMe", 1200, "budget"),
-  makePlan("Titan Ultra", "48 GiB RAM", "800% CPU", "300 GiB NVMe", 1600, "budget"),
-  makePlan("Titan Max", "64 GiB RAM", "1000% CPU", "400 GiB NVMe", 2000, "budget"),
+  // ───────── Budget Plans ─────────
+  makePlan("Titan Starter", "8 GB RAM", "200% CPU", "60 GB NVMe", 300, "budget"),
+  makePlan("Titan Pro", "12 GB RAM", "400% CPU", "80 GB NVMe", 400, "budget"),
+  makePlan("Titan Hero", "16 GB RAM", "500% CPU", "100 GB NVMe", 600, "budget", true),
+  makePlan("Titan Legend", "24 GB RAM", "600% CPU", "150 GB NVMe", 800, "budget"),
+  makePlan("Titan Star", "32 GB RAM", "700% CPU", "200 GB NVMe", 1200, "budget"),
+  makePlan("Titan Ultra", "48 GB RAM", "800% CPU", "300 GB NVMe", 1600, "budget"),
+  makePlan("Titan Max", "64 GB RAM", "1000% CPU", "400 GB NVMe", 2000, "budget"),
 
-  // Premium Tier (Powered by AMD Ryzen 9 9950X / DDR5 5600MHz RAM)
-  makePlan("Titan Starter", "8 GiB DDR5 (5600MHz)", "250% CPU", "80 GiB NVMe Gen4", 500, "premium"),
-  makePlan("Titan Pro", "12 GiB DDR5 (5600MHz)", "450% CPU", "110 GiB NVMe Gen4", 700, "premium"),
-  makePlan("Titan Hero", "16 GiB DDR5 (5600MHz)", "550% CPU", "140 GiB NVMe Gen4", 950, "premium", true),
-  makePlan("Titan Legend", "24 GiB DDR5 (5600MHz)", "700% CPU", "200 GiB NVMe Gen4", 1350, "premium"),
-  makePlan("Titan Star", "32 GiB DDR5 (5600MHz)", "800% CPU", "260 GiB NVMe Gen4", 1850, "premium"),
-  makePlan("Titan Ultra", "48 GiB DDR5 (5600MHz)", "1000% CPU", "380 GiB NVMe Gen4", 2500, "premium"),
-  makePlan("Titan Max", "64 GiB DDR5 (5600MHz)", "1200% CPU", "500 GiB NVMe Gen4", 3200, "premium"),
+  // ───────── Premium Plans (DDR5 NVMe Gen4) ─────────
+  makePlan("Titan Starter", "8 GB DDR5", "250% CPU", "80 GB NVMe Gen4", 500, "premium"),
+  makePlan("Titan Pro", "12 GB DDR5", "450% CPU", "110 GB NVMe Gen4", 700, "premium"),
+  makePlan("Titan Hero", "16 GB DDR5", "550% CPU", "140 GB NVMe Gen4", 950, "premium", true),
+  makePlan("Titan Legend", "24 GB DDR5", "700% CPU", "200 GB NVMe Gen4", 1350, "premium"),
+  makePlan("Titan Star", "32 GB DDR5", "800% CPU", "260 GB NVMe Gen4", 1850, "premium"),
+  makePlan("Titan Ultra", "48 GB DDR5", "1000% CPU", "380 GB NVMe Gen4", 2500, "premium"),
+  makePlan("Titan Max", "64 GB DDR5", "1200% CPU", "500 GB NVMe Gen4", 3200, "premium"),
+
+  // ───────── Deluxe Plans (AMD Ryzen 9 9950X) ─────────
+  makePlan("Titan Starter", "8 GB RAM", "250% CPU", "80 GB NVMe Gen4", 950, "deluxe"),
+  makePlan("Titan Hero", "16 GB RAM", "400% CPU", "140 GB NVMe Gen4", 1650, "deluxe", true),
+  makePlan("Titan Legend", "24 GB RAM", "550% CPU", "200 GB NVMe Gen4", 2250, "deluxe"),
+  makePlan("Titan Star", "32 GB RAM", "700% CPU", "280 GB NVMe Gen4", 3100, "deluxe"),
+  makePlan("Titan Ultra", "48 GB RAM", "900% CPU", "400 GB NVMe Gen4", 3950, "deluxe"),
+  makePlan("Titan Max", "64 GB RAM", "1100% CPU", "500 GB NVMe Gen4", 4800, "deluxe"),
 ];
 
 const palFeatures = [
@@ -113,8 +127,8 @@ const palFeatures = [
   },
   {
     icon: Terminal,
-    title: "Full World Config Editor",
-    desc: "Easily modify Pal capture rates, XP multipliers, egg hatch timers, and death penalties via web GUI or SFTP.",
+    title: "Full Admin Controls",
+    desc: "Direct access to WorldOption.sav, admin passwords, server multipliers, exp rates, and death drop settings.",
   },
 ];
 
@@ -128,34 +142,32 @@ function PalworldPage() {
 
       {/* Hero */}
       <section className="relative w-full overflow-hidden">
-        {/* Crisp in-game clean background without clashing text */}
         <img
           src={palworldHero}
           alt="Palworld Dedicated Server Hosting"
-          className="absolute inset-0 h-full w-full object-cover opacity-80 brightness-[1.1]"
+          className="absolute inset-0 h-full w-full object-cover opacity-75 brightness-[1.1]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050810]/55 via-[#050810]/35 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050810]/60 via-[#050810]/40 to-background" />
 
-        <div className="relative mx-auto flex min-h-[50vh] sm:min-h-[62vh] max-w-7xl flex-col items-center justify-center px-4 py-16 sm:py-24 text-center">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#00b0ff]/30 bg-black/60 px-4 py-1.5 text-xs font-semibold text-[#00b0ff] backdrop-blur-md shadow-[0_0_15px_rgba(0,176,255,0.25)]">
+        <div className="relative mx-auto flex min-h-[50vh] sm:min-h-[60vh] max-w-7xl flex-col items-center justify-center px-4 py-16 sm:py-24 text-center">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-sky-500/30 bg-black/60 px-4 py-1.5 text-xs font-semibold text-sky-400 backdrop-blur-md shadow-[0_0_15px_rgba(56,189,248,0.25)]">
             <Sparkles className="h-3.5 w-3.5" />
-            <span>Dedicated Palworld Host</span>
+            <span>Dedicated Palworld Host • Budget, Premium &amp; Deluxe</span>
           </div>
 
-          {/* Prominent, Glowing Palworld Official Logo */}
           <div className="mb-4 flex items-center justify-center">
             <img
               src={palworldLogo}
               alt="Palworld Official Logo"
-              className="h-16 sm:h-24 md:h-28 w-auto object-contain drop-shadow-[0_4px_30px_rgba(0,176,255,0.7)]"
+              className="h-16 sm:h-24 md:h-28 w-auto object-contain drop-shadow-[0_4px_30px_rgba(56,189,248,0.7)]"
             />
           </div>
 
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-md">
-            Palworld Server <span className="text-[#00b0ff]">Hosting</span>
+            Palworld Server <span className="text-[#38bdf8]">Hosting</span>
           </h1>
           <p className="mt-3 sm:mt-5 max-w-2xl text-xs sm:text-base text-zinc-300 md:text-lg leading-relaxed drop-shadow">
-            Catch Pals, construct automated bases, and conquer dungeons with zero lag. Bare-metal NVMe compute built specifically for demanding Palworld multiplayer worlds.
+            High-performance Palworld multiplayer servers with automated memory leak cleanups, instant deployment, and 10Tbps+ enterprise DDoS mitigation.
           </p>
         </div>
       </section>
@@ -165,20 +177,20 @@ function PalworldPage() {
       {/* Plans Section */}
       <section id="plans" className="mx-auto max-w-7xl px-4 py-12 sm:py-20">
         <div className="mb-4 text-center">
-          <p className="mb-2 inline-flex items-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#00b0ff]">
-            <span className="h-px w-6 sm:w-8 bg-[#00b0ff]/40" />
+          <p className="mb-2 inline-flex items-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#38bdf8]">
+            <span className="h-px w-6 sm:w-8 bg-[#38bdf8]/40" />
             Official TitanNode Configurations
-            <span className="h-px w-6 sm:w-8 bg-[#00b0ff]/40" />
+            <span className="h-px w-6 sm:w-8 bg-[#38bdf8]/40" />
           </p>
           <h2 className="text-2xl font-extrabold sm:text-4xl md:text-5xl text-white">
             Choose Your Palworld Plan
           </h2>
           <p className="mt-2 text-xs sm:text-sm text-muted-foreground">
-            Switch between high-value Budget and ultra-performance Ryzen 9 Premium tiers.
+            Switch between entry-level Budget, high-speed Premium, and AMD Ryzen™ 9 Deluxe configurations.
           </p>
         </div>
 
-        {/* Tier Switcher Buttons (Like Minecraft) */}
+        {/* Tier Switcher Buttons */}
         <div className="my-6 sm:my-10 flex justify-center">
           <div className="inline-flex flex-wrap justify-center gap-2 rounded-2xl border border-white/10 bg-card/40 p-1.5 backdrop-blur shadow-inner">
             {tierOptions.map((t) => {
@@ -186,9 +198,11 @@ function PalworldPage() {
               let activeClass = "";
               if (active) {
                 if (t.id === "budget") {
-                  activeClass = "bg-[#00b0ff] text-white shadow-lg shadow-[#00b0ff]/30 font-bold";
+                  activeClass = "bg-[#10b981] text-white shadow-lg shadow-[#10b981]/30 font-bold";
+                } else if (t.id === "premium") {
+                  activeClass = "bg-[#38bdf8] text-black shadow-lg shadow-[#38bdf8]/35 font-bold";
                 } else {
-                  activeClass = "bg-[#a855f7] text-white shadow-lg shadow-[#a855f7]/30 font-bold";
+                  activeClass = "bg-[#8b5cf6] text-white shadow-lg shadow-[#8b5cf6]/30 font-bold";
                 }
               } else {
                 activeClass = "text-muted-foreground hover:text-foreground hover:bg-white/5";
@@ -207,20 +221,22 @@ function PalworldPage() {
           </div>
         </div>
 
-        {/* Tier info banner */}
+        {/* Tier Info Banner */}
         <div className="mb-8 flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#060a12] px-4 py-1.5 text-xs text-zinc-400">
-            <Activity className="h-3.5 w-3.5 text-[#00b0ff]" />
+            <Activity className="h-3.5 w-3.5 text-[#38bdf8]" />
             {tier === "budget"
-              ? "Budget Tier: High value multi-core compute starting at ₹300/mo"
-              : "Premium Tier: AMD Ryzen™ 9 9950X @ 5.7GHz with DDR5 5600MHz RAM"}
+              ? "Budget Plans: High-value multi-core Palworld hosting starting at ₹300/mo"
+              : tier === "premium"
+              ? "Premium Plans: DDR5 NVMe Gen4 high-frequency hosting starting at ₹500/mo"
+              : "Deluxe Plans: Extreme AMD Ryzen™ 9 9950X performance starting at ₹950/mo"}
           </span>
         </div>
 
         {/* Plans Grid */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filteredPlans.map((p) => (
-            <PlanCard key={`${p.tier}-${p.name}`} plan={p} />
+            <PlanCard key={`${p.tier}-${p.name}-${p.price}`} plan={p} />
           ))}
         </div>
       </section>
@@ -228,20 +244,20 @@ function PalworldPage() {
       {/* Palworld Specific Features */}
       <section className="mx-auto max-w-7xl px-4 pb-24">
         <div className="mb-12 text-center">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#00b0ff]">Optimized Engine</p>
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#38bdf8]">Optimized Engine</p>
           <h2 className="text-2xl sm:text-3xl font-bold text-white md:text-4xl">Engineered for Palworld Multi-core</h2>
         </div>
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {palFeatures.map((f) => (
             <div
               key={f.title}
-              className="rounded-none border border-white/10 bg-[#090d16] p-5 transition hover:border-[#00b0ff]/40"
+              className="rounded-lg border border-white/10 bg-[#080c14] p-6 transition-all hover:border-[#38bdf8]/40 hover:shadow-[0_12px_30px_rgba(56,189,248,0.15)]"
             >
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-none border border-[#00b0ff]/30 bg-[#00b0ff]/10 text-[#00b0ff]">
+              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#38bdf8]/20 bg-[#38bdf8]/10 text-[#38bdf8]">
                 <f.icon className="h-5 w-5" />
               </div>
-              <h3 className="mb-2 text-base font-bold text-white">{f.title}</h3>
-              <p className="text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
+              <h3 className="text-base font-bold text-white">{f.title}</h3>
+              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>

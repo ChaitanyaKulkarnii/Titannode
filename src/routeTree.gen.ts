@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as ArkRouteImport } from './routes/ark'
 import { Route as AupRouteImport } from './routes/aup'
 import { Route as BotHostingRouteImport } from './routes/bot-hosting'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -26,8 +27,11 @@ import { Route as PalworldRouteImport } from './routes/palworld'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as RdpHostingRouteImport } from './routes/rdp-hosting'
 import { Route as RefundRouteImport } from './routes/refund'
+import { Route as RustRouteImport } from './routes/rust'
 import { Route as SlaRouteImport } from './routes/sla'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TerrariaRouteImport } from './routes/terraria'
+import { Route as ValheimRouteImport } from './routes/valheim'
 import { Route as VpsHostingRouteImport } from './routes/vps-hosting'
 import { Route as WebHostingRouteImport } from './routes/web-hosting'
 
@@ -39,6 +43,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArkRoute = ArkRouteImport.update({
+  id: '/ark',
+  path: '/ark',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AupRoute = AupRouteImport.update({
@@ -116,6 +125,11 @@ const RefundRoute = RefundRouteImport.update({
   path: '/refund',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RustRoute = RustRouteImport.update({
+  id: '/rust',
+  path: '/rust',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SlaRoute = SlaRouteImport.update({
   id: '/sla',
   path: '/sla',
@@ -124,6 +138,16 @@ const SlaRoute = SlaRouteImport.update({
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TerrariaRoute = TerrariaRouteImport.update({
+  id: '/terraria',
+  path: '/terraria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ValheimRoute = ValheimRouteImport.update({
+  id: '/valheim',
+  path: '/valheim',
   getParentRoute: () => rootRouteImport,
 } as any)
 const VpsHostingRoute = VpsHostingRouteImport.update({
@@ -140,6 +164,7 @@ const WebHostingRoute = WebHostingRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ark': typeof ArkRoute
   '/aup': typeof AupRoute
   '/bot-hosting': typeof BotHostingRoute
   '/contact': typeof ContactRoute
@@ -155,14 +180,18 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/rdp-hosting': typeof RdpHostingRoute
   '/refund': typeof RefundRoute
+  '/rust': typeof RustRoute
   '/sla': typeof SlaRoute
   '/terms': typeof TermsRoute
+  '/terraria': typeof TerrariaRoute
+  '/valheim': typeof ValheimRoute
   '/vps-hosting': typeof VpsHostingRoute
   '/web-hosting': typeof WebHostingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ark': typeof ArkRoute
   '/aup': typeof AupRoute
   '/bot-hosting': typeof BotHostingRoute
   '/contact': typeof ContactRoute
@@ -178,8 +207,11 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/rdp-hosting': typeof RdpHostingRoute
   '/refund': typeof RefundRoute
+  '/rust': typeof RustRoute
   '/sla': typeof SlaRoute
   '/terms': typeof TermsRoute
+  '/terraria': typeof TerrariaRoute
+  '/valheim': typeof ValheimRoute
   '/vps-hosting': typeof VpsHostingRoute
   '/web-hosting': typeof WebHostingRoute
 }
@@ -187,6 +219,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ark': typeof ArkRoute
   '/aup': typeof AupRoute
   '/bot-hosting': typeof BotHostingRoute
   '/contact': typeof ContactRoute
@@ -202,8 +235,11 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/rdp-hosting': typeof RdpHostingRoute
   '/refund': typeof RefundRoute
+  '/rust': typeof RustRoute
   '/sla': typeof SlaRoute
   '/terms': typeof TermsRoute
+  '/terraria': typeof TerrariaRoute
+  '/valheim': typeof ValheimRoute
   '/vps-hosting': typeof VpsHostingRoute
   '/web-hosting': typeof WebHostingRoute
 }
@@ -212,6 +248,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/ark'
     | '/aup'
     | '/bot-hosting'
     | '/contact'
@@ -227,14 +264,18 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/rdp-hosting'
     | '/refund'
+    | '/rust'
     | '/sla'
     | '/terms'
+    | '/terraria'
+    | '/valheim'
     | '/vps-hosting'
     | '/web-hosting'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/ark'
     | '/aup'
     | '/bot-hosting'
     | '/contact'
@@ -250,14 +291,18 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/rdp-hosting'
     | '/refund'
+    | '/rust'
     | '/sla'
     | '/terms'
+    | '/terraria'
+    | '/valheim'
     | '/vps-hosting'
     | '/web-hosting'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/ark'
     | '/aup'
     | '/bot-hosting'
     | '/contact'
@@ -273,8 +318,11 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/rdp-hosting'
     | '/refund'
+    | '/rust'
     | '/sla'
     | '/terms'
+    | '/terraria'
+    | '/valheim'
     | '/vps-hosting'
     | '/web-hosting'
   fileRoutesById: FileRoutesById
@@ -282,6 +330,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ArkRoute: typeof ArkRoute
   AupRoute: typeof AupRoute
   BotHostingRoute: typeof BotHostingRoute
   ContactRoute: typeof ContactRoute
@@ -297,8 +346,11 @@ export interface RootRouteChildren {
   PrivacyRoute: typeof PrivacyRoute
   RdpHostingRoute: typeof RdpHostingRoute
   RefundRoute: typeof RefundRoute
+  RustRoute: typeof RustRoute
   SlaRoute: typeof SlaRoute
   TermsRoute: typeof TermsRoute
+  TerrariaRoute: typeof TerrariaRoute
+  ValheimRoute: typeof ValheimRoute
   VpsHostingRoute: typeof VpsHostingRoute
   WebHostingRoute: typeof WebHostingRoute
 }
@@ -317,6 +369,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ark': {
+      id: '/ark'
+      path: '/ark'
+      fullPath: '/ark'
+      preLoaderRoute: typeof ArkRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/aup': {
@@ -424,6 +483,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RefundRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rust': {
+      id: '/rust'
+      path: '/rust'
+      fullPath: '/rust'
+      preLoaderRoute: typeof RustRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sla': {
       id: '/sla'
       path: '/sla'
@@ -436,6 +502,20 @@ declare module '@tanstack/react-router' {
       path: '/terms'
       fullPath: '/terms'
       preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terraria': {
+      id: '/terraria'
+      path: '/terraria'
+      fullPath: '/terraria'
+      preLoaderRoute: typeof TerrariaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/valheim': {
+      id: '/valheim'
+      path: '/valheim'
+      fullPath: '/valheim'
+      preLoaderRoute: typeof ValheimRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/vps-hosting': {
@@ -458,6 +538,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ArkRoute: ArkRoute,
   AupRoute: AupRoute,
   BotHostingRoute: BotHostingRoute,
   ContactRoute: ContactRoute,
@@ -473,8 +554,11 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyRoute: PrivacyRoute,
   RdpHostingRoute: RdpHostingRoute,
   RefundRoute: RefundRoute,
+  RustRoute: RustRoute,
   SlaRoute: SlaRoute,
   TermsRoute: TermsRoute,
+  TerrariaRoute: TerrariaRoute,
+  ValheimRoute: ValheimRoute,
   VpsHostingRoute: VpsHostingRoute,
   WebHostingRoute: WebHostingRoute,
 }

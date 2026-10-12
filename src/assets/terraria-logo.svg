@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" fill="none">
+  <!-- Terraria Pixel Tree Emblem -->
+  <g transform="translate(10, 8)">
+    <!-- Tree Trunk -->
+    <rect x="28" y="32" width="8" height="26" fill="#8B5A2B" rx="1" />
+    <rect x="25" y="44" width="4" height="12" fill="#6B4226" rx="1" />
+    <rect x="35" y="48" width="5" height="10" fill="#5A341A" rx="1" />
+    <!-- Tree Canopy Layers (Terraria stylized foliage) -->
+    <circle cx="32" cy="22" r="18" fill="#22C55E" />
+    <circle cx="22" cy="26" r="13" fill="#16A34A" />
+    <circle cx="42" cy="26" r="13" fill="#15803D" />
+    <circle cx="32" cy="14" r="11" fill="#4ADE80" />
+    <circle cx="28" cy="18" r="4" fill="#86EFAC" opacity="0.8" />
+    <circle cx="38" cy="22" r="3" fill="#86EFAC" opacity="0.6" />
+    <!-- Outer Magic Sparkle Ring -->
+    <circle cx="32" cy="32" r="28" stroke="#22C55E" stroke-width="1.5" opacity="0.4" stroke-dasharray="3 3" />
+  </g>
+  <!-- Stylized Terraria Typography -->
+  <g fill="#FFFFFF" font-family="'Impact', 'Arial Black', sans-serif" font-weight="900" font-size="40" letter-spacing="3">
+    <text x="82" y="52">TERRARIA</text>
+  </g>
+  <!-- Subtitle -->
+  <text x="84" y="67" fill="#22C55E" font-family="monospace" font-size="9" font-weight="bold" letter-spacing="3.2">SANDBOX ADVENTURE DEDICATED</text>
+</svg>

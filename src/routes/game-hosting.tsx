@@ -39,13 +39,13 @@ interface Game {
 const games: Game[] = [
   { name: "Minecraft", image: minecraftHero, startingUsd: 38 / 86.5, platforms: ["pc", "mobile", "console"], popular: true, to: "/minecraft" },
   { name: "Palworld", image: palworld, startingUsd: 300 / 83, platforms: ["pc"], popular: true, to: "/palworld" },
-  { name: "Counter-Strike 2", image: cs2, startingUsd: 100 / 83, platforms: ["pc"], popular: true, to: "/cs2" },
-  { name: "Hytale", image: hytale, startingUsd: 110 / 83, platforms: ["pc"], popular: true, to: "/hytale" },
+  { name: "Counter-Strike 2", image: cs2, startingUsd: 100 / 86.5, platforms: ["pc"], popular: true, to: "/cs2" },
+  { name: "Hytale", image: hytale, startingUsd: 110 / 86.5, platforms: ["pc"], popular: true, to: "/hytale" },
   { name: "FiveM", image: fivem, startingUsd: 120 / 83, platforms: ["pc"], popular: true, to: "/fivem" },
-  { name: "Rust", image: rust, startingUsd: 2, platforms: ["pc"], popular: true, to: "/game-hosting" },
-  { name: "ARK: Survival Evolved", image: ark, startingUsd: 2, platforms: ["pc"], to: "/game-hosting" },
-  { name: "Terraria", image: terraria, startingUsd: 2, platforms: ["pc", "mobile"], to: "/game-hosting" },
-  { name: "Valheim", image: valheim, startingUsd: 2, platforms: ["pc"], to: "/game-hosting" },
+  { name: "Rust", image: rust, startingUsd: 270 / 86.5, platforms: ["pc"], popular: true, to: "/rust" },
+  { name: "ARK: Survival Evolved", image: ark, startingUsd: 370 / 86.5, platforms: ["pc"], to: "/ark" },
+  { name: "Terraria", image: terraria, startingUsd: 28 / 86.5, platforms: ["pc", "mobile"], popular: true, to: "/terraria" },
+  { name: "Valheim", image: valheim, startingUsd: 100 / 86.5, platforms: ["pc"], to: "/valheim" },
 ];
 
 const filters: { id: "all" | Platform; label: string; icon: React.ComponentType<{ className?: string }> }[] = [

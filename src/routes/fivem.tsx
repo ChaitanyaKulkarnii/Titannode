@@ -11,9 +11,9 @@ import {
   Zap,
   Shield,
   Sparkles,
-  Database,
   Radio,
   Sliders,
+  Database,
   Flame,
   Activity,
 } from "lucide-react";
@@ -27,18 +27,19 @@ export const Route = createFileRoute("/fivem")({
       {
         name: "description",
         content:
-          "High-performance FiveM GTA V RP server hosting with Budget (Intel Xeon Platinum) and Premium (Ryzen 9 DDR5) tiers starting at ₹120/mo. OneSync Infinity ready with txAdmin and 10Tbps+ DDoS mitigation.",
+          "High-performance FiveM server hosting with Budget (Intel Platinum), Premium, and Deluxe tiers starting at ₹120/mo. txAdmin pre-installed, OneSync ready, MySQL database and 10Tbps+ DDoS protection.",
       },
     ],
   }),
   component: FiveMPage,
 });
 
-export type FiveMTier = "budget" | "premium";
+export type FiveMTier = "budget" | "premium" | "deluxe";
 
 const tierOptions: { id: FiveMTier; label: string; icon: typeof Server }[] = [
-  { id: "budget", label: "Budget Tier", icon: Server },
-  { id: "premium", label: "Premium Tier", icon: Flame },
+  { id: "budget", label: "Budget Plans", icon: Server },
+  { id: "premium", label: "Premium Plans", icon: Flame },
+  { id: "deluxe", label: "Deluxe Plans", icon: Zap },
 ];
 
 const features = [
@@ -60,15 +61,20 @@ const makePlan = (
   popular?: boolean
 ): PlanCardData & { tier: FiveMTier } => ({
   name,
-  subtitle: tier === "budget" ? "Budget FiveM Server" : "Premium FiveM Server",
-  price: priceInr / 83,
+  subtitle:
+    tier === "budget"
+      ? "Budget FiveM Server"
+      : tier === "premium"
+      ? "Premium NVMe FiveM Server"
+      : "Deluxe FiveM Server",
+  price: priceInr / 86.5,
   topBannerLogo: fivemLogo,
   popular,
   tier,
   specs: [
     { icon: Server, label: "RAM", value: ram },
     { icon: Cpu, label: "CPU", value: cpu },
-    { icon: HardDrive, label: "NVMe", value: storage },
+    { icon: HardDrive, label: "Storage", value: storage },
     { icon: Shield, label: "Anti-DDoS", value: "10Tbps+ Path.net" },
   ],
   features,
@@ -76,23 +82,31 @@ const makePlan = (
 });
 
 const allPlans: (PlanCardData & { tier: FiveMTier })[] = [
-  // Budget Tier (Intel Platinum)
-  makePlan("Titan Starter", "4 GiB DDR4", "100% CPU", "20 GiB NVMe", 120, "budget"),
-  makePlan("Titan Pro", "6 GiB DDR4", "200% CPU", "30 GiB NVMe", 160, "budget"),
-  makePlan("Titan Hero", "8 GiB DDR4", "300% CPU", "40 GiB NVMe", 200, "budget", true),
-  makePlan("Titan Legend", "12 GiB DDR4", "400% CPU", "50 GiB NVMe", 280, "budget"),
-  makePlan("Titan Star", "16 GiB DDR4", "500% CPU", "60 GiB NVMe", 360, "budget"),
-  makePlan("Titan Ultra", "24 GiB DDR4", "600% CPU", "80 GiB NVMe", 520, "budget"),
-  makePlan("Titan Max", "32 GiB DDR4", "700% CPU", "100 GiB NVMe", 660, "budget"),
+  // ───────── Budget Plans (Intel Platinum) ─────────
+  makePlan("Titan Starter", "4 GB RAM", "100% CPU", "20 GB NVMe", 120, "budget"),
+  makePlan("Titan Pro", "6 GB RAM", "200% CPU", "30 GB NVMe", 160, "budget"),
+  makePlan("Titan Hero", "8 GB RAM", "300% CPU", "40 GB NVMe", 200, "budget", true),
+  makePlan("Titan Legend", "12 GB RAM", "400% CPU", "50 GB NVMe", 280, "budget"),
+  makePlan("Titan Star", "16 GB RAM", "500% CPU", "60 GB NVMe", 360, "budget"),
+  makePlan("Titan Ultra", "24 GB RAM", "600% CPU", "80 GB NVMe", 520, "budget"),
+  makePlan("Titan Max", "32 GB RAM", "700% CPU", "100 GB NVMe", 660, "budget"),
 
-  // Premium Tier (AMD Ryzen 9 9950X / DDR5 5600MHz RAM & Gen4 NVMe)
-  makePlan("Titan Starter", "4 GiB DDR5 (5600MHz)", "150% CPU", "30 GiB NVMe Gen4", 190, "premium"),
-  makePlan("Titan Pro", "6 GiB DDR5 (5600MHz)", "250% CPU", "45 GiB NVMe Gen4", 260, "premium"),
-  makePlan("Titan Hero", "8 GiB DDR5 (5600MHz)", "350% CPU", "60 GiB NVMe Gen4", 340, "premium", true),
-  makePlan("Titan Legend", "12 GiB DDR5 (5600MHz)", "450% CPU", "80 GiB NVMe Gen4", 480, "premium"),
-  makePlan("Titan Star", "16 GiB DDR5 (5600MHz)", "550% CPU", "100 GiB NVMe Gen4", 620, "premium"),
-  makePlan("Titan Ultra", "24 GiB DDR5 (5600MHz)", "700% CPU", "140 GiB NVMe Gen4", 880, "premium"),
-  makePlan("Titan Max", "32 GiB DDR5 (5600MHz)", "800% CPU", "180 GiB NVMe Gen4", 1120, "premium"),
+  // ───────── Premium Plans (AMD Ryzen DDR5) ─────────
+  makePlan("Titan Starter", "4 GB RAM", "150% CPU", "30 GB NVMe Gen4", 190, "premium"),
+  makePlan("Titan Pro", "6 GB RAM", "250% CPU", "45 GB NVMe Gen4", 260, "premium"),
+  makePlan("Titan Hero", "8 GB RAM", "350% CPU", "60 GB NVMe Gen4", 340, "premium", true),
+  makePlan("Titan Legend", "12 GB RAM", "450% CPU", "80 GB NVMe Gen4", 480, "premium"),
+  makePlan("Titan Star", "16 GB RAM", "550% CPU", "100 GB NVMe Gen4", 620, "premium"),
+  makePlan("Titan Ultra", "24 GB RAM", "700% CPU", "140 GB NVMe Gen4", 880, "premium"),
+  makePlan("Titan Max", "32 GB RAM", "800% CPU", "180 GB NVMe Gen4", 1120, "premium"),
+
+  // ───────── Deluxe Plans (AMD Ryzen 9 9950X OneSync) ─────────
+  makePlan("Titan Starter", "8 GB RAM", "250% CPU", "80 GB NVMe Gen4", 950, "deluxe"),
+  makePlan("Titan Hero", "16 GB RAM", "400% CPU", "140 GB NVMe Gen4", 1620, "deluxe", true),
+  makePlan("Titan Legend", "24 GB RAM", "550% CPU", "200 GB NVMe Gen4", 2200, "deluxe"),
+  makePlan("Titan Star", "32 GB RAM", "700% CPU", "280 GB NVMe Gen4", 2980, "deluxe"),
+  makePlan("Titan Ultra", "48 GB RAM", "900% CPU", "400 GB NVMe Gen4", 3890, "deluxe"),
+  makePlan("Titan Max", "64 GB RAM", "1100% CPU", "500 GB NVMe Gen4", 4750, "deluxe"),
 ];
 
 const fivemFeatures = [
@@ -108,13 +122,13 @@ const fivemFeatures = [
   },
   {
     icon: Database,
-    title: "Instant MariaDB Database",
-    desc: "Pre-configured SQL backend ready for ESX, QBCore, and Qbox frameworks with zero manual database setup required.",
+    title: "Managed MariaDB / MySQL",
+    desc: "Pre-configured high-performance database instance ready for ESX, QBCore, and custom SQL resource frameworks.",
   },
   {
     icon: Shield,
-    title: "10Tbps+ Gaming Anti-DDoS",
-    desc: "Tailored UDP packet filtering engineered to mitigate FiveM server-list query attacks and high-volume state spoofing.",
+    title: "FiveM-Specific Anti-DDoS",
+    desc: "Automated Path.net network scrubbing tailored for OneSync UDP bursts and server list query flooding.",
   },
 ];
 
@@ -136,24 +150,24 @@ function FiveMPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#050810]/60 via-[#050810]/40 to-background" />
 
         <div className="relative mx-auto flex min-h-[50vh] sm:min-h-[60vh] max-w-7xl flex-col items-center justify-center px-4 py-16 sm:py-24 text-center">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#ff5500]/30 bg-black/60 px-4 py-1.5 text-xs font-semibold text-[#ff7722] backdrop-blur-md shadow-[0_0_15px_rgba(255,85,0,0.25)]">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-orange-500/30 bg-black/60 px-4 py-1.5 text-xs font-semibold text-orange-400 backdrop-blur-md shadow-[0_0_15px_rgba(249,115,22,0.25)]">
             <Sparkles className="h-3.5 w-3.5" />
-            <span>Dedicated FiveM Host • Budget &amp; Premium Ryzen 9</span>
+            <span>Dedicated FiveM Host • Budget, Premium &amp; Deluxe</span>
           </div>
 
           <div className="mb-4 flex items-center justify-center">
             <img
               src={fivemLogo}
               alt="FiveM Official Logo"
-              className="h-16 sm:h-24 md:h-28 w-auto object-contain drop-shadow-[0_4px_30px_rgba(255,85,0,0.7)]"
+              className="h-16 sm:h-24 md:h-28 w-auto object-contain drop-shadow-[0_4px_30px_rgba(249,115,22,0.7)]"
             />
           </div>
 
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-md">
-            FiveM Server <span className="text-[#ff7722]">Hosting</span>
+            FiveM Server <span className="text-[#f97316]">Hosting</span>
           </h1>
           <p className="mt-3 sm:mt-5 max-w-2xl text-xs sm:text-base text-zinc-300 md:text-lg leading-relaxed drop-shadow">
-            Run your dream GTA V RP community. Zero-lag NVMe compute optimized for QBCore, ESX, custom MLOs, high-poly vehicles, and hundreds of concurrent roleplayers.
+            Run lag-free GTA V Roleplay servers with OneSync Infinity, txAdmin panel, pre-configured MySQL, and 10Tbps+ enterprise DDoS mitigation.
           </p>
         </div>
       </section>
@@ -163,16 +177,16 @@ function FiveMPage() {
       {/* Plans Section */}
       <section id="plans" className="mx-auto max-w-7xl px-4 py-12 sm:py-20">
         <div className="mb-4 text-center">
-          <p className="mb-2 inline-flex items-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#ff7722]">
-            <span className="h-px w-6 sm:w-8 bg-[#ff7722]/40" />
+          <p className="mb-2 inline-flex items-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#f97316]">
+            <span className="h-px w-6 sm:w-8 bg-[#f97316]/40" />
             Official TitanNode Configurations
-            <span className="h-px w-6 sm:w-8 bg-[#ff7722]/40" />
+            <span className="h-px w-6 sm:w-8 bg-[#f97316]/40" />
           </p>
           <h2 className="text-2xl font-extrabold sm:text-4xl md:text-5xl text-white">
             Choose Your FiveM Plan
           </h2>
           <p className="mt-2 text-xs sm:text-sm text-muted-foreground">
-            Switch between high-value Budget and ultra-performance Ryzen 9 Premium tiers.
+            Switch between Intel® Xeon® Budget, high-speed NVMe Premium, and AMD Ryzen™ 9 Deluxe configurations.
           </p>
         </div>
 
@@ -184,9 +198,11 @@ function FiveMPage() {
               let activeClass = "";
               if (active) {
                 if (t.id === "budget") {
-                  activeClass = "bg-[#ff5500] text-white shadow-lg shadow-[#ff5500]/30 font-bold";
+                  activeClass = "bg-[#10b981] text-white shadow-lg shadow-[#10b981]/30 font-bold";
+                } else if (t.id === "premium") {
+                  activeClass = "bg-[#38bdf8] text-black shadow-lg shadow-[#38bdf8]/35 font-bold";
                 } else {
-                  activeClass = "bg-[#a855f7] text-white shadow-lg shadow-[#a855f7]/30 font-bold";
+                  activeClass = "bg-[#8b5cf6] text-white shadow-lg shadow-[#8b5cf6]/30 font-bold";
                 }
               } else {
                 activeClass = "text-muted-foreground hover:text-foreground hover:bg-white/5";
@@ -208,42 +224,42 @@ function FiveMPage() {
         {/* Tier Info Banner */}
         <div className="mb-8 flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#060a12] px-4 py-1.5 text-xs text-zinc-400">
-            <Activity className="h-3.5 w-3.5 text-[#ff7722]" />
+            <Activity className="h-3.5 w-3.5 text-[#f97316]" />
             {tier === "budget"
-              ? "Budget Tier: Powered by Intel® Platinum starting at ₹120/mo"
-              : "Premium Tier: AMD Ryzen™ 9 9950X @ 5.7GHz with DDR5 5600MHz RAM"}
+              ? "Budget Plans: Intel® Xeon® Platinum multi-core starting at ₹120/mo"
+              : tier === "premium"
+              ? "Premium Plans: High-speed NVMe Gen4 hosting starting at ₹190/mo"
+              : "Deluxe Plans: Extreme AMD Ryzen™ 9 9950X compute starting at ₹950/mo"}
           </span>
         </div>
 
         {/* Plans Grid */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filteredPlans.map((p) => (
-            <PlanCard key={`${p.tier}-${p.name}`} plan={p} />
+            <PlanCard key={`${p.tier}-${p.name}-${p.price}`} plan={p} />
           ))}
         </div>
       </section>
 
       {/* Features Grid */}
-      <section className="border-t border-white/[0.06] bg-black/40 py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-12 text-center">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#ff7722]">Engineered For Roleplay</p>
-            <h2 className="mt-2 text-2xl font-extrabold sm:text-4xl text-white">Why Host FiveM On TitanNode?</h2>
-          </div>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {fivemFeatures.map((f, i) => (
-              <div
-                key={i}
-                className="group relative rounded-lg border border-white/10 bg-[#080c14] p-6 transition-all hover:-translate-y-1 hover:border-[#ff5500]/40 hover:shadow-[0_12px_30px_rgba(255,85,0,0.15)]"
-              >
-                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-md border border-[#ff5500]/20 bg-[#ff5500]/10 text-[#ff7722]">
-                  <f.icon className="h-5 w-5" />
-                </div>
-                <h3 className="text-base font-bold text-white">{f.title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{f.desc}</p>
+      <section className="mx-auto max-w-7xl px-4 pb-24">
+        <div className="mb-12 text-center">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-[#f97316]">Roleplay Performance</p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white md:text-4xl">Engineered for FiveM Roleplay</h2>
+        </div>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {fivemFeatures.map((f) => (
+            <div
+              key={f.title}
+              className="rounded-lg border border-white/10 bg-[#080c14] p-6 transition-all hover:border-[#f97316]/40 hover:shadow-[0_12px_30px_rgba(249,115,22,0.15)]"
+            >
+              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#f97316]/20 bg-[#f97316]/10 text-[#f97316]">
+                <f.icon className="h-5 w-5" />
               </div>
-            ))}
-          </div>
+              <h3 className="text-base font-bold text-white">{f.title}</h3>
+              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{f.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
