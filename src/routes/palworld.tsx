@@ -27,7 +27,7 @@ export const Route = createFileRoute("/palworld")({
       {
         name: "description",
         content:
-          "High-performance Palworld server hosting with Budget, Premium, and Deluxe tiers starting at ₹300/mo. Titan Starter to Titan Max plans with NVMe Gen4, automated RAM management and DDoS protection.",
+          "High-performance Palworld server hosting with Budget, Premium, and Deluxe tiers starting at ₹350/mo. Titan Starter to Titan Max plans with NVMe Gen4, automated RAM management and DDoS protection.",
       },
     ],
   }),
@@ -83,12 +83,12 @@ const makePlan = (
 
 const allPlans: (PlanCardData & { tier: PalTier })[] = [
   // ───────── Budget Plans ─────────
-  makePlan("Titan Starter", "8 GB RAM", "200% CPU", "60 GB NVMe", 300, "budget"),
-  makePlan("Titan Pro", "12 GB RAM", "400% CPU", "80 GB NVMe", 400, "budget"),
-  makePlan("Titan Hero", "16 GB RAM", "500% CPU", "100 GB NVMe", 600, "budget", true),
-  makePlan("Titan Legend", "24 GB RAM", "600% CPU", "150 GB NVMe", 800, "budget"),
-  makePlan("Titan Star", "32 GB RAM", "700% CPU", "200 GB NVMe", 1200, "budget"),
-  makePlan("Titan Ultra", "48 GB RAM", "800% CPU", "300 GB NVMe", 1600, "budget"),
+  makePlan("Titan Starter", "8 GB RAM", "200% CPU", "60 GB NVMe", 350, "budget"),
+  makePlan("Titan Pro", "12 GB RAM", "400% CPU", "80 GB NVMe", 460, "budget"),
+  makePlan("Titan Hero", "16 GB RAM", "500% CPU", "100 GB NVMe", 700, "budget", true),
+  makePlan("Titan Legend", "24 GB RAM", "600% CPU", "150 GB NVMe", 1000, "budget"),
+  makePlan("Titan Star", "32 GB RAM", "700% CPU", "200 GB NVMe", 1400, "budget"),
+  makePlan("Titan Ultra", "48 GB RAM", "800% CPU", "300 GB NVMe", 1650, "budget"),
   makePlan("Titan Max", "64 GB RAM", "1000% CPU", "400 GB NVMe", 2000, "budget"),
 
   // ───────── Premium Plans ─────────
@@ -225,7 +225,7 @@ function PalworldPage() {
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#060a12] px-4 py-1.5 text-xs text-zinc-400">
             <Activity className="h-3.5 w-3.5 text-[#38bdf8]" />
             {tier === "budget"
-              ? "Budget Plans: High-value multi-core Palworld hosting starting at ₹300/mo"
+              ? "Budget Plans: High-value multi-core Palworld hosting starting at ₹350/mo"
               : tier === "premium"
               ? "Premium Plans: High-speed NVMe hosting starting at ₹538/mo"
               : "Deluxe Plans: Extreme AMD Ryzen™ 9 9950X performance starting at ₹1,000/mo"}

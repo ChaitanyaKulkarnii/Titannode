@@ -278,7 +278,7 @@ import hytaleCard from "@/assets/games/hytale.jpg";
 
 const games = [
   { name: "Minecraft", img: minecraftCard, href: "/minecraft", priceUsd: 38 / 86.5, tag: "Most Popular" },
-  { name: "Palworld", img: palworldCard, href: "/palworld", priceUsd: 300 / 86.5, tag: "Popular" },
+  { name: "Palworld", img: palworldCard, href: "/palworld", priceUsd: 350 / 86.5, tag: "Popular" },
   { name: "Counter-Strike 2", img: cs2Card, href: "/cs2", priceUsd: 100 / 86.5, tag: "Popular" },
   { name: "Hytale", img: hytaleCard, href: "/hytale", priceUsd: 110 / 86.5, tag: "New" },
   { name: "FiveM (GTA V)", img: fivemCard, href: "/fivem", priceUsd: 120 / 86.5, tag: "Popular" },
