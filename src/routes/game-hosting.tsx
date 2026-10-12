@@ -38,10 +38,10 @@ interface Game {
 
 const games: Game[] = [
   { name: "Minecraft", image: minecraftHero, startingUsd: 38 / 86.5, platforms: ["pc", "mobile", "console"], popular: true, to: "/minecraft" },
-  { name: "Palworld", image: palworld, startingUsd: 300 / 83, platforms: ["pc"], popular: true, to: "/palworld" },
+  { name: "Palworld", image: palworld, startingUsd: 300 / 86.5, platforms: ["pc"], popular: true, to: "/palworld" },
   { name: "Counter-Strike 2", image: cs2, startingUsd: 100 / 86.5, platforms: ["pc"], popular: true, to: "/cs2" },
   { name: "Hytale", image: hytale, startingUsd: 110 / 86.5, platforms: ["pc"], popular: true, to: "/hytale" },
-  { name: "FiveM", image: fivem, startingUsd: 120 / 83, platforms: ["pc"], popular: true, to: "/fivem" },
+  { name: "FiveM", image: fivem, startingUsd: 120 / 86.5, platforms: ["pc"], popular: true, to: "/fivem" },
   { name: "Rust", image: rust, startingUsd: 270 / 86.5, platforms: ["pc"], popular: true, to: "/rust" },
   { name: "ARK: Survival Evolved", image: ark, startingUsd: 370 / 86.5, platforms: ["pc"], to: "/ark" },
   { name: "Terraria", image: terraria, startingUsd: 28 / 86.5, platforms: ["pc", "mobile"], popular: true, to: "/terraria" },

@@ -91,22 +91,21 @@ const allPlans: (PlanCardData & { tier: PalTier })[] = [
   makePlan("Titan Ultra", "48 GB RAM", "800% CPU", "300 GB NVMe", 1600, "budget"),
   makePlan("Titan Max", "64 GB RAM", "1000% CPU", "400 GB NVMe", 2000, "budget"),
 
-  // ───────── Premium Plans (DDR5 NVMe Gen4) ─────────
-  makePlan("Titan Starter", "8 GB DDR5", "250% CPU", "80 GB NVMe Gen4", 500, "premium"),
-  makePlan("Titan Pro", "12 GB DDR5", "450% CPU", "110 GB NVMe Gen4", 700, "premium"),
-  makePlan("Titan Hero", "16 GB DDR5", "550% CPU", "140 GB NVMe Gen4", 950, "premium", true),
-  makePlan("Titan Legend", "24 GB DDR5", "700% CPU", "200 GB NVMe Gen4", 1350, "premium"),
-  makePlan("Titan Star", "32 GB DDR5", "800% CPU", "260 GB NVMe Gen4", 1850, "premium"),
-  makePlan("Titan Ultra", "48 GB DDR5", "1000% CPU", "380 GB NVMe Gen4", 2500, "premium"),
-  makePlan("Titan Max", "64 GB DDR5", "1200% CPU", "500 GB NVMe Gen4", 3200, "premium"),
+  // ───────── Premium Plans ─────────
+  makePlan("Titan Starter", "8 GB RAM", "200% CPU", "80 GB NVMe", 538, "premium"),
+  makePlan("Titan Pro", "12 GB RAM", "400% CPU", "100 GB NVMe", 800, "premium"),
+  makePlan("Titan Hero", "16 GB RAM", "500% CPU", "120 GB NVMe", 1070, "premium", true),
+  makePlan("Titan Legend", "24 GB RAM", "600% CPU", "150 GB NVMe", 1360, "premium"),
+  makePlan("Titan Star", "32 GB RAM", "700% CPU", "180 GB NVMe", 1650, "premium"),
+  makePlan("Titan Ultra", "48 GB RAM", "800% CPU", "200 GB NVMe", 2300, "premium"),
+  makePlan("Titan Max", "64 GB RAM", "1000% CPU", "250 GB NVMe", 3000, "premium"),
 
   // ───────── Deluxe Plans (AMD Ryzen 9 9950X) ─────────
-  makePlan("Titan Starter", "8 GB RAM", "250% CPU", "80 GB NVMe Gen4", 950, "deluxe"),
-  makePlan("Titan Hero", "16 GB RAM", "400% CPU", "140 GB NVMe Gen4", 1650, "deluxe", true),
-  makePlan("Titan Legend", "24 GB RAM", "550% CPU", "200 GB NVMe Gen4", 2250, "deluxe"),
-  makePlan("Titan Star", "32 GB RAM", "700% CPU", "280 GB NVMe Gen4", 3100, "deluxe"),
-  makePlan("Titan Ultra", "48 GB RAM", "900% CPU", "400 GB NVMe Gen4", 3950, "deluxe"),
-  makePlan("Titan Max", "64 GB RAM", "1100% CPU", "500 GB NVMe Gen4", 4800, "deluxe"),
+  makePlan("Titan Starter", "8 GB RAM", "200% CPU", "70 GB NVMe", 1000, "deluxe"),
+  makePlan("Titan Hero", "16 GB RAM", "300% CPU", "100 GB NVMe", 1700, "deluxe", true),
+  makePlan("Titan Legend", "24 GB RAM", "400% CPU", "120 GB Storage", 2300, "deluxe"),
+  makePlan("Titan Star", "32 GB RAM", "500% CPU", "200 GB Storage", 3370, "deluxe"),
+  makePlan("Titan Max", "48 GB RAM", "600% CPU", "250 GB NVMe", 4200, "deluxe"),
 ];
 
 const palFeatures = [
@@ -228,8 +227,8 @@ function PalworldPage() {
             {tier === "budget"
               ? "Budget Plans: High-value multi-core Palworld hosting starting at ₹300/mo"
               : tier === "premium"
-              ? "Premium Plans: DDR5 NVMe Gen4 high-frequency hosting starting at ₹500/mo"
-              : "Deluxe Plans: Extreme AMD Ryzen™ 9 9950X performance starting at ₹950/mo"}
+              ? "Premium Plans: High-speed NVMe hosting starting at ₹538/mo"
+              : "Deluxe Plans: Extreme AMD Ryzen™ 9 9950X performance starting at ₹1,000/mo"}
           </span>
         </div>
 
