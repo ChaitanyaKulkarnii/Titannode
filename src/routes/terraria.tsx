@@ -106,14 +106,14 @@ const allPlans: (PlanCardData & { tier: TerrariaTier })[] = [
   makePlan("Titan Max", "32 GB RAM", "800% CPU", "100 GB NVMe", 450, "premium"),
 
   // ───────── Terraria Deluxe Plans ─────────
-  makePlan("Titan Starter", "2 GB RAM", "100% CPU", "10 GB NVMe", 82, "deluxe"),
-  makePlan("Titan Scout", "4 GB RAM", "150% CPU", "20 GB NVMe", 160, "deluxe"),
-  makePlan("Titan Pro", "6 GB RAM", "200% CPU", "30 GB NVMe", 238, "deluxe"),
-  makePlan("Titan Hero", "8 GB RAM", "250% CPU", "40 GB NVMe", 300, "deluxe", true),
-  makePlan("Titan Champion", "12 GB RAM", "300% CPU", "50 GB NVMe", 450, "deluxe"),
-  makePlan("Titan Legend", "16 GB RAM", "350% CPU", "60 GB NVMe", 560, "deluxe"),
-  makePlan("Titan Star", "24 GB RAM", "500% CPU", "80 GB NVMe", 900, "deluxe"),
-  makePlan("Titan Max", "32 GB RAM", "800% CPU", "100 GB NVMe", 1340, "deluxe"),
+  makePlan("Titan Starter", "2 GB RAM", "100% CPU", "10 GB NVMe", 180, "deluxe"),
+  makePlan("Titan Scout", "4 GB RAM", "150% CPU", "20 GB NVMe", 360, "deluxe"),
+  makePlan("Titan Pro", "6 GB RAM", "200% CPU", "30 GB NVMe", 540, "deluxe"),
+  makePlan("Titan Hero", "8 GB RAM", "250% CPU", "40 GB NVMe", 700, "deluxe", true),
+  makePlan("Titan Champion", "12 GB RAM", "300% CPU", "50 GB NVMe", 1040, "deluxe"),
+  makePlan("Titan Legend", "16 GB RAM", "350% CPU", "60 GB NVMe", 1300, "deluxe"),
+  makePlan("Titan Star", "24 GB RAM", "500% CPU", "80 GB NVMe", 2100, "deluxe"),
+  makePlan("Titan Max", "32 GB RAM", "800% CPU", "100 GB NVMe", 2840, "deluxe"),
 ];
 
 const terrariaFeatures = [
@@ -231,7 +231,7 @@ function TerrariaPage() {
               ? "Budget Plans: High-value Terraria hosting starting at ₹28/mo"
               : tier === "premium"
               ? "Premium Plans: High-performance NVMe starting at ₹37/mo"
-              : "Deluxe Plans: Extreme compute for heavy Calamity & Thorium modpacks starting at ₹82/mo"}
+              : "Deluxe Plans: Extreme compute for heavy Calamity & Thorium modpacks starting at ₹180/mo"}
           </span>
         </div>
 
