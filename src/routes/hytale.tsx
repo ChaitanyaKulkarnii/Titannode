@@ -91,13 +91,14 @@ const allPlans: (PlanCardData & { tier: HytaleTier })[] = [
   makePlan("Titan Max", "32 GB RAM", "700% CPU", "100 GB NVMe", 650, "budget"),
 
   // ───────── Hytale Premium Plans ─────────
-  makePlan("Titan Starter", "4 GB RAM", "150% CPU", "30 GB NVMe Gen4", 180, "premium"),
-  makePlan("Titan Pro", "6 GB RAM", "250% CPU", "45 GB NVMe Gen4", 250, "premium"),
-  makePlan("Titan Hero", "8 GB RAM", "350% CPU", "60 GB NVMe Gen4", 320, "premium", true),
-  makePlan("Titan Legend", "12 GB RAM", "450% CPU", "80 GB NVMe Gen4", 460, "premium"),
-  makePlan("Titan Star", "16 GB RAM", "550% CPU", "100 GB NVMe Gen4", 590, "premium"),
-  makePlan("Titan Ultra", "24 GB RAM", "700% CPU", "140 GB NVMe Gen4", 840, "premium"),
-  makePlan("Titan Max", "32 GB RAM", "800% CPU", "180 GB NVMe Gen4", 1090, "premium"),
+  makePlan("Titan Starter", "6 GB RAM", "100% CPU", "50 GB NVMe", 300, "premium"),
+  makePlan("Titan Pro", "8 GB RAM", "200% CPU", "70 GB NVMe", 505, "premium"),
+  makePlan("Titan Hero", "12 GB RAM", "300% CPU", "100 GB NVMe", 775, "premium", true),
+  makePlan("Titan Champion", "16 GB RAM", "400% CPU", "120 GB Storage", 985, "premium"),
+  makePlan("Titan Legend", "24 GB RAM", "500% CPU", "200 GB Storage", 1300, "premium"),
+  makePlan("Titan Star", "32 GB RAM", "750% CPU", "250 GB NVMe", 1500, "premium"),
+  makePlan("Titan Ultra", "48 GB RAM", "900% CPU", "300 GB NVMe", 1982, "premium"),
+  makePlan("Titan Max", "64 GB RAM", "1000% CPU", "350 GB NVMe", 2410, "premium"),
 
   // ───────── Hytale Ryzen 9 Plans ─────────
   makePlan("Titan Starter", "4 GB RAM", "100% CPU", "50 GB NVMe", 565, "deluxe"),
@@ -227,7 +228,7 @@ function HytalePage() {
             {tier === "budget"
               ? "Budget Plans: Powered by Intel® Xeon® Platinum starting at ₹110/mo"
               : tier === "premium"
-              ? "Premium Plans: High-performance NVMe Gen4 starting at ₹180/mo"
+              ? "Premium Plans: High-performance NVMe starting at ₹300/mo"
               : "Ryzen 9 Plans: Extreme AMD Ryzen™ 9 9950X performance starting at ₹565/mo"}
           </span>
         </div>

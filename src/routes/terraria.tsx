@@ -96,14 +96,14 @@ const allPlans: (PlanCardData & { tier: TerrariaTier })[] = [
   makePlan("Titan Max", "32 GB RAM", "800% CPU", "100 GB NVMe", 420, "budget"),
 
   // ───────── Terraria Premium Plans ─────────
-  makePlan("Titan Starter", "2 GB RAM", "100% CPU", "10 GB NVMe", 37, "premium"),
-  makePlan("Titan Scout", "4 GB RAM", "150% CPU", "20 GB NVMe", 70, "premium"),
-  makePlan("Titan Pro", "6 GB RAM", "200% CPU", "30 GB NVMe", 100, "premium"),
-  makePlan("Titan Hero", "8 GB RAM", "250% CPU", "40 GB NVMe", 133, "premium", true),
-  makePlan("Titan Champion", "12 GB RAM", "300% CPU", "50 GB NVMe", 177, "premium"),
-  makePlan("Titan Legend", "16 GB RAM", "350% CPU", "60 GB NVMe", 210, "premium"),
-  makePlan("Titan Star", "24 GB RAM", "500% CPU", "80 GB NVMe", 320, "premium"),
-  makePlan("Titan Max", "32 GB RAM", "800% CPU", "100 GB NVMe", 450, "premium"),
+  makePlan("Titan Starter", "2 GB RAM", "100% CPU", "10 GB NVMe", 45, "premium"),
+  makePlan("Titan Scout", "4 GB RAM", "150% CPU", "20 GB NVMe", 90, "premium"),
+  makePlan("Titan Pro", "6 GB RAM", "200% CPU", "30 GB NVMe", 140, "premium"),
+  makePlan("Titan Hero", "8 GB RAM", "250% CPU", "40 GB NVMe", 190, "premium", true),
+  makePlan("Titan Champion", "12 GB RAM", "300% CPU", "50 GB NVMe", 260, "premium"),
+  makePlan("Titan Legend", "16 GB RAM", "350% CPU", "60 GB NVMe", 340, "premium"),
+  makePlan("Titan Star", "24 GB RAM", "500% CPU", "80 GB NVMe", 450, "premium"),
+  makePlan("Titan Max", "32 GB RAM", "800% CPU", "100 GB NVMe", 600, "premium"),
 
   // ───────── Terraria Deluxe Plans ─────────
   makePlan("Titan Starter", "2 GB RAM", "100% CPU", "10 GB NVMe", 180, "deluxe"),
@@ -230,7 +230,7 @@ function TerrariaPage() {
             {tier === "budget"
               ? "Budget Plans: High-value Terraria hosting starting at ₹28/mo"
               : tier === "premium"
-              ? "Premium Plans: High-performance NVMe starting at ₹37/mo"
+              ? "Premium Plans: High-performance NVMe starting at ₹45/mo"
               : "Deluxe Plans: Extreme compute for heavy Calamity & Thorium modpacks starting at ₹180/mo"}
           </span>
         </div>
