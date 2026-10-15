@@ -94,7 +94,7 @@ const faqs = [
   },
 ];
 
-function ContactPage() {
+export function ContactPage() {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [formState, setFormState] = useState({
     name: "",

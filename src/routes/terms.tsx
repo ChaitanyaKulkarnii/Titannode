@@ -6,7 +6,7 @@ export const Route = createFileRoute("/terms")({
   component: TermsPage,
 });
 
-function TermsPage() {
+export function TermsPage() {
   return (
     <InfoPage
       title="Terms of Service"

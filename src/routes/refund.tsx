@@ -6,7 +6,7 @@ export const Route = createFileRoute("/refund")({
   component: RefundPage,
 });
 
-function RefundPage() {
+export function RefundPage() {
   return (
     <InfoPage
       title="Refund Policy"

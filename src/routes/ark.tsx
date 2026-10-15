@@ -132,7 +132,7 @@ const arkFeatures = [
   },
 ];
 
-function ArkPage() {
+export function ArkPage() {
   const [tier, setTier] = useState<ArkTier>("budget");
   const filteredPlans = allPlans.filter((p) => p.tier === tier);
 

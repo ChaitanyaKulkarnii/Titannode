@@ -6,7 +6,7 @@ export const Route = createFileRoute("/sla")({
   component: SlaPage,
 });
 
-function SlaPage() {
+export function SlaPage() {
   return (
     <InfoPage
       title="Service Level Agreement (SLA)"

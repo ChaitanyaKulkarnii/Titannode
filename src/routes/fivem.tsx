@@ -132,7 +132,7 @@ const fivemFeatures = [
   },
 ];
 
-function FiveMPage() {
+export function FiveMPage() {
   const [tier, setTier] = useState<FiveMTier>("budget");
   const filteredPlans = allPlans.filter((p) => p.tier === tier);
 

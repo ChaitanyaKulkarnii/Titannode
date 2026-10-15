@@ -60,7 +60,7 @@ const plans: PlanCardData[] = [
   makeRdpPlan("RDP Plan 8", "12", "64 GB DDR4", "400 GB NVMe", 2600),
 ];
 
-function RdpPage() {
+export function RdpPage() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />

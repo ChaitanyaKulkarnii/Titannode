@@ -52,7 +52,7 @@ const plans: PlanCardData[] = [
   makeBotPlan("Professional Plan", "2 GiB DDR4 (3200MHz)", "1.25 vCore (125%)", "15 GiB NVMe (GEN-4)", 80),
 ];
 
-function BotPage() {
+export function BotPage() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />

@@ -131,7 +131,7 @@ const rustFeatures = [
   },
 ];
 
-function RustPage() {
+export function RustPage() {
   const [tier, setTier] = useState<RustTier>("budget");
   const filteredPlans = allPlans.filter((p) => p.tier === tier);
 

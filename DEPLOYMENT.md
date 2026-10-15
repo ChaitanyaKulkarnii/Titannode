@@ -21,22 +21,35 @@ npm run build
 
 ---
 
-## 🚀 Option 1: Deploying on cPanel Shared Hosting (Static Upload)
+## 🚀 Option 1: Deploying on cPanel Shared Hosting (Static Site - Recommended)
 
-If you have a standard cPanel hosting account (Apache/Nginx):
+If you have a standard cPanel hosting account (Apache/LiteSpeed/Nginx without Node.js):
 
-1. **Build locally or in cPanel Terminal**:
+1. **Build the static site**:
    ```bash
-   npm run build
+   npm run build:static
    ```
-2. **Locate the Output Folder**:
-   - The build output is located in `dist/client/`.
-3. **Upload to cPanel**:
-   - Compress all contents inside `dist/client/` into a `.zip` file.
-   - Open **cPanel File Manager** → navigate to `public_html/`.
-   - Upload the `.zip` file and extract its contents directly into `public_html/`.
-4. **URL Routing**:
-   - The included `.htaccess` file automatically routes all page subpaths (`/vps-hosting`, `/game-hosting`, etc.) to `index.html` without returning 404 errors.
+   This generates the production bundle inside the `dist-static/` directory with `.htaccess` pre-configured.
+
+2. **Ready-made Zip**:
+   - A pre-built zip archive `titannode-cpanel.zip` is ready in the project root!
+   - Or to re-generate it at any time, run:
+     ```powershell
+     Compress-Archive -Path "dist-static\*" -DestinationPath "titannode-cpanel.zip" -Force
+     ```
+
+3. **Upload to cPanel File Manager**:
+   - Log into your **cPanel** dashboard.
+   - Open **File Manager** and enter your website root directory (usually `public_html/` or your subdomain folder).
+   - Click **Upload** in the top toolbar, select `titannode-cpanel.zip`.
+   - Once uploaded (100% green bar), go back to File Manager, right-click `titannode-cpanel.zip`, and click **Extract**.
+   - Make sure all files (`index.html`, `.htaccess`, `assets/`, `images/`, etc.) are placed directly in `public_html/` (not inside a nested subfolder).
+
+4. **Show Hidden Files (Verify `.htaccess`)**:
+   - In cPanel File Manager, click **Settings** (top right gear icon).
+   - Check **Show Hidden Files (dotfiles)** and click **Save**.
+   - Verify that `.htaccess` is present. It ensures client-side routing works for all routes (like `/vps-hosting`, `/game-hosting`, `/about`, etc.) without 404 errors.
+
 
 ---
 

@@ -116,7 +116,7 @@ const plans: (PlanCardData & { tier: Tier })[] = [
   make("Beacon", "64 GB RAM", "1000% CPU", "150 GB NVMe", "10 Auto Backups", 5600, beaconIcon, "deluxe"),
 ];
 
-function MinecraftPage() {
+export function MinecraftPage() {
   const [tier, setTier] = useState<Tier>("legacy");
   const filtered = plans.filter((p) => p.tier === tier);
 

@@ -131,7 +131,7 @@ const palFeatures = [
   },
 ];
 
-function PalworldPage() {
+export function PalworldPage() {
   const [tier, setTier] = useState<PalTier>("budget");
   const filteredPlans = allPlans.filter((p) => p.tier === tier);
 

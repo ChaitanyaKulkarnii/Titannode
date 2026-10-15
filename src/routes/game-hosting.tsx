@@ -55,7 +55,7 @@ const filters: { id: "all" | Platform; label: string; icon: React.ComponentType<
   { id: "console", label: "Console", icon: Gamepad2 },
 ];
 
-function GameHostingPage() {
+export function GameHostingPage() {
   const [filter, setFilter] = useState<"all" | Platform>("all");
   const [query, setQuery] = useState("");
   const { format } = useCurrency();

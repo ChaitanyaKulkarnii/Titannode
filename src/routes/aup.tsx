@@ -6,7 +6,7 @@ export const Route = createFileRoute("/aup")({
   component: AupPage,
 });
 
-function AupPage() {
+export function AupPage() {
   return (
     <InfoPage
       title="Acceptable Use Policy"

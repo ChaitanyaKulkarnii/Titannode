@@ -50,7 +50,7 @@ const plans: PlanCardData[] = [
   makeWebPlan("WebSpace L", "Unlimited Domains", "100 GB", "50 Accounts", 4),
 ];
 
-function WebPage() {
+export function WebPage() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "build:static": "vite build --config vite.config.static.ts",
     "start": "node standalone-server.js",
     "preview": "vite preview",
     "lint": "eslint .",

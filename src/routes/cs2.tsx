@@ -133,7 +133,7 @@ const cs2Features = [
   },
 ];
 
-function CS2Page() {
+export function CS2Page() {
   const [tier, setTier] = useState<CS2Tier>("budget");
   const filteredPlans = allPlans.filter((p) => p.tier === tier);
 

@@ -137,7 +137,7 @@ const valheimFeatures = [
   },
 ];
 
-function ValheimPage() {
+export function ValheimPage() {
   const [tier, setTier] = useState<ValheimTier>("budget");
   const filteredPlans = allPlans.filter((p) => p.tier === tier);
 

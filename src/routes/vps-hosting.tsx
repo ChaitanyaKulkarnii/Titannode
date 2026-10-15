@@ -191,7 +191,7 @@ const configMap: Record<`${LocationId}_${CpuId}`, ConfigDetail> = {
   },
 };
 
-function VpsPage() {
+export function VpsPage() {
   const [selectedLocation, setSelectedLocation] = useState<LocationId>("india");
   const [selectedCpu, setSelectedCpu] = useState<CpuId>("intel");
 

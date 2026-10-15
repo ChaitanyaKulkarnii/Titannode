@@ -132,7 +132,7 @@ const hytaleFeatures = [
   },
 ];
 
-function HytalePage() {
+export function HytalePage() {
   const [tier, setTier] = useState<HytaleTier>("budget");
   const filteredPlans = allPlans.filter((p) => p.tier === tier);
 

@@ -10,7 +10,7 @@ export const Route = createFileRoute("/infrastructure")({
   component: InfrastructurePage,
 });
 
-function InfrastructurePage() {
+export function InfrastructurePage() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Navbar />

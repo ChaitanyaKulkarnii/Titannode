@@ -139,7 +139,7 @@ const terrariaFeatures = [
   },
 ];
 
-function TerrariaPage() {
+export function TerrariaPage() {
   const [tier, setTier] = useState<TerrariaTier>("budget");
   const filteredPlans = allPlans.filter((p) => p.tier === tier);
 
