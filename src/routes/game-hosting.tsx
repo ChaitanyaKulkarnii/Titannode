@@ -72,53 +72,65 @@ function GameHostingPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        {/* Subtle non-AI ambient illumination */}
-        <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-72 w-[600px] max-w-full rounded-full bg-sky-500/[0.03] blur-[120px]" />
-        <div className="relative mx-auto max-w-5xl px-4 pb-10 pt-16 text-center md:pt-24">
-          <h1 className="text-5xl font-extrabold uppercase tracking-tight text-foreground md:text-7xl">
-            Game Server<br />Hosting
-          </h1>
-          <p className="mx-auto mt-8 max-w-2xl text-base text-muted-foreground md:text-lg">
-            At <span className="font-semibold text-foreground">TitanNode</span>, we provide{" "}
-            <span className="font-semibold text-foreground">premium game server hosting</span>{" "}
-            for over 9 of the most popular games you can think of.
-          </p>
-        </div>
-      </section>
-
-      {/* Filter pills + search */}
-      <section className="mx-auto max-w-5xl px-4 pb-6">
-        <div className="mb-5 flex flex-wrap gap-2">
-          {filters.map((f) => {
-            const active = filter === f.id;
-            return (
-              <button
-                key={f.id}
-                onClick={() => setFilter(f.id)}
-                className={`inline-flex items-center gap-2 rounded-md border px-4 py-2 text-sm font-medium transition ${
-                  active
-                    ? "border-zinc-700 bg-zinc-800 text-white shadow-sm"
-                    : "border-zinc-800 bg-[#090a0d] text-zinc-400 hover:border-zinc-700 hover:text-white"
-                }`}
-              >
-                <f.icon className="h-4 w-4" />
-                {f.label}
-              </button>
-            );
-          })}
-        </div>
-
-        <div className="relative">
-          <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
-          <input
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search games..."
-            className="h-11 w-full rounded-md border border-zinc-800 bg-[#090a0d] pl-10 pr-4 text-sm text-foreground outline-none transition placeholder:text-zinc-500 focus:border-zinc-600"
+      {/* Hero & Filter Section with Sci-Fi Datacenter Background */}
+      <section className="relative overflow-hidden border-b border-cyan-900/30">
+        {/* Futuristic Server Room Background */}
+        <div className="pointer-events-none absolute inset-0 z-0">
+          <img
+            src="/images/game-hosting-bg.png"
+            alt="TitanNode Game Server Infrastructure"
+            className="h-full w-full object-cover object-[center_30%] opacity-80 brightness-[0.88] contrast-[1.05]"
           />
+          {/* Subtle directional scrims to blend with navbar and cards while keeping artwork vibrant */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#05070c]/85 via-[#05070c]/45 to-[#05070c]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_#05070c_85%)] opacity-80" />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-5xl px-4 pb-14 pt-16 md:pt-24">
+          <div className="text-center">
+            <h1 className="text-5xl font-extrabold uppercase tracking-tight text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.95)] md:text-7xl">
+              Game Server<br />Hosting
+            </h1>
+            <p className="mx-auto mt-7 max-w-2xl text-base font-normal text-zinc-200 md:text-lg leading-relaxed drop-shadow-[0_2px_16px_rgba(0,0,0,0.9)]">
+              At <span className="font-semibold text-white">TitanNode</span>, we provide{" "}
+              <span className="font-semibold text-sky-400">premium game server hosting</span>{" "}
+              for over 9 of the most popular games you can think of.
+            </p>
+          </div>
+
+          {/* Filter pills + search */}
+          <div className="mt-10">
+            <div className="mb-5 flex flex-wrap gap-2">
+              {filters.map((f) => {
+                const active = filter === f.id;
+                return (
+                  <button
+                    key={f.id}
+                    onClick={() => setFilter(f.id)}
+                    className={`inline-flex items-center gap-2 rounded-md border px-4 py-2 text-sm font-medium backdrop-blur-md transition ${
+                      active
+                        ? "border-sky-500/50 bg-sky-500/20 text-white shadow-[0_0_15px_rgba(56,189,248,0.25)]"
+                        : "border-zinc-800/90 bg-black/60 text-zinc-400 hover:border-zinc-700 hover:bg-black/80 hover:text-white"
+                    }`}
+                  >
+                    <f.icon className="h-4 w-4" />
+                    {f.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="relative">
+              <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
+              <input
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search games..."
+                className="h-11 w-full rounded-md border border-zinc-800/90 bg-black/60 pl-10 pr-4 text-sm text-foreground backdrop-blur-md outline-none transition placeholder:text-zinc-500 focus:border-sky-500/60 focus:ring-1 focus:ring-sky-500/40"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
