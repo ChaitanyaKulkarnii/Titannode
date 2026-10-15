@@ -189,7 +189,15 @@ function LoginModal({ open, onClose }: { open: boolean; onClose: () => void }) {
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
+          <a
+            href="/client"
+            className="flex w-full items-center justify-center gap-2 rounded-md bg-white hover:bg-zinc-200 text-black py-3 px-4 text-sm font-bold transition shadow-lg active:scale-[0.99]"
+          >
+            <span>Client Area (WHMCS)</span>
+            <ArrowRight className="w-4 h-4 text-black" />
+          </a>
+
           <a
             href={DISCORD_URL}
             target="_blank"

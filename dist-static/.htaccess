@@ -4,16 +4,22 @@
   RewriteEngine On
   RewriteBase /
 
-  # Handle Authorization Header
+  # 1. WHMCS & System Exclusions
+  # Never rewrite requests directed to the WHMCS /client directory or cPanel /cgi-bin
+  RewriteRule ^(client|cgi-bin)(/.*)?$ - [L]
+
+  # 2. Handle Authorization Header
   RewriteCond %{HTTP:Authorization} .
   RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-  # Redirect Trailing Slashes If Not A Folder
+  # 3. Redirect Trailing Slashes If Not A Folder (exclude /client)
+  RewriteCond %{REQUEST_URI} !^/client
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_URI} (.+)/$
   RewriteRule ^ %1 [L,R=301]
 
-  # Send Requests To index.html if file or directory does not exist
+  # 4. Send Requests To index.html if file or directory does not exist (exclude /client)
+  RewriteCond %{REQUEST_URI} !^/client
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^ index.html [L]

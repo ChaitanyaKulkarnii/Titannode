@@ -50,6 +50,11 @@ If you have a standard cPanel hosting account (Apache/LiteSpeed/Nginx without No
    - Check **Show Hidden Files (dotfiles)** and click **Save**.
    - Verify that `.htaccess` is present. It ensures client-side routing works for all routes (like `/vps-hosting`, `/game-hosting`, `/about`, etc.) without 404 errors.
 
+5. **WHMCS `/client` Compatibility**:
+   - The `.htaccess` is pre-configured with rules that explicitly exclude `/client` and `/cgi-bin` from SPA rewrites.
+   - Extracting `titannode-cpanel.zip` into `public_html/` will safely sit alongside your existing `client/` folder without overwriting it.
+   - All WHMCS requests (e.g. `https://titannodes.fun/client`, `https://titannodes.fun/client/cart.php`, login, admin, etc.) will be handled directly by WHMCS and PHP.
+
 
 ---
 
